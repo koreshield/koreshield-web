@@ -8,7 +8,15 @@ import { PageLoader, SuspenseFallback } from './components/LoadingStates';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { ToastProvider, setGlobalToast, useToast } from './components/ToastNotification';
 import { ThemeProvider } from './context/ThemeContext';
-
+import LandingPage from './pages/LandingPage';
+import BlogPage from './pages/BlogPageWrapper';
+import DocsPage from './pages/DocsPage';
+import StatusPage from './pages/StatusPage';
+import PricingPage from './pages/PricingPage';
+import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
+import ComparisonPage from './pages/ComparisonPage';
+import SolutionsPage from './pages/SolutionsPage';
 // Retry dynamic imports once on chunk-load failure (stale deploy cache)
 function lazyRetry<T extends { default: React.ComponentType }>(
 	importFn: () => Promise<T>,
@@ -35,18 +43,10 @@ function lazyRetry<T extends { default: React.ComponentType }>(
 	);
 }
 
-// Lazy load pages for code splitting
-const LandingPage = lazyRetry(() => import('./pages/LandingPage'));
+// Lazy load remaining pages for code splitting
 const DashboardPage = lazyRetry(() => import('./pages/DashboardPage').then(m => ({ default: m.DashboardPage })));
 const ApiKeysPage = lazyRetry(() => import('./pages/ApiKeysPage').then(m => ({ default: m.ApiKeysPage })));
-const BlogPage = lazyRetry(() => import('./pages/BlogPageWrapper'));
 const AuthorPage = lazyRetry(() => import('./pages/AuthorPage'));
-const DocsPage = lazyRetry(() => import('./pages/DocsPage'));
-const StatusPage = lazyRetry(() => import('./pages/StatusPage'));
-const PricingPage = lazyRetry(() => import('./pages/PricingPage'));
-const ContactPage = lazyRetry(() => import('./pages/ContactPage'));
-const AboutPage = lazyRetry(() => import('./pages/AboutPage'));
-const ComparisonPage = lazyRetry(() => import('./pages/ComparisonPage'));
 const VsLakeraPage = lazyRetry(() => import('./pages/VsLakeraPage'));
 const VsLLMGuardPage = lazyRetry(() => import('./pages/VsLLMGuardPage'));
 const VsBuildYourselfPage = lazyRetry(() => import('./pages/VsBuildYourselfPage'));
@@ -96,7 +96,6 @@ const ResearchPage = lazyRetry(() => import('./pages/ResearchPage'));
 const ResearchArticlePage = lazyRetry(() => import('./pages/ResearchArticlePage'));
 // Solution pages
 const SolutionDetectionResponsePage = lazyRetry(() => import('./pages/SolutionDetectionResponsePage'));
-const SolutionsPage = lazyRetry(() => import('./pages/SolutionsPage'));
 const SolutionApplicationProtectionPage = lazyRetry(() => import('./pages/SolutionApplicationProtectionPage'));
 const SolutionAgentsSecurityPage = lazyRetry(() => import('./pages/SolutionAgentsSecurityPage'));
 const SolutionUsageControlPage = lazyRetry(() => import('./pages/SolutionUsageControlPage'));
