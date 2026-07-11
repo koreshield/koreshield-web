@@ -64,3 +64,52 @@ export const defaultOrganizationSchema = {
 		'https://www.linkedin.com/company/koreshield',
 	],
 };
+
+export const defaultSiteNavigationSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'ItemList',
+	itemListElement: [
+		{
+			'@type': 'SiteNavigationElement',
+			position: 1,
+			name: 'Solutions',
+			description: 'Explore our AI security layers: prompt injection protection, RAG security, agent control, and more.',
+			url: `${PRIMARY_SITE_URL}/solutions`,
+		},
+		{
+			'@type': 'SiteNavigationElement',
+			position: 2,
+			name: 'Pricing',
+			description: 'Koreshield pricing plans for teams of all sizes, from Growth to custom Enterprise self-hosted options.',
+			url: `${PRIMARY_SITE_URL}/pricing`,
+		},
+		{
+			'@type': 'SiteNavigationElement',
+			position: 3,
+			name: 'Documentation',
+			description: 'Complete documentation for the Koreshield platform. API reference, SDK guides, and integration examples.',
+			url: `${PRIMARY_SITE_URL}/docs`,
+		},
+		{
+			'@type': 'SiteNavigationElement',
+			position: 4,
+			name: 'Blog',
+			description: 'Latest insights on LLM security, AI threat detection, and enterprise AI infrastructure.',
+			url: `${PRIMARY_SITE_URL}/blog`,
+		},
+		{
+			'@type': 'SiteNavigationElement',
+			position: 5,
+			name: 'About',
+			description: 'We are building the runtime security layer for production AI applications. Learn more about our team and mission.',
+			url: `${PRIMARY_SITE_URL}/about`,
+		},
+		{
+			'@type': 'SiteNavigationElement',
+			position: 6,
+			name: 'Careers',
+			description: 'Join the Koreshield team and help secure the future of enterprise AI infrastructure.',
+			url: `${PRIMARY_SITE_URL}/careers`,
+		},
+	],
+};

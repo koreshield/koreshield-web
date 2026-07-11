@@ -19,6 +19,11 @@ export const SEOConfig = {
 				'https://x.com/koreshield',
 				'https://www.linkedin.com/company/koreshield',
 			],
+			potentialAction: {
+				'@type': 'SearchAction',
+				target: 'https://koreshield.ai/?q={search_term_string}',
+				'query-input': 'required name=search_term_string',
+			},
 		},
 	},
 	features: {
