@@ -59,7 +59,9 @@ export function LoginPage() {
 				return;
 			}
 			const fromLocation = locationState?.from;
-			const from = fromLocation ? `${fromLocation.pathname}${fromLocation.search || ''}` : '/dashboard';
+			const sessionPath = sessionStorage.getItem('koreshield-post-auth-path');
+			sessionStorage.removeItem('koreshield-post-auth-path');
+			const from = sessionPath || (fromLocation ? `${fromLocation.pathname}${fromLocation.search || ''}` : '/dashboard');
 			navigate(from, { replace: true });
 		} catch (err) {
 			setError(err instanceof Error ? err.message : 'Invalid email or password');
@@ -77,7 +79,9 @@ export function LoginPage() {
 			await authService.verifyMfaCode(mfaCode);
 			setPendingMfa(null);
 			const fromLocation = locationState?.from;
-			const from = fromLocation ? `${fromLocation.pathname}${fromLocation.search || ''}` : '/dashboard';
+			const sessionPath = sessionStorage.getItem('koreshield-post-auth-path');
+			sessionStorage.removeItem('koreshield-post-auth-path');
+			const from = sessionPath || (fromLocation ? `${fromLocation.pathname}${fromLocation.search || ''}` : '/dashboard');
 			navigate(from, { replace: true });
 		} catch (err) {
 			setError(err instanceof Error ? err.message : 'Verification failed');
