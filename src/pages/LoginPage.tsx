@@ -90,6 +90,12 @@ export function LoginPage() {
 		if (oauthLoading) return;
 		setError('');
 		setOauthLoading('github');
+		
+		const fromLocation = locationState?.from;
+		if (fromLocation) {
+			sessionStorage.setItem('koreshield-post-auth-path', `${fromLocation.pathname}${fromLocation.search || ''}`);
+		}
+		
 		try {
 			const { auth_url } = await authService.initializeGitHubOAuth();
 			window.location.href = auth_url;
@@ -103,6 +109,12 @@ export function LoginPage() {
 		if (oauthLoading) return;
 		setError('');
 		setOauthLoading('google');
+		
+		const fromLocation = locationState?.from;
+		if (fromLocation) {
+			sessionStorage.setItem('koreshield-post-auth-path', `${fromLocation.pathname}${fromLocation.search || ''}`);
+		}
+		
 		try {
 			const { auth_url } = await authService.initializeGoogleOAuth();
 			window.location.href = auth_url;
