@@ -852,7 +852,11 @@ class ApiClient {
 	async getProviderMetrics(timeRange: '7d' | '30d' | '90d' | '1y' | 'today' = '7d') {
 		return this.fetch(`/v1/analytics/provider-metrics?time_range=${timeRange}`);
 	}
-
+	async generateSSOTicket(): Promise<{ ticket: string }> {
+		return this.fetch('/v1/management/sso/ticket', {
+			method: 'POST',
+		});
+	}
 	async getCompliancePosture() {
 		return this.fetch('/v1/analytics/compliance-posture');
 	}

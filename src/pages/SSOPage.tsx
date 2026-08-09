@@ -18,8 +18,8 @@ export const SSOPage: React.FC = () => {
 
 		const generateTicket = async () => {
 			try {
-				const response = await api.post('/management/sso/ticket');
-				const ticket = response.data.ticket;
+				const response = await api.generateSSOTicket();
+				const ticket = response.ticket;
 				
 				if (isMounted && ticket) {
 					// Construct the redirect URL with the ticket
