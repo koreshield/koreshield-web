@@ -54,6 +54,7 @@ const WhyKoreShieldPage = lazyRetry(() => import('./pages/WhyKoreShieldPage'));
 const FAQPage = lazyRetry(() => import('./pages/FAQPage'));
 const NotFoundPage = lazyRetry(() => import('./pages/NotFoundPage'));
 const DemoPage = lazyRetry(() => import('./pages/DemoPage'));
+const SSOPage = lazyRetry(() => import('./pages/SSOPage'));
 const LoginPage = lazyRetry(() => import('./pages/LoginPage').then(m => ({ default: m.LoginPage })));
 const SignupPage = lazyRetry(() => import('./pages/SignupPage').then(m => ({ default: m.SignupPage })));
 const ForgotPasswordPage = lazyRetry(() => import('./pages/ForgotPasswordPage').then(m => ({ default: m.ForgotPasswordPage })));
@@ -642,6 +643,18 @@ function AppContent() {
 								<RouteErrorBoundary>
 									<ProtectedRoute>
 										<DashboardPage />
+									</ProtectedRoute>
+								</RouteErrorBoundary>
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/sso"
+						element={
+							<Suspense fallback={<SuspenseFallback />}>
+								<RouteErrorBoundary>
+									<ProtectedRoute>
+										<SSOPage />
 									</ProtectedRoute>
 								</RouteErrorBoundary>
 							</Suspense>
