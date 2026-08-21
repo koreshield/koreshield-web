@@ -459,6 +459,163 @@ export const careerRoles: CareerRole[] = [
 		],
 		recruitmentEmail,
 	},
+
+	{
+		slug: 'motion-designer',
+		title: 'Motion Designer',
+		team: 'Design',
+		location: 'Remote',
+		type: 'Full-time',
+		summary: 'Create fluid, highly technical product animations and visual narratives that explain how Koreshield intercepts LLM traffic in real time.',
+		hero: 'We need someone who can turn complex security proxy architecture and prompt injection concepts into satisfying, precise, and beautiful motion design.',
+		overview: [
+			'Koreshield intercepts and analyzes AI traffic at runtime.',
+			'Your role is to make the invisible visible—animating data flows, threat interceptions, and UI interactions that make our product immediately understandable.'
+		],
+		responsibilities: [
+			'Create high-quality motion graphics and product walkthroughs for the marketing site and social channels.',
+			'Animate complex technical concepts (e.g., RAG context poisoning, prompt injections) into clear visual metaphors.',
+			'Collaborate with product and engineering to design micro-interactions for the Koreshield dashboard.',
+			'Produce lightweight animations (Lottie/Rive) for direct integration into the React frontend.'
+		],
+		profile: [
+			'Exceptional portfolio demonstrating technical motion design and product UI animation.',
+			'Mastery of After Effects, Figma, and modern web animation workflows.',
+			'Strong sense of timing, easing, and spatial relationships.',
+			'Ability to translate abstract backend processes into compelling visuals.'
+		],
+		whatWeOffer: [
+			'Creative freedom to define the motion language of a deeply technical product.',
+			'High visibility—your work will be the primary way people understand our technology.',
+			'Remote flexibility and a no-nonsense engineering culture.'
+		],
+		recruitmentEmail,
+	},
+	{
+		slug: 'visual-designer',
+		title: 'Visual Designer',
+		team: 'Design',
+		location: 'Remote',
+		type: 'Full-time',
+		summary: 'Define and extend the visual language of Koreshield across the marketing site, product UI, and brand assets.',
+		hero: 'We are looking for a designer with exceptional taste and typographic rigor to help us build a brand that feels precise, engineered, and distinctly authoritative.',
+		overview: [
+			'Security products often suffer from cluttered, legacy interfaces. We aim for extreme clarity and technical aesthetic.',
+			'You will be responsible for everything from landing page layouts to complex data visualization dashboards.'
+		],
+		responsibilities: [
+			'Design high-converting landing pages, documentation layouts, and marketing assets.',
+			'Create pixel-perfect UI designs and maintain our evolving design system.',
+			'Develop custom iconography, technical diagrams, and visual metaphors for AI security.',
+			'Work directly with frontend engineers to ensure pristine implementation of your designs.'
+		],
+		profile: [
+			'A portfolio that screams "taste"—strong typography, spacing, and layout skills.',
+			'Expertise in Figma and building scalable component libraries.',
+			'Experience designing for developer tools, devtools, or technical B2B SaaS.',
+			'Ability to balance aesthetic beauty with the functional density required by security engineers.'
+		],
+		whatWeOffer: [
+			'Ownership of the visual brand from day one.',
+			'A team that genuinely cares about design and implementation quality.',
+			'Direct impact on the commercial success of the product.'
+		],
+		recruitmentEmail,
+	},
+	{
+		slug: 'ai-red-teamer-threat-researcher',
+		title: 'AI Red Teamer & Threat Researcher',
+		team: 'Security',
+		location: 'Remote',
+		type: 'Full-time',
+		summary: 'Break LLMs and agentic systems before the attackers do. Research novel prompt injections, jailbreaks, and data exfiltration methods to improve our core detection engine.',
+		hero: 'You will spend your days inventing new ways to bypass AI safety guardrails and turning those discoveries into defensive capabilities for our customers.',
+		overview: [
+			'Koreshield's value relies on our ability to detect attacks that generic firewalls miss.',
+			'As a Threat Researcher, you will push the boundaries of adversarial machine learning and directly feed intelligence into our proxy engine.'
+		],
+		responsibilities: [
+			'Discover and document zero-day vulnerabilities in commercial and open-source LLMs.',
+			'Develop novel prompt injection, indirect injection, and jailbreak techniques.',
+			'Build and maintain adversarial evaluation datasets for continuous engine testing.',
+			'Publish research papers, blog posts, and present findings at security conferences.'
+		],
+		profile: [
+			'Deep understanding of transformer architectures and LLM internals.',
+			'Experience in adversarial machine learning or AI safety red teaming.',
+			'Strong scripting skills (Python) and experience interacting with LLM APIs.',
+			'A hacker mindset—you enjoy finding the edge cases that developers didn't consider.'
+		],
+		whatWeOffer: [
+			'Dedicated time and budget for independent AI security research.',
+			'The ability to see your research immediately protect production AI systems.',
+			'A platform to build your personal brand in the AI security community.'
+		],
+		recruitmentEmail,
+	},
+	{
+		slug: 'detection-and-response-engineer',
+		title: 'Detection & Response Engineer',
+		team: 'Security',
+		location: 'Remote',
+		type: 'Full-time',
+		summary: 'Translate cutting-edge AI security research into highly performant runtime rules and heuristics for the Koreshield proxy.',
+		hero: 'Your job is to catch the attacks our Red Team discovers, but do it in under 5 milliseconds without breaking legitimate customer traffic.',
+		overview: [
+			'Our engine evaluates thousands of requests per second. Accuracy and latency are everything.',
+			'You will bridge the gap between threat intelligence and high-performance software engineering.'
+		],
+		responsibilities: [
+			'Write, tune, and deploy detection signatures (Regex, heuristics, ML classifiers).',
+			'Analyze false positive/negative reports from customers and refine the engine.',
+			'Develop automated pipelines for testing detection efficacy against new datasets.',
+			'Monitor the global threat landscape for emerging AI attack patterns.'
+		],
+		profile: [
+			'Strong background in security engineering, SOC/DFIR, or detection engineering.',
+			'Proficiency in Python, Rust, or Go, with a focus on writing performant code.',
+			'Experience with regular expressions, AST parsing, or NLP techniques.',
+			'Obsession with minimizing false positives while maintaining high recall.'
+		],
+		whatWeOffer: [
+			'Work at the absolute bleeding edge of detection engineering.',
+			'Direct responsibility for the core efficacy of the product.',
+			'A highly technical environment where your work has immediate, measurable impact.'
+		],
+		recruitmentEmail,
+	},
+	{
+		slug: 'infrastructure-security-engineer',
+		title: 'Infrastructure Security Engineer',
+		team: 'Security',
+		location: 'Remote',
+		type: 'Full-time',
+		summary: 'Ensure Koreshield's own global proxy network and infrastructure remains hardened against attack and compliant with enterprise standards.',
+		hero: 'We secure other companies' infrastructure, so our own posture must be flawless. You will own the security architecture of our edge nodes, control plane, and cloud environments.',
+		overview: [
+			'Enterprise customers trust us with their raw AI traffic. We must maintain the highest standards of infrastructure security, isolation, and compliance.',
+			'You will be the guardian of our own systems.'
+		],
+		responsibilities: [
+			'Design and implement security controls for our AWS/GCP cloud infrastructure.',
+			'Perform internal security audits, penetration testing, and code reviews.',
+			'Manage compliance initiatives (SOC2, ISO 27001, HIPAA) and respond to vendor security questionnaires.',
+			'Automate security guardrails in our CI/CD pipelines and infrastructure-as-code.'
+		],
+		profile: [
+			'Deep expertise in cloud security (AWS/GCP), IAM, and network segmentation.',
+			'Strong experience with Terraform, Kubernetes security, and zero-trust architectures.',
+			'Previous experience leading SOC2 or similar compliance audits.',
+			'Ability to balance stringent security requirements with developer velocity.'
+		],
+		whatWeOffer: [
+			'Total ownership over the security posture of a rapidly scaling enterprise product.',
+			'Resources to build a best-in-class security program from the ground up.',
+			'Direct engagement with top-tier enterprise security teams during vendor assessments.'
+		],
+		recruitmentEmail,
+	}
+
 ];
 
 export function getCareerRole(slug: string) {
