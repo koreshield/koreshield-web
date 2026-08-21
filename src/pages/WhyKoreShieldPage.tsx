@@ -52,7 +52,7 @@ const advantages = [
 	{
 		icon: <Globe className="w-7 h-7" />,
 		title: 'Multi-Provider Excellence',
-		description: 'Unlike competitors locked to specific providers, Koreshield works seamlessly with OpenAI, Anthropic, Google Gemini, DeepSeek, Azure OpenAI, and any OpenAI-compatible API.',
+		description: 'Unlike competitors locked to specific providers, Koreshield works seamlessly with OpenAI, Anthropic, Google Gemini, Azure OpenAI, and any OpenAI-compatible API.',
 		bullets: [
 			'Unified security across all LLM providers',
 			'No vendor lock-in',

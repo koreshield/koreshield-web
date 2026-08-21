@@ -46,11 +46,6 @@ const logos = {
             <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6s-4.298 9.6-9.6 9.6S2.4 17.302 2.4 12 6.698 2.4 12 2.4zm-2.4 4.8v9.6h1.8v-3.6h2.4l2.4 3.6h2.1l-2.7-3.9c1.35-.45 2.4-1.65 2.4-3.15 0-1.8-1.5-3.3-3.3-3.3h-4.5v.75zm1.8 1.05h2.7c.99 0 1.5.51 1.5 1.5s-.51 1.5-1.5 1.5h-2.7v-3z" />
         </svg>
     ),
-    DeepSeek: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-        </svg>
-    ),
     Azure: () => (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
             <path d="M13.05 2 4.6 21.91h7.12l1.14-3.39h-3.5l4.93-14.6L13.05 2Zm1.61 4.88-2.39 6.73 4.6 5.72H8.43L7.6 21.91h13.8L14.66 6.88Z" />
@@ -100,7 +95,6 @@ const integrationGroups = [
             { name: 'Anthropic', Logo: logos.Anthropic },
             { name: 'Gemini', Logo: logos.Google },
             { name: 'Azure OpenAI', Logo: logos.Azure },
-            { name: 'DeepSeek', Logo: logos.DeepSeek },
         ],
     },
     {

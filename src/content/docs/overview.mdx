@@ -24,7 +24,7 @@ Koreshield blocks all of this at the gateway layer, without requiring changes to
 ## How It Works
 
 ```
-Your App  →  Koreshield  →  OpenAI / Anthropic / Gemini / DeepSeek
+Your App  →  Koreshield  →  OpenAI / Anthropic / Gemini
                 ↓
          Scan + Policy
          Decision here
@@ -49,7 +49,7 @@ Koreshield routes to the right provider automatically based on the model name yo
 | `gpt-*`, `o1-*`, `o3-*` | OpenAI |
 | `claude-*` | Anthropic |
 | `gemini-*` | Google Gemini |
-| `deepseek-*` | DeepSeek |
+
 | `gpt-*` via Azure endpoint | Azure OpenAI |
 
 ## Authentication: Which Method Should I Use?

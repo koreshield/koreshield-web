@@ -29,7 +29,7 @@ const whatYoullSee = [
 const trustSignals = [
 	'Zero-log by default',
 	'Under 50ms overhead',
-	'Compatible with OpenAI, Anthropic, Gemini, DeepSeek',
+	'Compatible with OpenAI, Anthropic, Gemini',
 	'Public SDK on PyPI and npm',
 	'No sales pressure',
 ];

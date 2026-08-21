@@ -21,7 +21,7 @@ kubectl create secret generic koreshield-secrets \
   --from-literal=JWT_SECRET='replace-with-32+char-secret' \
   --from-literal=JWT_ISSUER='koreshield-auth' \
   --from-literal=JWT_AUDIENCE='koreshield-api' \
-  --from-literal=DEEPSEEK_API_KEY='...'
+
 ```
 
 ## 3. Deploy App + Redis + Postgres
@@ -33,7 +33,7 @@ Core env for app pod:
 - `JWT_SECRET` (or RSA key mode)
 - `JWT_ISSUER`
 - `JWT_AUDIENCE`
-- `DEEPSEEK_API_KEY` (or other enabled provider key)
+
 - `REDIS_URL`
 - `DATABASE_URL`
 

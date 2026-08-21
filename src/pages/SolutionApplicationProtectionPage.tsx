@@ -96,7 +96,7 @@ export default function SolutionApplicationProtectionPage() {
 			<section className="px-4 py-16 sm:px-6 md:py-20">
 				<div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
 					{[
-						{ icon: Route, title: 'Provider routing', body: 'OpenAI, Anthropic, Gemini, DeepSeek, or OpenAI-compatible endpoints.' },
+						{ icon: Route, title: 'Provider routing', body: 'OpenAI, Anthropic, Gemini, or OpenAI-compatible endpoints.' },
 						{ icon: ShieldCheck, title: 'Policy enforcement', body: 'Block, redact, log, or allow based on the risk profile of each request.' },
 						{ icon: Code2, title: 'No migration drama', body: 'No full SDK rewrite. No model retraining. No brittle app-side filters.' },
 					].map((item) => (

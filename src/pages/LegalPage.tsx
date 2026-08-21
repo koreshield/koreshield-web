@@ -271,7 +271,7 @@ const pages: Record<string, { title: string; effective: string; sections: { head
 			},
 			{
 				heading: 'Detection and model-analysis providers',
-				body: 'Depending on service configuration, Koreshield may use model-analysis providers such as OpenAI, Google Gemini or Vertex AI, Microsoft Azure OpenAI, and DeepSeek as part of the detection engine. Provider availability depends on configuration, enabled integrations, and customer deployment choices.',
+				body: 'Depending on service configuration, Koreshield may use model-analysis providers such as OpenAI, Google Gemini or Vertex AI, Microsoft Azure OpenAI,  as part of the detection engine. Provider availability depends on configuration, enabled integrations, and customer deployment choices.',
 			},
 			{
 				heading: 'Updates',

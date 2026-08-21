@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
       Authorization: `Bearer ${process.env.KORESHIELD_JWT}`,
     },
     body: JSON.stringify({
-      model: 'deepseek-chat',
+      model: 'gpt-4o',
       messages: body.messages,
     }),
   })

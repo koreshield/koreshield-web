@@ -127,7 +127,7 @@ export interface ProviderHealthResponse {
     openai: ProviderStatus;
     anthropic: ProviderStatus;
     gemini: ProviderStatus;
-    deepseek: ProviderStatus;
+    
     azure: ProviderStatus;
   };
   overall_status: 'operational' | 'degraded' | 'down';

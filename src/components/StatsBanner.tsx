@@ -21,7 +21,7 @@ const stats = [
 	{
 		value: '4+',
 		label: 'LLM Providers',
-		sub: 'OpenAI, Anthropic, Gemini, DeepSeek',
+		sub: 'OpenAI, Anthropic, Gemini',
 	},
 ];
 

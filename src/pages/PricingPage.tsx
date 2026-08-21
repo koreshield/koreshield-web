@@ -79,7 +79,7 @@ export default function PricingPage() {
 							One URL change. Zero-log by default. Koreshield inspects every request and response before it completes, without touching your codebase.
 						</p>
 						<p className="mx-auto mt-3 max-w-[20rem] text-sm leading-relaxed text-muted-foreground sm:max-w-3xl">
-							Compatible with OpenAI, Anthropic, Gemini, and DeepSeek. Public SDK on PyPI and npm.
+							Compatible with OpenAI, Anthropic, Gemini, . Public SDK on PyPI and npm.
 						</p>
 
 						<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

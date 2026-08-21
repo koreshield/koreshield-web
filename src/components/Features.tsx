@@ -13,7 +13,7 @@ const features = [
         icon: Network,
         title: 'Multi-Provider',
         eyebrow: 'Provider control',
-        description: 'One proxy policy across OpenAI, Anthropic, Gemini, and DeepSeek.',
+        description: 'One proxy policy across OpenAI, Anthropic, Gemini, .',
         proof: 'One policy layer across every model route',
     },
     {
@@ -46,7 +46,7 @@ const features = [
     },
 ];
 
-const modelRoutes = ['OpenAI', 'Anthropic', 'Gemini', 'DeepSeek'];
+const modelRoutes = ['OpenAI', 'Anthropic', 'Gemini'];
 
 const metricChips = [
     '50+ attack patterns',

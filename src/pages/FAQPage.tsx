@@ -23,7 +23,7 @@ const faqCategories: FAQCategory[] = [
 			},
 			{
 				q: 'Which LLM providers does Koreshield support?',
-				a: 'Koreshield supports OpenAI, Anthropic (Claude), Google Gemini, DeepSeek, Azure OpenAI, and any OpenAI-compatible endpoint. You configure provider routing once and Koreshield handles the rest.',
+				a: 'Koreshield supports OpenAI, Anthropic (Claude), Google Gemini, Azure OpenAI, and any OpenAI-compatible endpoint. You configure provider routing once and Koreshield handles the rest.',
 			},
 			{
 				q: 'Is Koreshield open source?',

@@ -184,7 +184,6 @@ export function CostAnalyticsPage() {
                         <option value="all">All Providers</option>
                         <option value="openai">OpenAI</option>
                         <option value="anthropic">Anthropic</option>
-                        <option value="deepseek">DeepSeek</option>
                         <option value="gemini">Google Gemini</option>
                     </select>
                 </div>

@@ -153,7 +153,7 @@ const CHANGELOG_BATCHES: ChangelogBatch[] = [
 				customerImpact:
 					'Customers can see whether provider routing is healthy in real time instead of relying on a static snapshot.',
 				items: [
-					'Added detailed provider route cards for DeepSeek, Gemini, and Azure OpenAI.',
+					'Added detailed provider route cards for Gemini, and Azure OpenAI.',
 					'Improved the status summary so core systems, provider routing, and live counters stay aligned.',
 					'Expanded status diagnostics to surface initialized routes, response times, and missing credential states.',
 				],
@@ -572,9 +572,9 @@ const CHANGELOG_BATCHES: ChangelogBatch[] = [
 				summary:
 					'Koreshield\'s first public release shipped with core LLM security features: multi-provider support, real-time prompt injection detection, Python and JavaScript SDKs, basic RAG context scanning, and Docker-based deployment.',
 				customerImpact:
-					'Developers can immediately protect LLM applications across OpenAI, Anthropic, and DeepSeek with a drop-in SDK, with no infrastructure changes required.',
+					'Developers can immediately protect LLM applications across OpenAI, Anthropic,  with a drop-in SDK, with no infrastructure changes required.',
 				items: [
-					'Multi-provider LLM support: OpenAI, Anthropic, and DeepSeek out of the box.',
+					'Multi-provider LLM support: OpenAI, Anthropic,  out of the box.',
 					'Real-time prompt injection detection on every request.',
 					'Python and JavaScript SDKs published for easy integration.',
 					'Basic RAG context scanning to catch retrieved-document abuse.',

@@ -457,10 +457,6 @@
       "title": "Custom Models Integration Documentation | Koreshield",
       "description": "Route any OpenAI-compatible API through Koreshield with streaming support."
     },
-    "/docs/integrations/models/deepseek": {
-      "title": "DeepSeek Integration Documentation | Koreshield",
-      "description": "Route DeepSeek-compatible chat calls through Koreshield."
-    },
     "/docs/integrations/models/gemini": {
       "title": "Google Gemini Integration Documentation | Koreshield",
       "description": "Route Gemini requests through Koreshield with streaming support."

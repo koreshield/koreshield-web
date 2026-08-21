@@ -153,7 +153,7 @@ function Architecture() {
                             <h3 className="font-semibold">3. LLM Providers</h3>
                         </div>
                         <div className="space-y-2">
-                            {['OpenAI', 'Anthropic', 'Gemini', 'DeepSeek'].map((provider) => (
+                            {['OpenAI', 'Anthropic', 'Gemini'].map((provider) => (
                                 <div key={provider} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg bg-muted/50 border border-white/[0.04]">
                                     <div className="w-2 h-2 bg-secondary-dark rounded-full shrink-0" />
                                     <span className="text-sm text-foreground/80 font-medium">{provider}</span>
