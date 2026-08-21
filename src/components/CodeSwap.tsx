@@ -111,7 +111,7 @@ export function CodeSwap() {
 
   return (
     <div className="w-full max-w-5xl mx-auto rounded-3xl border border-white/[0.08] bg-card/30 p-6 backdrop-blur-sm relative overflow-hidden transition-all duration-300">
-      <div className="absolute inset-0 bg-gradient-to-tr from-electric-green/[0.01] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.01] via-transparent to-transparent pointer-events-none" />
       
       {/* Top Bar with Language Tabs and Before/After Switcher */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-white/[0.06] pb-5 relative z-10">
@@ -157,13 +157,13 @@ export function CodeSwap() {
             <button
               onClick={() => setIsProtected(true)}
               className={`relative px-3.5 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer select-none z-10 flex items-center gap-1.5 ${
-                isProtected ? 'text-electric-green' : 'text-muted-foreground hover:text-foreground'
+                isProtected ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {isProtected && (
                 <motion.div
                   layoutId="activeGatewayTab"
-                  className="absolute inset-0 bg-electric-green/10 border border-electric-green/20 rounded-lg"
+                  className="absolute inset-0 bg-primary/10 border border-primary/20 rounded-lg"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -183,7 +183,7 @@ export function CodeSwap() {
 		  aria-label={copied ? 'Code copied' : 'Copy code'}
           className="absolute right-4 top-4 rounded-xl border border-white/[0.08] bg-white/[0.02] p-2 text-muted-foreground transition-all hover:bg-white/[0.08] hover:text-foreground active:scale-95 cursor-pointer z-10"
         >
-          {copied ? <Check className="w-4 h-4 text-electric-green" /> : <Copy className="w-4 h-4" />}
+          {copied ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
         </button>
 
         {/* Floating security status badge inside editor */}
@@ -196,9 +196,9 @@ export function CodeSwap() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                className="inline-flex items-center gap-1.5 rounded-full bg-electric-green/15 border border-electric-green/30 px-3 py-1 text-xs font-bold text-electric-green shadow-lg shadow-emerald-500/5"
+                className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/30 px-3 py-1 text-xs font-bold text-primary shadow-lg shadow-primary/5"
               >
-                <span className="w-1.5 h-1.5 bg-electric-green rounded-full animate-ping" />
+                <span className="w-1.5 h-1.5 bg-primary rounded-full animate-ping" />
                 Active Proxy Firewall
               </motion.span>
             ) : (
@@ -227,8 +227,8 @@ export function CodeSwap() {
                 lineClass = "text-red-400 font-semibold";
                 bgClass = "bg-red-950/20 -mx-5 px-5 border-l-2 border-red-500";
               } else if (line.isAdded) {
-                lineClass = "text-electric-green font-semibold";
-                bgClass = "bg-emerald-950/20 -mx-5 px-5 border-l-2 border-electric-green";
+                lineClass = "text-primary font-semibold";
+                bgClass = "bg-primary-dark/20 -mx-5 px-5 border-l-2 border-primary";
               }
 
               return (
@@ -251,7 +251,7 @@ export function CodeSwap() {
 
       <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground px-1">
         <div className="flex items-center gap-1">
-          <Terminal className="w-3.5 h-3.5 text-electric-green" />
+          <Terminal className="w-3.5 h-3.5 text-primary" />
           <span>Zero dependencies or library migrations needed.</span>
         </div>
         <span className="hidden md:inline">Latency impact: &lt;30ms</span>

@@ -211,8 +211,8 @@ export default function FAQPage() {
 			<section className="relative px-6 py-24 ambient-glow">
 				<div className="mx-auto max-w-4xl text-center relative z-10">
 					<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-						<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-electric-green">
-							<span className="h-1.5 w-1.5 rounded-full bg-electric-green" />
+						<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 							Knowledge Base
 						</div>
 						<h1 className="text-5xl font-extrabold tracking-[-0.04em] text-foreground md:text-6xl">
@@ -233,7 +233,7 @@ export default function FAQPage() {
 							<a
 								key={cat.title}
 								href={`#${cat.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-								className="shrink-0 rounded-full border border-border bg-card px-3.5 py-1.5 text-[11px] font-semibold text-muted-foreground transition-colors hover:border-electric-green/30 hover:text-foreground"
+								className="shrink-0 rounded-full border border-border bg-card px-3.5 py-1.5 text-[11px] font-semibold text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground"
 							>
 								{cat.title}
 							</a>
@@ -287,13 +287,13 @@ export default function FAQPage() {
 					<div className="mt-8 flex flex-wrap justify-center gap-4">
 						<Link
 							to="/contact"
-							className="inline-flex items-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright"
+							className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark"
 						>
 							Contact us <ArrowRight className="h-4 w-4" />
 						</Link>
 						<Link
 							to="/docs"
-							className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] bg-background/60 px-6 py-3 text-sm font-bold text-foreground transition-colors hover:border-electric-green/30 hover:bg-muted"
+							className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] bg-background/60 px-6 py-3 text-sm font-bold text-foreground transition-colors hover:border-primary/30 hover:bg-muted"
 						>
 							Read the docs
 						</Link>

@@ -27,10 +27,10 @@ export default function SolutionDetectionResponsePage() {
 			/>
 
 			<section className="relative overflow-hidden px-4 py-20 ambient-glow sm:px-6 md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(225,29,72,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(198,105,82,0.08),transparent_24%)]" />
 				<div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Siren className="h-3.5 w-3.5" />
 							AI Detection
 						</span>
@@ -41,7 +41,7 @@ export default function SolutionDetectionResponsePage() {
 							Koreshield turns every risky LLM interaction into a decision: allow, block, redact, alert, or log.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
-							<Link to="/signup?plan=growth" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-7 py-3 font-bold text-white transition-colors hover:bg-emerald-bright">
+							<Link to="/signup?plan=growth" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-bold text-white transition-colors hover:bg-primary-dark">
 								Choose a plan <ArrowRight className="h-4 w-4" />
 							</Link>
 							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card/70 px-7 py-3 font-bold text-foreground transition-colors hover:bg-muted">
@@ -54,9 +54,9 @@ export default function SolutionDetectionResponsePage() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.55, delay: 0.1 }}
-						className="relative rounded-[1.75rem] border border-border bg-card/90 p-4 shadow-2xl shadow-emerald-900/10 dark:bg-card/75 sm:p-5 md:rounded-[2rem]"
+						className="relative rounded-[1.75rem] border border-border bg-card/90 p-4 shadow-2xl shadow-primary-dark/10 dark:bg-card/75 sm:p-5 md:rounded-[2rem]"
 					>
-						<div className="absolute -inset-px -z-10 rounded-[2rem] bg-gradient-to-br from-electric-green/25 via-transparent to-ruby/15" />
+						<div className="absolute -inset-px -z-10 rounded-[2rem] bg-gradient-to-br from-primary/25 via-transparent to-ruby/15" />
 						<div className="mb-4 flex items-center justify-between">
 							<div className="min-w-0">
 								<p className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">live decision feed</p>
@@ -77,7 +77,7 @@ export default function SolutionDetectionResponsePage() {
 										<p className="break-words font-mono text-sm font-semibold text-foreground">{threat}</p>
 										<p className="text-xs text-muted-foreground">confidence {(94 + index).toString()}%</p>
 									</div>
-									<span className="col-span-2 w-fit rounded-full bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-electric-green sm:col-span-1">
+									<span className="col-span-2 w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-primary sm:col-span-1">
 										{outcome}
 									</span>
 								</div>
@@ -90,7 +90,7 @@ export default function SolutionDetectionResponsePage() {
 			<section className="border-y border-border bg-card/35 px-4 py-16 sm:px-6 md:py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10 max-w-3xl">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Response loop</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Response loop</p>
 						<h2 className="text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl md:text-5xl">Not a filter. A security workflow.</h2>
 					</div>
 					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -103,7 +103,7 @@ export default function SolutionDetectionResponsePage() {
 								transition={{ duration: 0.4, delay: index * 0.07 }}
 								className="rounded-[1.5rem] border border-border bg-card/85 p-5 shadow-sm md:p-6"
 							>
-								<item.icon className="mb-5 h-6 w-6 text-electric-green" />
+								<item.icon className="mb-5 h-6 w-6 text-primary" />
 								<h3 className="text-xl font-bold">{item.title}</h3>
 								<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
 							</motion.div>
@@ -118,7 +118,7 @@ export default function SolutionDetectionResponsePage() {
 						<h2 className="text-2xl font-extrabold tracking-[-0.03em] sm:text-3xl">Put detection in the path of live AI traffic.</h2>
 						<p className="mt-2 text-sm text-muted-foreground">Start with proxy enforcement, then expand into alerts, reports, and audit evidence.</p>
 					</div>
-					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 						See it live <ArrowRight className="h-4 w-4" />
 					</Link>
 				</div>

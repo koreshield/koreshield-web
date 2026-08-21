@@ -103,16 +103,16 @@ const client = new OpenAI({
 	const allowedRequests = statistics.requests_allowed || 0;
 	const blockRate = totalRequests > 0 ? Math.round((blockedRequests / totalRequests) * 100) : 0;
 	const quickActions = [
-		{ to: '/settings/api-keys', icon: Key, title: 'API Keys', body: 'Server tokens', tone: 'text-sky-400' },
-		{ to: '/policies', icon: Shield, title: 'Policies', body: 'Rules and actions', tone: 'text-electric-green' },
+		{ to: '/settings/api-keys', icon: Key, title: 'API Keys', body: 'Server tokens', tone: 'text-secondary' },
+		{ to: '/policies', icon: Shield, title: 'Policies', body: 'Rules and actions', tone: 'text-primary' },
 		{ to: '/rag-security', icon: ScanSearch, title: 'RAG Scanner', body: 'Inspect context', tone: 'text-amber-400' },
-		{ to: '/teams', icon: Users, title: 'Teams', body: 'Access control', tone: 'text-violet-400' },
+		{ to: '/teams', icon: Users, title: 'Teams', body: 'Access control', tone: 'text-secondary-dark' },
 	];
 	const statCards = [
-		{ label: 'Total Requests', value: totalRequests.toLocaleString(), icon: Activity, tone: 'text-sky-400', detail: 'Traffic inspected' },
+		{ label: 'Total Requests', value: totalRequests.toLocaleString(), icon: Activity, tone: 'text-secondary', detail: 'Traffic inspected' },
 		{ label: 'Blocked', value: blockedRequests, icon: Shield, tone: 'text-red-400', detail: `${blockRate}% block rate` },
 		{ label: 'Attacks', value: attacksDetected, icon: AlertTriangle, tone: 'text-amber-400', detail: 'Threats detected' },
-		{ label: 'Allowed', value: allowedRequests, icon: CheckCircle, tone: 'text-electric-green', detail: 'Clean requests' },
+		{ label: 'Allowed', value: allowedRequests, icon: CheckCircle, tone: 'text-primary', detail: 'Clean requests' },
 	];
 
 	if (statsError) {
@@ -137,7 +137,7 @@ const client = new OpenAI({
 				description={`Welcome back${user?.name ? `, ${user.name}` : ''}. Review traffic, threats, and the actions Koreshield has taken.`}
 				icon={LayoutDashboard}
 				stats={[
-					{ label: 'Posture', value: attacksDetected > 0 ? 'Active' : 'Quiet', tone: 'text-electric-green' },
+					{ label: 'Posture', value: attacksDetected > 0 ? 'Active' : 'Quiet', tone: 'text-primary' },
 					{ label: 'Blocked', value: blockedRequests },
 				]}
 			/>
@@ -335,7 +335,7 @@ const client = new OpenAI({
 						<div className="space-y-2">
 							{recentAttacks.length === 0 ? (
 								<div className="rounded-2xl border border-border bg-background/45 py-12 text-center text-muted-foreground">
-									<Shield className="mx-auto mb-3 h-10 w-10 text-electric-green opacity-70" />
+									<Shield className="mx-auto mb-3 h-10 w-10 text-primary opacity-70" />
 									<p className="text-sm font-medium">No threats detected yet</p>
 									<p className="mt-1 text-xs">Protected traffic will appear here when Koreshield catches or flags risky activity.</p>
 								</div>

@@ -107,8 +107,8 @@ export default function ContactPage() {
 						transition={{ duration: 0.6 }}
 						className="rounded-[2rem] border border-border bg-card/75 p-6 shadow-[0_30px_120px_rgba(0,0,0,0.16)] backdrop-blur md:p-10"
 					>
-						<div className="inline-flex items-center gap-2 bg-electric-green/10 border border-electric-green/20 text-electric-green text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-							<span className="w-1.5 h-1.5 rounded-full bg-electric-green" />
+						<div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+							<span className="w-1.5 h-1.5 rounded-full bg-primary" />
 							Contact
 						</div>
 						<h1 className="text-4xl md:text-6xl font-black mb-6 tracking-[-0.06em] text-foreground">
@@ -134,7 +134,7 @@ export default function ContactPage() {
 								transition={{ duration: 0.4, delay: index * 0.08 }}
 								className="group bg-card border border-border hover:border-primary/40 rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5"
 							>
-								<div className="text-electric-green mb-4">{option.icon}</div>
+								<div className="text-primary mb-4">{option.icon}</div>
 								<h3 className="text-base font-semibold text-foreground mb-2">{option.title}</h3>
 								<p className="text-sm text-muted-foreground mb-6 leading-relaxed">{option.description}</p>
 								{option.external ? (
@@ -189,7 +189,7 @@ export default function ContactPage() {
 				<div className="max-w-4xl mx-auto">
 					<div className="rounded-[2rem] bg-card border border-white/[0.08] p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
 						<div>
-							<p className="text-xs font-semibold text-electric-green uppercase tracking-wider mb-1">Enterprise</p>
+							<p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Enterprise</p>
 							<h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Scaling AI at enterprise level?</h3>
 							<p className="text-muted-foreground max-w-lg text-sm leading-relaxed">
 								Talk to our sales team about protected-request volume, dedicated support, SSO, and compliance requirements.

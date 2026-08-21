@@ -173,7 +173,7 @@ export function ThreatMonitoringPage() {
 			/>
 
 			<AppStatGrid columns={3}>
-				<AppStatCard label="Total Threats" value={stats.total} icon={TrendingUp} tone="text-sky-400" detail={`Last ${timeRange}`} />
+				<AppStatCard label="Total Threats" value={stats.total} icon={TrendingUp} tone="text-secondary" detail={`Last ${timeRange}`} />
 				<AppStatCard
 					label="Blocked"
 					value={stats.blocked}
@@ -243,7 +243,7 @@ export function ThreatMonitoringPage() {
 											critical: 'border-red-500/50 bg-red-500/5',
 											high: 'border-orange-500/50 bg-orange-500/5',
 											medium: 'border-yellow-500/50 bg-yellow-500/5',
-											low: 'border-blue-500/50 bg-blue-500/5'
+											low: 'border-secondary/50 bg-secondary/10'
 										};
 
 										return (
@@ -265,7 +265,7 @@ export function ThreatMonitoringPage() {
 															<span className={`text-xs px-2 py-0.5 rounded-full ${severity === 'critical' ? 'bg-red-500/20 text-red-600' :
 																severity === 'high' ? 'bg-orange-500/20 text-orange-600' :
 																	severity === 'medium' ? 'bg-yellow-500/20 text-yellow-600' :
-																		'bg-blue-500/20 text-blue-600'
+																		'bg-secondary/20 text-secondary'
 																}`}>
 																{severity}
 															</span>
@@ -284,7 +284,7 @@ export function ThreatMonitoringPage() {
 													<AlertTriangle className={`w-5 h-5 flex-shrink-0 ${severity === 'critical' ? 'text-red-500' :
 														severity === 'high' ? 'text-orange-500' :
 															severity === 'medium' ? 'text-yellow-500' :
-																'text-blue-500'
+																'text-secondary'
 														}`} />
 												</div>
 											</div>

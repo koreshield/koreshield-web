@@ -253,7 +253,7 @@ export default function AuditLogsPage() {
 			case 'critical': return 'text-red-600 bg-red-50';
 			case 'high': return 'text-orange-600 bg-orange-50';
 			case 'medium': return 'text-yellow-600 bg-yellow-50';
-			case 'low': return 'text-blue-600 bg-blue-50';
+			case 'low': return 'text-secondary bg-secondary/5';
 			default: return 'text-muted-foreground bg-muted';
 		}
 	};
@@ -283,15 +283,15 @@ export default function AuditLogsPage() {
 				/>
 
 				<AppStatGrid>
-					<AppStatCard label="Total Events" value={logs.length} icon={Activity} tone="text-sky-400" />
+					<AppStatCard label="Total Events" value={logs.length} icon={Activity} tone="text-secondary" />
 					<AppStatCard
 						label="Success Rate"
 						value={logs.length === 0 ? '0%' : `${Math.round((logs.filter(l => l.status === 'success').length / logs.length) * 100)}%`}
 						icon={Activity}
-						tone="text-emerald-400"
+						tone="text-primary"
 					/>
 					<AppStatCard label="Runtime Tool Events" value={runtimeToolLogs.length} icon={Workflow} tone="text-amber-400" />
-					<AppStatCard label="Review Required" value={reviewRequiredLogs.length} icon={Eye} tone="text-violet-400" />
+					<AppStatCard label="Review Required" value={reviewRequiredLogs.length} icon={Eye} tone="text-secondary-dark" />
 				</AppStatGrid>
 
 				<AppSurface className="mb-8">
@@ -326,7 +326,7 @@ export default function AuditLogsPage() {
 				<div className="mb-8 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
 					<AppSurface>
 						<div className="flex items-center gap-3 mb-3">
-							<Shield className="w-4 h-4 sm:w-5 sm:h-5 text-electric-green" />
+							<Shield className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
 							<h2 className="text-base sm:text-lg font-semibold text-foreground">Tool Runtime Focus</h2>
 						</div>
 						<p className="text-xs sm:text-sm text-muted-foreground">
@@ -344,7 +344,7 @@ export default function AuditLogsPage() {
 						label="Unique Actors"
 						value={new Set(logs.map(l => l.user_email)).size}
 						icon={User}
-						tone="text-sky-400"
+						tone="text-secondary"
 						detail="Includes API-key scoped and user-scoped runtime events."
 					/>
 				</div>
@@ -387,7 +387,7 @@ export default function AuditLogsPage() {
 									<div className="flex gap-2">
 										<button
 											onClick={() => handleReviewDecision(review.ticket_id, 'approved')}
-											className="px-3 py-2 rounded-lg bg-electric-green hover:bg-electric-green/90 text-black text-sm font-medium transition-colors"
+											className="px-3 py-2 rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-medium transition-colors"
 										>
 											Approve
 										</button>
@@ -460,7 +460,7 @@ export default function AuditLogsPage() {
 									placeholder="Search logs by user, action, IP..."
 									value={search}
 									onChange={(e) => setSearch(e.target.value)}
-									className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-electric-green text-sm"
+									className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
 								/>
 							</div>
 							<button
@@ -483,7 +483,7 @@ export default function AuditLogsPage() {
 							</button>
 							<button
 								onClick={() => handleExport('json')}
-								className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-electric-green hover:bg-electric-green/90 text-black font-medium rounded-lg transition-colors text-sm flex-1 sm:flex-none"
+								className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary/90 text-black font-medium rounded-lg transition-colors text-sm flex-1 sm:flex-none"
 							>
 								<Download className="w-4 h-4 sm:w-5 sm:h-5" />
 								<span className="hidden sm:inline">JSON</span>
@@ -501,7 +501,7 @@ export default function AuditLogsPage() {
 								<select
 									value={filterAction}
 									onChange={(e) => setFilterAction(e.target.value)}
-									className="w-full px-3 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-electric-green text-sm"
+									className="w-full px-3 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
 								>
 									<option value="all">All Actions</option>
 									<option value="created">Created</option>
@@ -523,7 +523,7 @@ export default function AuditLogsPage() {
 								<select
 									value={filterStatus}
 									onChange={(e) => setFilterStatus(e.target.value)}
-									className="w-full px-3 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-electric-green text-sm"
+									className="w-full px-3 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
 								>
 									<option value="all">All Statuses</option>
 									<option value="success">Success</option>
@@ -537,7 +537,7 @@ export default function AuditLogsPage() {
 								<select
 									value={filterSeverity}
 									onChange={(e) => setFilterSeverity(e.target.value)}
-									className="w-full px-3 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-electric-green"
+									className="w-full px-3 py-2 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
 								>
 									<option value="all">All Severities</option>
 									<option value="critical">Critical</option>

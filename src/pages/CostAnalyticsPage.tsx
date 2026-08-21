@@ -70,7 +70,7 @@ export function CostAnalyticsPage() {
         refetchInterval: 60000
     });
 
-    const COLORS = ['#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
+    const COLORS = ['#A9C652', '#7a8b39', '#6262c6', '#45458b', '#c66952'];
 
     // Calculate cost trends
     const calculateTrend = () => {
@@ -199,14 +199,14 @@ export function CostAnalyticsPage() {
                             label="Current Period Cost"
                             value={`£${currentPeriodCost.toFixed(2)}`}
                             icon={PoundSterling}
-                            tone="text-emerald-400"
+                            tone="text-primary"
                             detail={`${trend.isPositive ? '↓' : '↑'} ${trend.value.toFixed(1)}% vs previous period`}
                         />
                         <AppStatCard
                             label="Avg Cost per Request"
                             value={`£${avgCostPerRequest.toFixed(4)}`}
                             icon={TrendingUp}
-                            tone="text-sky-400"
+                            tone="text-secondary"
                             detail={`Based on ${currentRequests.toLocaleString()} requests`}
                         />
                         <AppStatCard
@@ -220,7 +220,7 @@ export function CostAnalyticsPage() {
                             label="Projected Monthly"
                             value={`£${projectedMonthlyCost.toFixed(2)}`}
                             icon={Calendar}
-                            tone="text-violet-400"
+                            tone="text-secondary-dark"
                             detail="Based on current usage rate"
                         />
                     </AppStatGrid>
@@ -236,7 +236,7 @@ export function CostAnalyticsPage() {
                                     labelStyle={{ color: '#f9fafb' }}
                                 />
                                 <Legend />
-                                <Line type="monotone" dataKey="total_cost" stroke="#3b82f6" strokeWidth={2} name="Total Cost (£)" />
+                                <Line type="monotone" dataKey="total_cost" stroke="#6262c6" strokeWidth={2} name="Total Cost (£)" />
                             </LineChart>
                         </ResponsiveContainer>
                     </AppPageSection>
@@ -255,7 +255,7 @@ export function CostAnalyticsPage() {
                                             return `${item.category}: ${((percent ?? 0) * 100).toFixed(1)}%`;
                                         }}
                                         outerRadius={100}
-                                        fill="#8884d8"
+                                        fill="#6262c6"
                                         dataKey="amount"
                                     >
                                         {providerCostBreakdown.map((entry, index) => (
@@ -280,7 +280,7 @@ export function CostAnalyticsPage() {
                                         contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151' }}
                                         formatter={(value) => [`£${Number(value).toFixed(2)}`, 'Cost']}
                                     />
-                                    <Bar dataKey="cost" fill="#3b82f6" />
+                                    <Bar dataKey="cost" fill="#6262c6" />
                                 </BarChart>
                             </ResponsiveContainer>
                         </AppPageSection>

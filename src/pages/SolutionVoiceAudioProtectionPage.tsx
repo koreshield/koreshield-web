@@ -26,10 +26,10 @@ export default function SolutionVoiceAudioProtectionPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.14),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(14,165,233,0.1),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(169,198,82,0.14),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(98,98,198,0.1),transparent_24%)]" />
 				<div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<AudioLines className="h-3.5 w-3.5" />
 							Voice & Audio Protection
 						</span>
@@ -40,7 +40,7 @@ export default function SolutionVoiceAudioProtectionPage() {
 							Voice agents convert audio into prompts, tool calls, and customer actions. Koreshield brings the same protection into that path.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
-							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-7 py-3 font-bold text-white transition-colors hover:bg-emerald-bright">
+							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-bold text-white transition-colors hover:bg-primary-dark">
 								Discuss voice protection <ArrowRight className="h-4 w-4" />
 							</Link>
 							<Link to="/solutions/ai-agents-security" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card/70 px-7 py-3 font-bold text-foreground transition-colors hover:bg-muted">
@@ -53,10 +53,10 @@ export default function SolutionVoiceAudioProtectionPage() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.55, delay: 0.1 }}
-						className="rounded-[2rem] border border-border bg-card/90 p-5 shadow-2xl shadow-emerald-900/10 dark:bg-card/75"
+						className="rounded-[2rem] border border-border bg-card/90 p-5 shadow-2xl shadow-primary-dark/10 dark:bg-card/75"
 					>
 						<div className="mb-5 flex items-center gap-4">
-							<div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-electric-green/10 text-electric-green">
+							<div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
 								<Volume2 className="h-7 w-7" />
 							</div>
 							<div>
@@ -67,7 +67,7 @@ export default function SolutionVoiceAudioProtectionPage() {
 						<div className="grid gap-3 sm:grid-cols-2">
 							{layers.map(([title, body], index) => (
 								<div key={title} className="rounded-2xl border border-border bg-background/70 p-4">
-									<p className="text-xs font-bold tracking-[0.22em] text-electric-green">0{index + 1}</p>
+									<p className="text-xs font-bold tracking-[0.22em] text-primary">0{index + 1}</p>
 									<p className="mt-3 font-bold">{title}</p>
 									<p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>
 								</div>
@@ -80,7 +80,7 @@ export default function SolutionVoiceAudioProtectionPage() {
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10 max-w-3xl">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Audio path</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Audio path</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Treat speech as another prompt surface.</h2>
 					</div>
 					<div className="grid gap-5 md:grid-cols-3">
@@ -93,7 +93,7 @@ export default function SolutionVoiceAudioProtectionPage() {
 								transition={{ duration: 0.4, delay: index * 0.07 }}
 								className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm"
 							>
-								<item.icon className="mb-5 h-6 w-6 text-electric-green" />
+								<item.icon className="mb-5 h-6 w-6 text-primary" />
 								<h3 className="text-xl font-bold">{item.title}</h3>
 								<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
 							</motion.div>
@@ -108,7 +108,7 @@ export default function SolutionVoiceAudioProtectionPage() {
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">Planning voice AI?</h2>
 						<p className="mt-2 text-sm text-muted-foreground">Map the transcript boundary, policy point, and audit trail before launch.</p>
 					</div>
-					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 						Book a demo <FileAudio className="h-4 w-4" />
 					</Link>
 				</div>

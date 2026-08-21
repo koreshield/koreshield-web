@@ -70,11 +70,11 @@ export default function AboutPage() {
 			<SEOMeta {...SEOConfig.about} />
 
 			<section className="relative px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.13),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(59,130,246,0.1),transparent_26%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(169,198,82,0.13),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(98,98,198,0.1),transparent_26%)]" />
 				<div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
 					<motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-						<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
-							<span className="h-1.5 w-1.5 rounded-full bg-electric-green" />
+						<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 							About Koreshield
 						</div>
 						<h1 className="max-w-4xl text-5xl font-extrabold tracking-[-0.055em] text-foreground md:text-7xl">
@@ -84,10 +84,10 @@ export default function AboutPage() {
 							Koreshield protects AI applications at runtime: prompts, retrieved context, provider calls, policy decisions, and the evidence teams need when security questions become business questions.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
-							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-7 py-3 font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-bright">
+							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-bold text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary-dark">
 								Book a demo <ArrowRight className="h-4 w-4" />
 							</Link>
-							<Link to="/docs" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card/70 px-7 py-3 font-bold text-foreground transition-colors hover:border-electric-green/30 hover:bg-card">
+							<Link to="/docs" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card/70 px-7 py-3 font-bold text-foreground transition-colors hover:border-primary/30 hover:bg-card">
 								Read the docs
 							</Link>
 						</div>
@@ -97,22 +97,22 @@ export default function AboutPage() {
 						initial={{ opacity: 0, scale: 0.96 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7, delay: 0.1 }}
-						className="relative rounded-[2rem] border border-white/[0.08] bg-card/75 p-6 shadow-2xl shadow-emerald-500/5"
+						className="relative rounded-[2rem] border border-white/[0.08] bg-card/75 p-6 shadow-2xl shadow-primary/5"
 					>
-						<div className="absolute -inset-px -z-10 rounded-[2rem] bg-gradient-to-br from-electric-green/25 via-transparent to-blue-500/10" />
+						<div className="absolute -inset-px -z-10 rounded-[2rem] bg-gradient-to-br from-primary/25 via-transparent to-secondary/10" />
 						<div className="mb-6 flex items-center justify-between">
 							<div>
-								<p className="text-xs font-bold uppercase tracking-[0.25em] text-electric-green">Runtime posture</p>
+								<p className="text-xs font-bold uppercase tracking-[0.25em] text-primary">Runtime posture</p>
 								<p className="mt-2 text-2xl font-bold">What we protect</p>
 							</div>
-							<div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-green/10">
-								<ShieldCheck className="h-6 w-6 text-electric-green" />
+							<div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+								<ShieldCheck className="h-6 w-6 text-primary" />
 							</div>
 						</div>
 						<div className="space-y-3">
 							{platformPillars.map((pillar) => (
 								<div key={pillar} className="flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-background/50 px-4 py-3">
-									<span className="h-2 w-2 rounded-full bg-electric-green shadow-[0_0_16px_rgba(16,185,129,0.65)]" />
+									<span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_16px_rgba(169,198,82,0.65)]" />
 									<span className="text-sm text-muted-foreground">{pillar}</span>
 								</div>
 							))}
@@ -135,7 +135,7 @@ export default function AboutPage() {
 			<section className="px-6 py-24">
 				<div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
 					<div>
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Our thesis</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Our thesis</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">AI security has to move from policy documents into the request path.</h2>
 					</div>
 					<div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
@@ -155,7 +155,7 @@ export default function AboutPage() {
 			<section className="bg-muted/30 px-6 py-24">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-12 max-w-3xl">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">How we operate</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">How we operate</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Built for teams that cannot treat AI risk as a slide deck.</h2>
 					</div>
 					<div className="grid gap-5 md:grid-cols-3">
@@ -166,10 +166,10 @@ export default function AboutPage() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.45, delay: index * 0.08 }}
-								className="group rounded-[1.75rem] border border-white/[0.08] bg-card/80 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-electric-green/30 hover:shadow-lg hover:shadow-emerald-500/10"
+								className="group rounded-[1.75rem] border border-white/[0.08] bg-card/80 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
 							>
-								<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-green/10 transition-colors group-hover:bg-electric-green/20">
-									<principle.icon className="h-6 w-6 text-electric-green" />
+								<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+									<principle.icon className="h-6 w-6 text-primary" />
 								</div>
 								<h3 className="text-xl font-bold text-foreground">{principle.title}</h3>
 								<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{principle.body}</p>
@@ -182,8 +182,8 @@ export default function AboutPage() {
 			<section className="px-6 py-24">
 				<div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
 					<div className="rounded-[2rem] border border-white/[0.08] bg-card/70 p-8 lg:col-span-2">
-						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-green/10">
-							<Globe2 className="h-6 w-6 text-electric-green" />
+						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+							<Globe2 className="h-6 w-6 text-primary" />
 						</div>
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">Built from the UK, for global AI teams.</h2>
 						<p className="mt-4 text-muted-foreground leading-relaxed">
@@ -191,8 +191,8 @@ export default function AboutPage() {
 						</p>
 					</div>
 					<div className="rounded-[2rem] border border-white/[0.08] bg-card/70 p-8">
-						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-green/10">
-							<Building2 className="h-6 w-6 text-electric-green" />
+						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+							<Building2 className="h-6 w-6 text-primary" />
 						</div>
 						<h3 className="text-2xl font-bold tracking-tight">Commercially focused. Technically serious.</h3>
 						<p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -206,7 +206,7 @@ export default function AboutPage() {
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
 						<div>
-							<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">The people</p>
+							<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">The people</p>
 							<h2 className="text-4xl font-extrabold tracking-[-0.04em] text-white md:text-5xl">A small team with clear ownership.</h2>
 						</div>
 						<p className="max-w-xl text-muted-foreground">
@@ -222,19 +222,19 @@ export default function AboutPage() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.45, delay: index * 0.08 }}
-								className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.035] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-electric-green/30 hover:bg-white/[0.055]"
+								className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.035] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/[0.055]"
 							>
-								<div className="pointer-events-none absolute -right-14 -top-14 h-32 w-32 rounded-full bg-electric-green/10 blur-3xl opacity-0 transition-opacity group-hover:opacity-100" />
+								<div className="pointer-events-none absolute -right-14 -top-14 h-32 w-32 rounded-full bg-primary/10 blur-3xl opacity-0 transition-opacity group-hover:opacity-100" />
 								<div className="relative mb-6 h-20 w-20 overflow-hidden rounded-2xl border border-white/[0.12] bg-white/[0.04]">
 									<img src={member.image} alt={member.name} width="460" height="460" loading="lazy" decoding="async" className="h-full w-full object-cover" />
 								</div>
 								<h3 className="text-xl font-bold text-white">{member.name}</h3>
-								<p className="mt-2 inline-flex rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-electric-green">
+								<p className="mt-2 inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary">
 									{member.role}
 								</p>
 								<p className="mt-4 text-sm leading-relaxed text-muted-foreground">{member.bio}</p>
 								{member.profile ? (
-									<Link to={member.profile} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-electric-green">
+									<Link to={member.profile} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-primary">
 										View author profile <ArrowRight className="h-4 w-4" />
 									</Link>
 								) : null}
@@ -242,7 +242,7 @@ export default function AboutPage() {
 									href={member.linkedin}
 									target="_blank"
 									rel="noreferrer noopener"
-									className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-electric-green transition-colors hover:text-emerald-bright"
+									className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
 									aria-label={`${member.name} on LinkedIn`}
 								>
 									<Linkedin className="h-4 w-4" />
@@ -257,8 +257,8 @@ export default function AboutPage() {
 			<section className="px-6 py-24">
 				<div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.8fr_1.2fr]">
 					<div className="rounded-[2rem] border border-white/[0.08] bg-card/70 p-8">
-						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-green/10">
-							<Target className="h-6 w-6 text-electric-green" />
+						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+							<Target className="h-6 w-6 text-primary" />
 						</div>
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">What we are building toward</h2>
 						<p className="mt-4 text-muted-foreground leading-relaxed">
@@ -266,15 +266,15 @@ export default function AboutPage() {
 						</p>
 					</div>
 					<div className="rounded-[2rem] border border-white/[0.08] bg-card/70 p-8">
-						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-green/10">
-							<Users className="h-6 w-6 text-electric-green" />
+						<div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+							<Users className="h-6 w-6 text-primary" />
 						</div>
 						<h3 className="text-2xl font-bold tracking-tight">For builders who already have AI in the wild.</h3>
 						<p className="mt-4 text-muted-foreground leading-relaxed">
 							If your team is shipping AI agents, RAG features, internal copilots, or customer-facing assistants, Koreshield is designed to give you a practical control point before model behaviour becomes an incident.
 						</p>
 						<div className="mt-7 flex flex-col gap-3 sm:flex-row">
-							<Link to="/solutions" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 font-bold text-white transition-colors hover:bg-emerald-bright">
+							<Link to="/solutions" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-bold text-white transition-colors hover:bg-primary-dark">
 								Explore solutions <ArrowRight className="h-4 w-4" />
 							</Link>
 							<Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 font-bold text-foreground transition-colors hover:bg-muted">

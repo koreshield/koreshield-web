@@ -22,7 +22,7 @@ export function ThreatMap({ threats, onMarkerClick }: ThreatMapProps) {
 			case 'critical': return 'bg-red-500';
 			case 'high': return 'bg-orange-500';
 			case 'medium': return 'bg-yellow-500';
-			case 'low': return 'bg-blue-500';
+			case 'low': return 'bg-secondary';
 			default: return 'bg-gray-500';
 		}
 	};
@@ -32,7 +32,7 @@ export function ThreatMap({ threats, onMarkerClick }: ThreatMapProps) {
 			case 'critical': return 'border-red-400';
 			case 'high': return 'border-orange-400';
 			case 'medium': return 'border-yellow-400';
-			case 'low': return 'border-blue-400';
+			case 'low': return 'border-secondary';
 			default: return 'border-gray-400';
 		}
 	};
@@ -50,7 +50,7 @@ export function ThreatMap({ threats, onMarkerClick }: ThreatMapProps) {
 						<div
 							key={threat.id}
 							className={`p-4 rounded-lg border-2 ${getSeverityBorder(threat.severity)} bg-slate-900/50 cursor-pointer transition-all hover:bg-slate-800/70 ${
-								hoveredThreat === threat.id ? 'ring-2 ring-electric-green' : ''
+								hoveredThreat === threat.id ? 'ring-2 ring-primary' : ''
 							}`}
 							onMouseEnter={() => setHoveredThreat(threat.id)}
 							onMouseLeave={() => setHoveredThreat(null)}

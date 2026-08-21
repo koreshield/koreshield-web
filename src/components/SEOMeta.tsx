@@ -160,7 +160,7 @@ export function SEOMeta({
 
 			{/* Additional Meta Tags */}
 			<meta name="language" content="English" />
-			<meta name="theme-color" content="#0EA5E9" />
+			<meta name="theme-color" content="#A9C652" />
 			<meta name="apple-mobile-web-app-capable" content="yes" />
 			<meta name="format-detection" content="telephone=no" />
 

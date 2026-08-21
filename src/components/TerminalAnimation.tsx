@@ -145,14 +145,14 @@ function TerminalAnimation() {
 	return (
 		<div className="space-y-3">
 			{/* ── Terminal window ─────────────────────────────── */}
-			<div className="terminal glow-green select-none">
+			<div className="terminal glow-primary select-none">
 				<div className="terminal-header">
 					<div className="terminal-dot bg-red-500" />
 					<div className="terminal-dot bg-yellow-500" />
 					<div className="terminal-dot bg-green-500" />
 					<span className="text-gray-500 text-sm ml-2 font-mono">koreshield-proxy</span>
 					<span className="ml-auto text-[10px] font-mono text-gray-600 uppercase tracking-widest">live</span>
-					<span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
+					<span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse ml-1" />
 				</div>
 
 				<div className="terminal-body min-h-[200px] flex flex-col">
@@ -234,7 +234,7 @@ function TerminalAnimation() {
 											<>
 												<div className="terminal-success font-bold text-base">[ALLOWED]</div>
 												<div className="text-gray-400">
-													status: <span className="text-emerald-400">safe</span>
+													status: <span className="text-primary">safe</span>
 												</div>
 												<div className="text-gray-400">
 													confidence:{' '}
@@ -286,13 +286,13 @@ function TerminalAnimation() {
 										isActive && blocked
 											? 'border-red-500/45 bg-red-500/10 text-red-700 shadow-red-500/10 dark:text-red-300'
 											: isActive && !blocked
-											? 'border-emerald-500/45 bg-emerald-500/10 text-emerald-700 shadow-emerald-500/10 dark:text-emerald-300'
+											? 'border-primary/45 bg-primary/10 text-primary-dark shadow-primary/10 dark:text-primary'
 											: 'border-border/80 bg-card/90 text-foreground hover:-translate-y-0.5 hover:border-primary/35 hover:bg-muted/60 hover:shadow-md dark:bg-slate-950/45 dark:text-slate-200 dark:hover:bg-slate-900/70',
 									].join(' ')}
 								>
 									<span className={[
 										'h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-background transition-transform group-hover:scale-110 dark:ring-slate-950',
-										blocked ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.55)]' : 'bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.55)]',
+										blocked ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.55)]' : 'bg-primary shadow-[0_0_12px_rgba(169,198,82,0.55)]',
 									].join(' ')} />
 									{pill.label}
 								</button>

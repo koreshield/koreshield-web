@@ -10,7 +10,7 @@ interface ThreatTypeBreakdownProps {
     data: Record<string, number>;
 }
 
-const COLORS = ['#ef4444', '#f97316', '#eab308', '#84cc16', '#10b981', '#06b6d4', '#3b82f6', '#8b5cf6'];
+const COLORS = ['#c66952','#7a8b39','#A9C652','#6262c6','#45458b','#c8df7c','#9090d8','#8a8a8a'];
 
 export function ThreatTypeBreakdown({ data }: ThreatTypeBreakdownProps) {
     const chartData: ThreatData[] = Object.entries(data).map(([name, value]) => ({
@@ -63,7 +63,7 @@ export function ThreatTypeBreakdown({ data }: ThreatTypeBreakdownProps) {
                         labelLine={false}
                         label={({ name, percent }) => `${name}: ${((percent || 0) * 100).toFixed(0)}%`}
                         outerRadius={100}
-                        fill="#8884d8"
+                        fill="#6262c6"
                         dataKey="value"
                     >
                         {chartData.map((_, index) => (

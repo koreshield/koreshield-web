@@ -103,7 +103,7 @@ export function TeamsPage() {
 							label="Owned"
 							value={teams.filter((team) => team.my_role === 'owner').length}
 							icon={Users}
-							tone="text-violet-400"
+							tone="text-secondary-dark"
 						/>
 					</AppStatGrid>
 				)}
@@ -141,8 +141,8 @@ export function TeamsPage() {
 									<div className="p-2 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
 										<Users className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
 									</div>
-									<span className={`px-2 py-1 rounded text-xs font-medium ${team.my_role === 'owner' ? 'bg-purple-500/10 text-purple-400' :
-										team.my_role === 'admin' ? 'bg-blue-500/10 text-blue-400' :
+									<span className={`px-2 py-1 rounded text-xs font-medium ${team.my_role === 'owner' ? 'bg-secondary-dark/10 text-secondary-dark' :
+										team.my_role === 'admin' ? 'bg-secondary/10 text-secondary' :
 											'bg-muted text-muted-foreground'
 										}`}>
 										{team.my_role.toUpperCase()}

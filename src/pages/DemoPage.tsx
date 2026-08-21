@@ -10,17 +10,17 @@ const API_BASE_URL = resolveApiBaseUrl(import.meta.env.VITE_API_BASE_URL);
 
 const whatYoullSee = [
 	{
-		icon: <Shield className="h-5 w-5 text-electric-green" />,
+		icon: <Shield className="h-5 w-5 text-primary" />,
 		title: 'Live threat interception',
 		body: 'Watch Koreshield catch prompt injection, jailbreaks, and PII exfiltration attempts in real time; routed through the real security proxy, not a simulation.',
 	},
 	{
-		icon: <Zap className="h-5 w-5 text-electric-green" />,
+		icon: <Zap className="h-5 w-5 text-primary" />,
 		title: 'One-URL integration',
 		body: 'We will walk through a real integration in under five minutes. One line change. No SDK migration. Compatible with your existing LLM client.',
 	},
 	{
-		icon: <Clock className="h-5 w-5 text-electric-green" />,
+		icon: <Clock className="h-5 w-5 text-primary" />,
 		title: 'Your use case, specifically',
 		body: 'We tailor every demo to your stack and threat model. Tell us what you are building in the form and we will come prepared.',
 	},
@@ -179,8 +179,8 @@ export default function DemoPage() {
 						transition={{ duration: 0.6 }}
 						className="relative z-0 lg:sticky lg:top-24"
 					>
-						<span className="inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-electric-green">
-							<span className="h-1.5 w-1.5 rounded-full bg-electric-green" />
+						<span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 							30-minute session
 						</span>
 
@@ -194,7 +194,7 @@ export default function DemoPage() {
 						<div className="mt-10 space-y-6">
 							{whatYoullSee.map((item) => (
 								<div key={item.title} className="flex gap-4">
-									<div className="mt-0.5 flex-shrink-0 rounded-xl border border-electric-green/20 bg-electric-green/10 p-2.5">
+									<div className="mt-0.5 flex-shrink-0 rounded-xl border border-primary/20 bg-primary/10 p-2.5">
 										{item.icon}
 									</div>
 									<div>
@@ -210,7 +210,7 @@ export default function DemoPage() {
 							<ul className="space-y-2.5">
 								{trustSignals.map((signal) => (
 									<li key={signal} className="flex items-center gap-3 text-sm">
-										<CheckCircle2 className="h-4 w-4 flex-shrink-0 text-electric-green" />
+										<CheckCircle2 className="h-4 w-4 flex-shrink-0 text-primary" />
 										<span>{signal}</span>
 									</li>
 								))}
@@ -219,7 +219,7 @@ export default function DemoPage() {
 
 						<p className="mt-8 text-sm text-muted-foreground">
 							Prefer to start immediately?{' '}
-							<Link to="/signup?plan=growth" className="font-semibold text-foreground underline underline-offset-2 hover:text-electric-green transition-colors">
+							<Link to="/signup?plan=growth" className="font-semibold text-foreground underline underline-offset-2 hover:text-primary transition-colors">
 								Choose a paid plan
 							</Link>{' '}
 							now.
@@ -236,8 +236,8 @@ export default function DemoPage() {
 						<div className="rounded-3xl border border-border bg-card p-8 shadow-xl">
 							{submitted ? (
 								<div className="flex min-h-[520px] flex-col items-center justify-center py-12 text-center">
-									<div className="rounded-full border border-electric-green/30 bg-electric-green/10 p-4">
-										<CheckCircle2 className="h-10 w-10 text-electric-green" />
+									<div className="rounded-full border border-primary/30 bg-primary/10 p-4">
+										<CheckCircle2 className="h-10 w-10 text-primary" />
 									</div>
 									<h2 className="mt-6 text-2xl font-bold">Request received.</h2>
 									<p className="mt-3 max-w-sm text-muted-foreground">
@@ -246,7 +246,7 @@ export default function DemoPage() {
 									<div className="mt-8 flex flex-col gap-3 sm:flex-row">
 										<Link
 											to="/signup?plan=growth"
-											className="inline-flex items-center gap-2 rounded-xl bg-electric-green px-6 py-3 font-semibold text-white transition-colors hover:bg-emerald-500"
+											className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary"
 										>
 											Choose Growth instead
 											<ArrowRight className="h-4 w-4" />
@@ -283,7 +283,7 @@ export default function DemoPage() {
 													className={`w-full rounded-xl border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 transition-colors ${
 														errors.firstName
 															? 'border-red-500 focus:ring-red-500/40'
-															: 'border-border focus:ring-electric-green/40'
+															: 'border-border focus:ring-primary/40'
 													}`}
 												/>
 												{errors.firstName && (
@@ -305,7 +305,7 @@ export default function DemoPage() {
 													className={`w-full rounded-xl border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 transition-colors ${
 														errors.lastName
 															? 'border-red-500 focus:ring-red-500/40'
-															: 'border-border focus:ring-electric-green/40'
+															: 'border-border focus:ring-primary/40'
 													}`}
 												/>
 												{errors.lastName && (
@@ -329,7 +329,7 @@ export default function DemoPage() {
 												className={`w-full rounded-xl border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 transition-colors ${
 													errors.workEmail
 														? 'border-red-500 focus:ring-red-500/40'
-														: 'border-border focus:ring-electric-green/40'
+														: 'border-border focus:ring-primary/40'
 												}`}
 											/>
 											{errors.workEmail && (
@@ -353,7 +353,7 @@ export default function DemoPage() {
 													className={`w-full rounded-xl border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 transition-colors ${
 														errors.company
 															? 'border-red-500 focus:ring-red-500/40'
-															: 'border-border focus:ring-electric-green/40'
+															: 'border-border focus:ring-primary/40'
 													}`}
 												/>
 												{errors.company && (
@@ -375,7 +375,7 @@ export default function DemoPage() {
 													className={`w-full rounded-xl border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 transition-colors ${
 														errors.jobTitle
 															? 'border-red-500 focus:ring-red-500/40'
-															: 'border-border focus:ring-electric-green/40'
+															: 'border-border focus:ring-primary/40'
 													}`}
 												/>
 												{errors.jobTitle && (
@@ -398,7 +398,7 @@ export default function DemoPage() {
 												className={`w-full rounded-xl border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 resize-none transition-colors ${
 													errors.useCase
 														? 'border-red-500 focus:ring-red-500/40'
-														: 'border-border focus:ring-electric-green/40'
+														: 'border-border focus:ring-primary/40'
 												}`}
 											/>
 											{errors.useCase && (
@@ -415,7 +415,7 @@ export default function DemoPage() {
 												name="source"
 												value={form.source}
 												onChange={handleChange}
-												className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-electric-green/40"
+												className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
 											>
 												<option value="">Select an option</option>
 												<option value="Search / Google">Search / Google</option>
@@ -432,7 +432,7 @@ export default function DemoPage() {
 										<button
 											type="submit"
 											disabled={submitting}
-											className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3.5 font-semibold text-white transition-colors hover:bg-emerald-500 disabled:opacity-60 disabled:cursor-not-allowed"
+											className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-white transition-colors hover:bg-primary disabled:opacity-60 disabled:cursor-not-allowed"
 										>
 											{submitting ? (
 												<>

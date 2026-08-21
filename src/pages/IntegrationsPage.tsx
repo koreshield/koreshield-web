@@ -68,7 +68,7 @@ const INTEGRATIONS: Integration[] = [
 		category: 'LLM',
 		description: 'Full support for Gemini Pro and Ultra models.',
 		icon: Cable,
-		logoTone: 'bg-gradient-to-br from-blue-500 via-violet-500 to-emerald-400 text-white',
+		logoTone: 'bg-gradient-to-br from-secondary via-secondary-dark to-primary text-white',
 		link: '/docs/integrations/models/gemini',
 		featured: true,
 		statusNote: 'Provider supported'
@@ -102,7 +102,7 @@ const INTEGRATIONS: Integration[] = [
 		category: 'Framework',
 		description: 'Secure RAG query engines and retrievers.',
 		icon: Database,
-		logoTone: 'bg-[#3b82f6] text-white',
+		logoTone: 'bg-[#6262c6] text-white',
 		link: '/docs/integrations/frameworks/llamaindex',
 		statusNote: 'Guide available'
 	},
@@ -173,7 +173,7 @@ const INTEGRATIONS: Integration[] = [
 const LOGO_STRIP = [
 	{ name: 'OpenAI', initials: 'AI', tone: 'bg-foreground text-background' },
 	{ name: 'Anthropic', initials: 'A', tone: 'bg-[#d97757] text-white' },
-	{ name: 'Gemini', initials: 'G', tone: 'bg-gradient-to-br from-blue-500 via-violet-500 to-emerald-400 text-white' },
+	{ name: 'Gemini', initials: 'G', tone: 'bg-gradient-to-br from-secondary via-secondary-dark to-primary text-white' },
 	{ name: 'LangChain', initials: 'LC', tone: 'bg-[#1c3c3c] text-white' },
 	{ name: 'AWS', logo: '/logos/ecosystem/powered-by-aws-white.png' },
 	{ name: 'NVIDIA', logo: '/logos/ecosystem/nvidia-logo.png' },
@@ -235,9 +235,9 @@ function IntegrationsPage() {
 				<div className="relative mb-14 overflow-hidden rounded-[2rem] border border-border bg-card/70 p-6 text-center shadow-[0_30px_120px_rgba(0,0,0,0.16)] md:p-10">
 					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(18,194,150,0.16),transparent_34%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.08),transparent_28%)]" />
 					<div className="relative">
-					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-electric-green/20 bg-electric-green/5 mb-6">
-						<span className="w-1.5 h-1.5 rounded-full bg-electric-green" />
-						<span className="text-xs font-semibold text-electric-green tracking-wide uppercase">Integrations</span>
+					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-6">
+						<span className="w-1.5 h-1.5 rounded-full bg-primary" />
+						<span className="text-xs font-semibold text-primary tracking-wide uppercase">Integrations</span>
 					</div>
 
 					<h1 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-5 text-foreground">
@@ -279,8 +279,8 @@ function IntegrationsPage() {
 									type="button"
 									onClick={() => setActiveCategory(cat)}
 									className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${activeCategory === cat
-										? 'bg-electric-green text-black'
-										: 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-electric-green/40'
+										? 'bg-primary text-black'
+										: 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40'
 										}`}
 								>
 									{cat}
@@ -300,11 +300,11 @@ function IntegrationsPage() {
 									<div className="flex items-center gap-3">
 										<BrandLogo item={item} />
 										<div className="rounded-full border border-border bg-background/70 p-2">
-											<item.icon className="w-4 h-4 text-muted-foreground group-hover:text-electric-green transition-colors" />
+											<item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
 										</div>
 									</div>
 									{item.featured && (
-										<span className="text-[10px] font-bold uppercase tracking-wider bg-electric-green/10 text-electric-green px-2 py-1 rounded-full">
+										<span className="text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary px-2 py-1 rounded-full">
 											Popular
 										</span>
 									)}
@@ -315,7 +315,7 @@ function IntegrationsPage() {
 									<div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest">
 										{item.category}
 									</div>
-									<span className="text-[11px] font-medium text-electric-green">{item.statusNote}</span>
+									<span className="text-[11px] font-medium text-primary">{item.statusNote}</span>
 								</div>
 							</>
 						);
@@ -327,7 +327,7 @@ function IntegrationsPage() {
 									href={item.link}
 									target="_blank"
 									rel="noreferrer noopener"
-									className="bg-card border border-border rounded-2xl p-6 hover:border-electric-green/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-electric-green/5 transition-all duration-300 group no-underline"
+									className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group no-underline"
 								>
 									{cardContent}
 								</a>
@@ -338,7 +338,7 @@ function IntegrationsPage() {
 							<Link
 								key={item.id}
 								to={item.link}
-								className="bg-card border border-border rounded-2xl p-6 hover:border-electric-green/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-electric-green/5 transition-all duration-300 group no-underline"
+								className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group no-underline"
 							>
 								{cardContent}
 							</Link>
@@ -353,7 +353,7 @@ function IntegrationsPage() {
 						<button
 							type="button"
 							onClick={() => { setSearch(''); setActiveCategory('All'); }}
-							className="text-electric-green hover:underline text-sm"
+							className="text-primary hover:underline text-sm"
 						>
 							Clear filters
 						</button>
@@ -362,10 +362,10 @@ function IntegrationsPage() {
 
 				{/* Partial list note */}
 				<div className="text-center mt-12 rounded-2xl border border-border bg-card/60 px-5 py-6">
-					<ShieldCheck className="mx-auto mb-3 h-5 w-5 text-electric-green" />
+					<ShieldCheck className="mx-auto mb-3 h-5 w-5 text-primary" />
 					<p className="text-muted-foreground text-sm">
 						This catalog is checked against the current docs and SDK repos. View the broader integration library in our{' '}
-						<Link to="/docs/integrations" className="text-electric-green hover:underline">
+						<Link to="/docs/integrations" className="text-primary hover:underline">
 							documentation
 						</Link>.
 					</p>

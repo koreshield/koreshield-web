@@ -82,7 +82,7 @@ export function MetricsPage() {
 					label="Status"
 					value={error ? 'Unavailable' : isLoading ? 'Loading' : 'Live'}
 					icon={error ? AlertTriangle : CheckCircle}
-					tone={error ? 'text-red-400' : 'text-electric-green'}
+					tone={error ? 'text-red-400' : 'text-primary'}
 				/>
 				<AppStatCard
 					label="Series lines"

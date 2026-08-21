@@ -246,7 +246,7 @@ export function MarketingLayout() {
 						{isAuthenticated ? (
 							<Link
 								to="/dashboard"
-								className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm shadow-emerald-500/10 transition-colors hover:bg-primary/90"
+								className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm shadow-primary/10 transition-colors hover:bg-primary/90"
 							>
 								Dashboard
 							</Link>
@@ -260,7 +260,7 @@ export function MarketingLayout() {
 								</Link>
 								<Link
 									to="/demo"
-									className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm shadow-emerald-500/10 transition-colors hover:bg-primary/90"
+									className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm shadow-primary/10 transition-colors hover:bg-primary/90"
 								>
 									Book Demo
 								</Link>

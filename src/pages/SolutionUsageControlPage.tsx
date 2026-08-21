@@ -25,10 +25,10 @@ export default function SolutionUsageControlPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(16,185,129,0.14),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(14,165,233,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(169,198,82,0.14),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(98,98,198,0.08),transparent_24%)]" />
 				<div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Settings2 className="h-3.5 w-3.5" />
 							AI Usage Control
 						</span>
@@ -39,7 +39,7 @@ export default function SolutionUsageControlPage() {
 							Control what models can receive, reveal, discuss, and do. Enforce it in the traffic path, not in a policy document nobody reads.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
-							<Link to="/pricing" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-7 py-3 font-bold text-white transition-colors hover:bg-emerald-bright">
+							<Link to="/pricing" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-bold text-white transition-colors hover:bg-primary-dark">
 								See plans <ArrowRight className="h-4 w-4" />
 							</Link>
 							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card/70 px-7 py-3 font-bold text-foreground transition-colors hover:bg-muted">
@@ -52,14 +52,14 @@ export default function SolutionUsageControlPage() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.55, delay: 0.1 }}
-						className="rounded-[2rem] border border-border bg-card/90 p-5 shadow-2xl shadow-emerald-900/10 dark:bg-card/75"
+						className="rounded-[2rem] border border-border bg-card/90 p-5 shadow-2xl shadow-primary-dark/10 dark:bg-card/75"
 					>
 						<p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">policy matrix</p>
 						<div className="space-y-3">
 							{policyRows.map(([profile, rule, outcome]) => (
 								<div key={profile} className="grid gap-2 rounded-2xl border border-border bg-background/70 p-4 sm:grid-cols-3">
 									<span className="font-semibold">{profile}</span>
-									<span className="rounded-xl bg-electric-green/10 px-3 py-2 text-sm text-electric-green">{rule}</span>
+									<span className="rounded-xl bg-primary/10 px-3 py-2 text-sm text-primary">{rule}</span>
 									<span className="rounded-xl bg-muted px-3 py-2 text-sm text-muted-foreground">{outcome}</span>
 								</div>
 							))}
@@ -71,7 +71,7 @@ export default function SolutionUsageControlPage() {
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10 max-w-3xl">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Governance layer</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Governance layer</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Rules that execute.</h2>
 					</div>
 					<div className="grid gap-5 md:grid-cols-3">
@@ -84,7 +84,7 @@ export default function SolutionUsageControlPage() {
 								transition={{ duration: 0.4, delay: index * 0.07 }}
 								className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm"
 							>
-								<item.icon className="mb-5 h-6 w-6 text-electric-green" />
+								<item.icon className="mb-5 h-6 w-6 text-primary" />
 								<h3 className="text-xl font-bold">{item.title}</h3>
 								<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
 							</motion.div>

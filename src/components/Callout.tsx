@@ -12,9 +12,9 @@ interface CalloutProps {
 const calloutConfig = {
   info: {
     icon: Info,
-    className: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800',
-    iconClassName: 'text-blue-600 dark:text-blue-400',
-    titleClassName: 'text-blue-900 dark:text-blue-100',
+    className: 'bg-secondary/10 dark:bg-secondary/10 border-secondary/30 dark:border-secondary/40',
+    iconClassName: 'text-secondary dark:text-secondary',
+    titleClassName: 'text-secondary-dark dark:text-secondary',
   },
   warning: {
     icon: AlertTriangle,
@@ -36,9 +36,9 @@ const calloutConfig = {
   },
   tip: {
     icon: Lightbulb,
-    className: 'bg-purple-50 dark:bg-purple-950/30 border-purple-200 dark:border-purple-800',
-    iconClassName: 'text-purple-600 dark:text-purple-400',
-    titleClassName: 'text-purple-900 dark:text-purple-100',
+    className: 'bg-secondary-dark/10 dark:bg-secondary-dark/10 border-secondary-dark/30 dark:border-secondary-dark/40',
+    iconClassName: 'text-secondary-dark dark:text-secondary-dark',
+    titleClassName: 'text-secondary-dark dark:text-secondary-dark',
   },
 };
 

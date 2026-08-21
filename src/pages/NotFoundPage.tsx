@@ -40,7 +40,7 @@ export default function NotFoundPage() {
 				>
 					{/* 404 number */}
 					<motion.div
-						className="text-[9rem] font-extrabold leading-none tracking-[-0.06em] text-electric-green/20 select-none mb-4"
+						className="text-[9rem] font-extrabold leading-none tracking-[-0.06em] text-primary/20 select-none mb-4"
 						animate={{ scale: [1, 1.03, 1] }}
 						transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
 					>
@@ -48,8 +48,8 @@ export default function NotFoundPage() {
 					</motion.div>
 
 					{/* Badge */}
-					<div className="inline-flex items-center gap-2 bg-electric-green/10 border border-electric-green/20 text-electric-green text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest">
-						<span className="w-1.5 h-1.5 rounded-full bg-electric-green" />
+					<div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+						<span className="w-1.5 h-1.5 rounded-full bg-primary" />
 						Page Not Found
 					</div>
 

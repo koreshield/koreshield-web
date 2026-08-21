@@ -162,7 +162,7 @@ export function LoginPage() {
 		>
 			<SEOMeta title="Sign In" noindex />
 					{locationState?.passwordReset && (
-						<div className="mb-6 p-3 bg-electric-green/10 border border-electric-green/20 rounded-lg text-sm text-electric-green font-medium">
+						<div className="mb-6 p-3 bg-primary/10 border border-primary/20 rounded-lg text-sm text-primary font-medium">
 							Password updated. Sign in with your new credentials.
 						</div>
 					)}
@@ -257,7 +257,7 @@ export function LoginPage() {
 							const isGitHubOAuth = error.toLowerCase().includes('github');
 							const isOAuthError = isGoogleOAuth || isGitHubOAuth;
 							return (
-								<div className={`p-3 rounded-lg text-sm border ${isOAuthError ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' : 'bg-destructive/10 border-destructive/20 text-destructive'}`}>
+								<div className={`p-3 rounded-lg text-sm border ${isOAuthError ? 'bg-secondary/10 border-secondary/20 text-secondary' : 'bg-destructive/10 border-destructive/20 text-destructive'}`}>
 									<p>{error}</p>
 									{isGoogleOAuth && (
 										<button

@@ -301,7 +301,7 @@ export default function StatusPage() {
       case 'major_outage':
         return 'text-red-500 dark:text-red-400';
       case 'maintenance':
-        return 'text-blue-500 dark:text-blue-400';
+        return 'text-secondary';
     }
   };
 
@@ -329,7 +329,7 @@ export default function StatusPage() {
       case 'minor':
         return 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20';
       case 'maintenance':
-        return 'bg-blue-500/10 text-blue-500 border-blue-500/20';
+        return 'bg-secondary/10 text-secondary border-secondary/20';
     }
   };
 
@@ -537,8 +537,8 @@ export default function StatusPage() {
             className="relative mx-auto max-w-4xl rounded-[2rem] border border-border bg-card/80 p-8 text-center shadow-[0_30px_120px_rgba(0,0,0,0.18)] backdrop-blur md:p-10"
           >
             <div className="flex flex-col items-center justify-center gap-4 mb-6 sm:flex-row">
-              <div className="bg-electric-green/10 p-4 rounded-2xl border border-electric-green/20">
-                <Activity className="w-8 h-8 text-electric-green" />
+              <div className="bg-primary/10 p-4 rounded-2xl border border-primary/20">
+                <Activity className="w-8 h-8 text-primary" />
               </div>
               <h1 className="text-4xl font-black tracking-[-0.06em] text-foreground md:text-6xl">System Status</h1>
             </div>
@@ -558,7 +558,7 @@ export default function StatusPage() {
             overallStatus === 'operational'
               ? 'bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900/70'
               : overallStatus === 'maintenance'
-                ? 'bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900'
+                ? 'bg-secondary/5 dark:bg-secondary-dark/20 border border-secondary/20 dark:border-secondary-dark/30'
                 : 'bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900'
           }`}
         >
@@ -569,7 +569,7 @@ export default function StatusPage() {
                   overallStatus === 'operational'
                     ? 'bg-green-500 animate-pulse'
                     : overallStatus === 'maintenance'
-                      ? 'bg-blue-500 animate-pulse'
+                      ? 'bg-secondary animate-pulse'
                       : 'bg-red-500 animate-pulse'
                 }`}
               />
@@ -933,7 +933,7 @@ function IncidentCard({
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     {update.status === 'resolved' && <CheckCircle className="w-4 h-4 text-green-500" />}
-                    {update.status === 'monitoring' && <Activity className="w-4 h-4 text-blue-500" />}
+                    {update.status === 'monitoring' && <Activity className="w-4 h-4 text-secondary" />}
                     {update.status === 'identified' && <Info className="w-4 h-4 text-yellow-500" />}
                     {update.status === 'investigating' && <AlertCircle className="w-4 h-4 text-orange-500" />}
                     <span className="text-sm font-medium text-foreground capitalize">{update.status.replace('_', ' ')}</span>
@@ -957,10 +957,10 @@ function MaintenanceCard({
   components: Component[];
 }) {
   return (
-    <div className="bg-blue-50 dark:bg-blue-950/20 rounded-xl p-6 border border-blue-200 dark:border-blue-900">
+    <div className="bg-secondary/5 dark:bg-secondary-dark/20 rounded-xl p-6 border border-secondary/20 dark:border-secondary-dark/30">
       <div className="flex items-start gap-4">
-        <div className="bg-electric-green/10 p-3 rounded-lg">
-          <Calendar className="w-6 h-6 text-electric-green" />
+        <div className="bg-primary/10 p-3 rounded-lg">
+          <Calendar className="w-6 h-6 text-primary" />
         </div>
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-foreground mb-2">{maintenance.title}</h3>
@@ -977,7 +977,7 @@ function MaintenanceCard({
             {maintenance.affectedComponents.map((componentId) => {
               const component = components.find((item) => item.id === componentId);
               return component ? (
-                <span key={componentId} className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded text-xs">
+                <span key={componentId} className="px-2 py-1 bg-secondary/10 dark:bg-secondary-dark/20 text-secondary-dark dark:text-secondary rounded text-xs">
                   {component.name}
                 </span>
               ) : null;
@@ -993,7 +993,7 @@ function UptimeChart({ data }: { data: UptimeDay[] }) {
   const getBarColor = (uptime: number, incidents: number) => {
     if (incidents > 0) return 'bg-red-500';
     if (uptime >= 100) return 'bg-green-500';
-    if (uptime >= 99.8) return 'bg-blue-500';
+    if (uptime >= 99.8) return 'bg-primary';
     if (uptime >= 99.5) return 'bg-yellow-500';
     return 'bg-orange-500';
   };

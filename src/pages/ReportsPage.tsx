@@ -295,7 +295,7 @@ export function ReportsPage() {
 												<p className="text-sm text-muted-foreground">{report.description}</p>
 											</div>
 											<span className={`rounded px-2 py-1 text-xs ${report.status === 'ready'
-												? 'bg-blue-500/10 text-blue-600'
+												? 'bg-secondary/10 text-secondary'
 												: report.status === 'running'
 													? 'bg-yellow-500/10 text-yellow-600'
 													: report.status === 'completed'
@@ -434,7 +434,7 @@ export function ReportsPage() {
 															? 'bg-green-500/10 text-green-600'
 															: report.status === 'failed'
 																? 'bg-red-500/10 text-red-600'
-																: 'bg-blue-500/10 text-blue-600'
+																: 'bg-secondary/10 text-secondary'
 														}`}>
 															{report.status}
 														</span>

@@ -53,8 +53,8 @@ export default function CareersPage() {
 					<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
 						<div className="grid gap-8 rounded-[2rem] border border-border bg-card/75 p-6 shadow-[0_30px_120px_rgba(0,0,0,0.18)] backdrop-blur md:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
 							<div>
-								<div className="inline-flex items-center gap-2 bg-electric-green/10 border border-electric-green/20 text-electric-green text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-									<span className="w-1.5 h-1.5 rounded-full bg-electric-green" />
+								<div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+									<span className="w-1.5 h-1.5 rounded-full bg-primary" />
 									We&apos;re hiring
 								</div>
 								<h1 className="text-4xl md:text-6xl font-black mb-6 tracking-[-0.06em] text-foreground">
@@ -67,7 +67,7 @@ export default function CareersPage() {
 							</div>
 
 							<div className="bg-background/70 backdrop-blur border border-border rounded-2xl p-6 shadow-[0_18px_80px_rgba(0,0,0,0.14)]">
-								<div className="inline-flex items-center gap-2 text-electric-green text-xs font-semibold uppercase tracking-[0.18em] mb-4">
+								<div className="inline-flex items-center gap-2 text-primary text-xs font-semibold uppercase tracking-[0.18em] mb-4">
 									<Target className="w-3.5 h-3.5" />
 									Latest opening
 								</div>

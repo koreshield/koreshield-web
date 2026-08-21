@@ -39,11 +39,11 @@ export default function AuthorPage() {
 				<section className="mt-8 grid gap-8 rounded-[2rem] border border-border bg-card/75 p-7 md:grid-cols-[180px_1fr] md:p-10">
 					<img src={author.image} alt={author.name} width="180" height="180" className="aspect-square w-full max-w-[180px] rounded-2xl object-cover" />
 					<div>
-						<p className="text-xs font-bold uppercase tracking-[0.2em] text-electric-green">Koreshield author</p>
+						<p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Koreshield author</p>
 						<h1 className="mt-3 text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">{author.name}</h1>
 						<p className="mt-2 font-semibold text-muted-foreground">{author.role}</p>
 						<p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">{author.bio}</p>
-						<a href={author.linkedin} target="_blank" rel="noreferrer noopener" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-electric-green">
+						<a href={author.linkedin} target="_blank" rel="noreferrer noopener" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
 							<Linkedin className="h-4 w-4" /> LinkedIn profile
 						</a>
 					</div>
@@ -53,11 +53,11 @@ export default function AuthorPage() {
 					<h2 id="author-articles" className="text-3xl font-extrabold tracking-[-0.03em]">Articles by {author.name}</h2>
 					<div className="mt-8 grid gap-5 md:grid-cols-2">
 						{articles.map((article) => (
-							<Link key={article.slug} to={article.path} className="group rounded-2xl border border-border bg-card/70 p-6 transition-colors hover:border-electric-green/35">
+							<Link key={article.slug} to={article.path} className="group rounded-2xl border border-border bg-card/70 p-6 transition-colors hover:border-primary/35">
 								<p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{article.date}</p>
-								<h3 className="mt-3 text-xl font-bold group-hover:text-electric-green">{article.title}</h3>
+								<h3 className="mt-3 text-xl font-bold group-hover:text-primary">{article.title}</h3>
 								<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{article.excerpt}</p>
-								<span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-electric-green">Read article <ArrowRight className="h-4 w-4" /></span>
+								<span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">Read article <ArrowRight className="h-4 w-4" /></span>
 							</Link>
 						))}
 					</div>

@@ -178,7 +178,7 @@ export function FullPageLoader({ message = 'Loading...' }: { message?: string })
     <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
       <div className="text-center space-y-6">
         <motion.div
-          className="text-6xl font-bold text-electric-green"
+          className="text-6xl font-bold text-primary"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

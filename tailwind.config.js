@@ -11,12 +11,27 @@ export default {
         sans: ['"Geist Sans"', 'sans-serif'],
       },
       colors: {
-        'electric-green': '#10b981',
-        'emerald': {
-          DEFAULT: '#059669',
-          bright: '#10b981',
-          dark: '#047857',
+        // ── Muzli Triade Palette ────────────────────────────────────────────
+        'primary': {
+          DEFAULT: '#A9C652',
+          dark: '#7a8b39',
+          light: '#c8df7c',
         },
+        'secondary': {
+          DEFAULT: '#6262c6',
+          dark: '#45458b',
+          light: '#9090d8',
+        },
+        'destructive-rust': '#c66952',
+
+        // ── Aliases so existing className strings compile without JSX edits ─
+        // electric-green / emerald-bright were the old custom tokens
+        'electric-green': '#A9C652',
+        'emerald-bright': '#7a8b39',
+
+        // Convenience shorthand used across pages
+        'secondary-dark': '#45458b',
+        'primary-dark': '#7a8b39',
       },
       animation: {
         'terminal-blink': 'blink 1s step-end infinite',

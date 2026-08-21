@@ -21,10 +21,10 @@ export default function SolutionAgentsSecurityPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(16,185,129,0.14),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(168,85,247,0.1),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(169,198,82,0.14),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(69,69,139,0.1),transparent_24%)]" />
 				<div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Workflow className="h-3.5 w-3.5" />
 							AI Agents Security
 						</span>
@@ -35,7 +35,7 @@ export default function SolutionAgentsSecurityPage() {
 							Koreshield checks retrieved content, tool output, and planned actions before autonomous systems do something expensive.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
-							<Link to="/signup?plan=growth" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-7 py-3 font-bold text-white transition-colors hover:bg-emerald-bright">
+							<Link to="/signup?plan=growth" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-bold text-white transition-colors hover:bg-primary-dark">
 								Choose a plan <ArrowRight className="h-4 w-4" />
 							</Link>
 							<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card/70 px-7 py-3 font-bold text-foreground transition-colors hover:bg-muted">
@@ -48,20 +48,20 @@ export default function SolutionAgentsSecurityPage() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.55, delay: 0.1 }}
-						className="rounded-[2rem] border border-border bg-card/90 p-5 shadow-2xl shadow-emerald-900/10 dark:bg-card/75"
+						className="rounded-[2rem] border border-border bg-card/90 p-5 shadow-2xl shadow-primary-dark/10 dark:bg-card/75"
 					>
 						<div className="mb-4 flex items-center justify-between">
 							<p className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">agent chain</p>
-							<span className="rounded-full bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-electric-green">policy enforced</span>
+							<span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-primary">policy enforced</span>
 						</div>
 						<div className="space-y-3">
 							{chain.map((step, index) => (
 								<div key={step} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-2xl border border-border bg-background/70 p-4">
-									<span className="flex h-8 w-8 items-center justify-center rounded-full bg-electric-green/10 text-xs font-black text-electric-green">
+									<span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-black text-primary">
 										{index + 1}
 									</span>
 									<span className="font-semibold">{step}</span>
-									{index === 3 ? <ShieldAlert className="h-5 w-5 text-electric-green" /> : <MousePointerClick className="h-5 w-5 text-muted-foreground" />}
+									{index === 3 ? <ShieldAlert className="h-5 w-5 text-primary" /> : <MousePointerClick className="h-5 w-5 text-muted-foreground" />}
 								</div>
 							))}
 						</div>
@@ -72,7 +72,7 @@ export default function SolutionAgentsSecurityPage() {
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10 max-w-3xl">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Why agents are different</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Why agents are different</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">They read, decide, and execute.</h2>
 					</div>
 					<div className="grid gap-5 md:grid-cols-3">
@@ -85,7 +85,7 @@ export default function SolutionAgentsSecurityPage() {
 								transition={{ duration: 0.4, delay: index * 0.07 }}
 								className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm"
 							>
-								<item.icon className="mb-5 h-6 w-6 text-electric-green" />
+								<item.icon className="mb-5 h-6 w-6 text-primary" />
 								<h3 className="text-xl font-bold">{item.title}</h3>
 								<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
 							</motion.div>

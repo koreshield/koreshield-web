@@ -57,7 +57,7 @@ export function AppPageHeader({
 			<div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 				<div className="max-w-3xl">
 					{eyebrow && (
-						<div className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric-green/25 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-electric-green">
+						<div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-primary">
 							{EyebrowIcon && <EyebrowIcon className="h-3.5 w-3.5" />}
 							{eyebrow}
 						</div>
@@ -142,7 +142,7 @@ export function AppPageSection({
 				<div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 					<div>
 						{eyebrow && (
-							<p className="text-xs font-bold uppercase tracking-[0.22em] text-electric-green">{eyebrow}</p>
+							<p className="text-xs font-bold uppercase tracking-[0.22em] text-primary">{eyebrow}</p>
 						)}
 						{title && <h2 className="mt-1 text-2xl font-black tracking-[-0.04em]">{title}</h2>}
 						{description && <p className="mt-2 text-sm text-muted-foreground">{description}</p>}
@@ -218,7 +218,7 @@ export function AppCallout({
 	const variantClass = {
 		info: 'border-border/80 bg-background/55 text-muted-foreground',
 		warning: 'border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300',
-		success: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300',
+		success: 'border-primary/30 bg-primary/10 text-primary-dark dark:text-primary',
 	}[variant];
 
 	return (
@@ -241,7 +241,7 @@ export function AppEmptyState({
 }) {
 	return (
 		<div className="dashboard-card rounded-[2rem] px-6 py-14 text-center">
-			<Icon className="mx-auto mb-4 h-10 w-10 text-electric-green opacity-70" />
+			<Icon className="mx-auto mb-4 h-10 w-10 text-primary opacity-70" />
 			<h3 className="text-lg font-bold tracking-[-0.03em]">{title}</h3>
 			{description && <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">{description}</p>}
 			{action && <div className="mt-6 flex justify-center">{action}</div>}

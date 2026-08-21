@@ -844,7 +844,7 @@ export function RAGSecurityPage() {
 			case 'critical': return 'text-red-600 bg-red-500/10 border-red-500/50';
 			case 'high': return 'text-orange-600 bg-orange-500/10 border-orange-500/50';
 			case 'medium': return 'text-yellow-600 bg-yellow-500/10 border-yellow-500/50';
-			case 'low': return 'text-blue-600 bg-blue-500/10 border-blue-500/50';
+			case 'low': return 'text-secondary bg-secondary/10 border-secondary/50';
 			default: return 'text-muted-foreground bg-muted border-border';
 		}
 	};
@@ -880,7 +880,7 @@ export function RAGSecurityPage() {
 						{
 							label: 'Session',
 							value: isAuthenticated ? 'Signed in' : isHydrating ? 'Checking…' : 'Guest',
-							tone: isAuthenticated ? 'text-electric-green' : undefined,
+							tone: isAuthenticated ? 'text-primary' : undefined,
 						},
 						{
 							label: 'Documents',
@@ -917,13 +917,13 @@ export function RAGSecurityPage() {
 							label="Threats Found"
 							value={scanResult.total_threats_found}
 							icon={AlertTriangle}
-							tone={scanResult.is_safe ? 'text-emerald-400' : 'text-red-400'}
+							tone={scanResult.is_safe ? 'text-primary' : 'text-red-400'}
 						/>
 						<AppStatCard
 							label="Documents Scanned"
 							value={scanResult.scan_metadata.documents_scanned}
 							icon={FileText}
-							tone="text-sky-400"
+							tone="text-secondary"
 						/>
 						<AppStatCard
 							label="Processing Time"

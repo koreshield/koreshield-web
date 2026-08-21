@@ -70,7 +70,7 @@ function ConsentModal({
                 checked={Boolean(state[key])}
                 disabled={key === 'functional'}
                 onChange={(e) => setState((current) => ({ ...current, [key]: e.target.checked }))}
-                className="h-4 w-4 accent-emerald-500"
+                className="h-4 w-4 accent-primary"
               />
             </label>
           ))}
@@ -86,7 +86,7 @@ function ConsentModal({
           </button>
           <button
             type="button"
-            className="rounded-full bg-electric-green px-4 py-2 text-sm font-semibold text-black"
+            className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-black"
             onClick={() => {
               saveConsent(state);
               onSave(state);
@@ -149,7 +149,7 @@ export default function CookieConsent() {
               Reject All
             </button>
             <button
-              className="rounded-full bg-electric-green px-4 py-2 text-sm font-semibold text-black"
+              className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-black"
               onClick={acceptAll}
             >
               Accept All

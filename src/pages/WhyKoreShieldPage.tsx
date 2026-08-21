@@ -11,15 +11,15 @@ const differentiators = [
 		icon: <Shield className="w-6 h-6" />,
 		title: 'High Detection Accuracy',
 		description: 'In our internal benchmark, Koreshield achieved a ~96.5% true-positive rate at ~3% false positives. Results vary by workload and are not a contractual guarantee.',
-		color: 'text-electric-green',
-		bg: 'bg-electric-green/10',
+		color: 'text-primary',
+		bg: 'bg-primary/10',
 	},
 	{
 		icon: <Code className="w-6 h-6" />,
 		title: 'Open SDKs & Docs',
 		description: 'SDKs and documentation are MIT-licensed for clear integrations and auditability.',
-		color: 'text-blue-400',
-		bg: 'bg-blue-400/10',
+		color: 'text-secondary',
+		bg: 'bg-secondary/10',
 	},
 	{
 		icon: <Zap className="w-6 h-6" />,
@@ -32,8 +32,8 @@ const differentiators = [
 		icon: <Users className="w-6 h-6" />,
 		title: 'Built for Teams',
 		description: 'Per-account isolation, RBAC, audit logs, and compliance tooling. SOC 2 controls are in progress (not yet certified).',
-		color: 'text-purple-400',
-		bg: 'bg-purple-400/10',
+		color: 'text-secondary-dark',
+		bg: 'bg-secondary-dark/10',
 	},
 ];
 
@@ -75,21 +75,21 @@ const advantages = [
 
 const deploymentOptions = [
 	{
-		icon: <Cloud className="w-5 h-5 text-blue-400" />,
+		icon: <Cloud className="w-5 h-5 text-secondary" />,
 		title: 'Managed Cloud',
 		description: 'Let us handle infrastructure, scaling, and updates. Focus on your product.',
 		bullets: ['Managed reliability', 'Automatic scaling', 'Zero maintenance', 'Global edge deployment'],
-		border: 'border-blue-400/20',
-		bg: 'bg-blue-400/5',
+		border: 'border-secondary/20',
+		bg: 'bg-secondary/5',
 		docLink: '/docs/integrations/deployment',
 	},
 	{
-		icon: <Building2 className="w-5 h-5 text-electric-green" />,
+		icon: <Building2 className="w-5 h-5 text-primary" />,
 		title: 'Self-Hosted',
 		description: 'Deploy on your own infrastructure with offline licence validation and full data sovereignty.',
 		bullets: ['Docker Compose deployment', 'VPC / on-premise', 'Offline licence validation', 'Custom threat corpus'],
-		border: 'border-electric-green/20',
-		bg: 'bg-electric-green/5',
+		border: 'border-primary/20',
+		bg: 'bg-primary/5',
 		docLink: '/docs/integrations/deployment/self-hosted',
 	},
 	{
@@ -102,12 +102,12 @@ const deploymentOptions = [
 		docLink: '/docs/integrations/deployment/airgapped',
 	},
 	{
-		icon: <Wrench className="w-5 h-5 text-purple-400" />,
+		icon: <Wrench className="w-5 h-5 text-secondary-dark" />,
 		title: 'Hybrid',
 		description: 'Mix cloud and self-hosted for the best of both worlds.',
 		bullets: ['Sensitive data on-prem', 'Public data in cloud', 'Flexible architecture', 'Cost optimisation'],
-		border: 'border-purple-400/20',
-		bg: 'bg-purple-400/5',
+		border: 'border-secondary-dark/20',
+		bg: 'bg-secondary-dark/5',
 	},
 ];
 
@@ -137,8 +137,8 @@ export default function WhyKoreshieldPage() {
 			<section className="py-24 px-6 relative ambient-glow">
 				<div className="max-w-4xl mx-auto text-center relative z-10">
 					<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-						<div className="inline-flex items-center gap-2 bg-electric-green/10 border border-electric-green/20 text-electric-green text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-							<span className="w-1.5 h-1.5 rounded-full bg-electric-green" />
+						<div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+							<span className="w-1.5 h-1.5 rounded-full bg-primary" />
 							Why Koreshield
 						</div>
 						<h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-[-0.04em] text-foreground">
@@ -177,7 +177,7 @@ export default function WhyKoreshieldPage() {
 					<div className="bg-card border border-border rounded-2xl divide-y divide-border">
 						{advantages.map((adv) => (
 							<div key={adv.title} className="p-8 flex gap-6">
-								<div className="bg-electric-green/10 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-electric-green">
+								<div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-primary">
 									{adv.icon}
 								</div>
 								<div>
@@ -186,7 +186,7 @@ export default function WhyKoreshieldPage() {
 									<ul className="space-y-1.5">
 										{adv.bullets.map((b) => (
 											<li key={b} className="flex items-center gap-2 text-sm text-foreground/80">
-												<Check className="w-4 h-4 text-electric-green shrink-0" />
+												<Check className="w-4 h-4 text-primary shrink-0" />
 												{b}
 											</li>
 										))}
@@ -218,7 +218,7 @@ export default function WhyKoreshieldPage() {
 									))}
 								</ul>
 								{'docLink' in opt && opt.docLink && (
-									<Link to={opt.docLink} className="inline-flex items-center gap-1.5 text-xs font-semibold text-electric-green hover:text-emerald-bright transition-colors">
+									<Link to={opt.docLink} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary-dark transition-colors">
 										Read the guide <ArrowRight className="w-3 h-3" />
 									</Link>
 								)}
@@ -234,12 +234,12 @@ export default function WhyKoreshieldPage() {
 					viewport={{ once: true }}
 					className="bg-card border border-white/[0.08] rounded-2xl p-12 relative overflow-hidden"
 				>
-					<div className="absolute inset-0 bg-gradient-to-br from-electric-green/[0.04] via-transparent to-transparent pointer-events-none" />
+					<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-transparent to-transparent pointer-events-none" />
 					<h2 className="text-3xl font-bold text-center text-foreground mb-12 tracking-tight relative z-10">Koreshield by the Numbers</h2>
 					<div className="grid md:grid-cols-4 gap-8 text-center relative z-10">
 						{stats.map((s) => (
 							<div key={s.label}>
-								<div className="text-5xl font-extrabold text-electric-green mb-2 tracking-tight">{s.value}</div>
+								<div className="text-5xl font-extrabold text-primary mb-2 tracking-tight">{s.value}</div>
 								<div className="text-sm text-muted-foreground">{s.label}</div>
 							</div>
 						))}
@@ -274,7 +274,7 @@ export default function WhyKoreshieldPage() {
 					viewport={{ once: true }}
 					className="bg-card border border-white/[0.08] rounded-2xl p-12 text-center relative overflow-hidden"
 				>
-					<div className="absolute inset-0 bg-gradient-to-b from-transparent via-electric-green/[0.02] to-transparent pointer-events-none" />
+					<div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
 					<h2 className="text-4xl font-extrabold text-foreground mb-4 tracking-[-0.03em] relative z-10">
 						Ready to Secure Your LLM?
 					</h2>

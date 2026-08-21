@@ -37,14 +37,14 @@ export default function ResearchArticlePage() {
 			/>
 
 			<section className="relative overflow-hidden border-b border-border px-6 py-20 ambient-glow">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.14),transparent_28%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(169,198,82,0.14),transparent_28%)]" />
 				<div className="relative mx-auto max-w-4xl">
 					<Link to="/research" className="inline-flex items-center gap-2 text-sm font-bold text-muted-foreground transition-colors hover:text-foreground">
 						<ArrowLeft className="h-4 w-4" />
 						Back to research
 					</Link>
 					<div className="mt-8 flex flex-wrap items-center gap-3">
-						<span className="rounded-full border border-electric-green/30 bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-electric-green">
+						<span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-primary">
 							{article.type}
 						</span>
 						<span className="text-sm text-muted-foreground">{article.date}</span>
@@ -90,7 +90,7 @@ export default function ResearchArticlePage() {
 
 					<aside className="lg:sticky lg:top-24 lg:self-start space-y-6">
 						<div className="rounded-[1.5rem] border border-border bg-card/90 p-6 shadow-sm">
-							<p className="text-xs font-bold uppercase tracking-[0.22em] text-electric-green mb-4">Table of Contents</p>
+							<p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-4">Table of Contents</p>
 							<ul className="space-y-2.5">
 								{article.sections.map((section) => {
 									const id = section.heading.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -106,7 +106,7 @@ export default function ResearchArticlePage() {
 						</div>
 
 						<div className="rounded-[1.5rem] border border-border bg-card/90 p-6 shadow-sm">
-							<FileText className="mb-5 h-6 w-6 text-electric-green" />
+							<FileText className="mb-5 h-6 w-6 text-primary" />
 							<p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">Research entry</p>
 							<p className="mt-3 text-sm leading-7 text-muted-foreground">
 								{article.authors} · {article.affiliation}

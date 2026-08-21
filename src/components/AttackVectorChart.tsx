@@ -11,13 +11,13 @@ interface AttackVectorChartProps {
 }
 
 const ATTACK_VECTOR_COLORS: Record<string, string> = {
-	'Prompt Injection': '#ef4444',
-	'Data Exfiltration': '#f97316',
-	'Jailbreak': '#eab308',
-	'PII Leakage': '#3b82f6',
-	'Malicious Code': '#8b5cf6',
-	'Social Engineering': '#ec4899',
-	'Other': '#6b7280'
+	'Prompt Injection': '#c66952',
+	'Data Exfiltration': '#c66952',
+	'Jailbreak': '#7a8b39',
+	'PII Leakage': '#6262c6',
+	'Malicious Code': '#45458b',
+	'Social Engineering': '#c66952',
+	'Other': '#8a8a8a'
 };
 
 export function AttackVectorChart({ data }: AttackVectorChartProps) {
@@ -48,7 +48,7 @@ export function AttackVectorChart({ data }: AttackVectorChartProps) {
 								labelLine={false}
 								label={({ name, percent }) => `${name}: ${percent ? (percent * 100).toFixed(1) : 0}%`}
 								outerRadius={100}
-								fill="#8884d8"
+								fill="#6262c6"
 								dataKey="value"
 							>
 								{chartData.map((entry, index) => (

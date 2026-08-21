@@ -35,7 +35,7 @@ function CopyButton({ text }: { text: string }) {
             }}
             className="rounded-lg p-1 text-muted-foreground transition-colors hover:bg-white/[0.08] hover:text-foreground"
         >
-            {copied ? <Check className="h-4 w-4 text-electric-green" /> : <Copy className="h-4 w-4" />}
+            {copied ? <Check className="h-4 w-4 text-primary" /> : <Copy className="h-4 w-4" />}
         </button>
     );
 }
@@ -83,7 +83,7 @@ function LandingPage() {
             </section>
 
             <section className="relative overflow-hidden border-y border-white/[0.06] bg-card/30 px-6 py-20">
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.12),transparent_55%)]" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(169,198,82,0.12),transparent_55%)]" />
                 <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                     <motion.div
                         initial={{ opacity: 0, y: 16 }}
@@ -91,7 +91,7 @@ function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+                        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
                             <Terminal className="h-3.5 w-3.5" />
                             Installation
                         </div>
@@ -108,16 +108,16 @@ function LandingPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.08 }}
-                        className="rounded-[1.75rem] border border-white/[0.08] bg-background/70 p-5 shadow-2xl shadow-emerald-500/5"
+                        className="rounded-[1.75rem] border border-white/[0.08] bg-background/70 p-5 shadow-2xl shadow-primary/5"
                     >
                         <div className="mb-4 flex items-center justify-between">
                             <div className="flex items-center gap-2 text-sm font-bold text-foreground">
-                                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-electric-green/10">
-                                    <Terminal className="h-4 w-4 text-electric-green" />
+                                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/10">
+                                    <Terminal className="h-4 w-4 text-primary" />
                                 </span>
                                 Choose your runtime
                             </div>
-                            <span className="rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-electric-green">
+                            <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary">
                                 Python + Node
                             </span>
                         </div>
@@ -129,8 +129,8 @@ function LandingPage() {
                                         <span className="text-sm font-bold text-foreground">{item.label}</span>
                                         <CopyButton text={item.command} />
                                     </div>
-                                    <code className="block overflow-x-auto rounded-xl border border-emerald-900/10 bg-emerald-950/[0.045] px-3 py-3 text-sm text-slate-700 dark:border-white/[0.06] dark:bg-black/40 dark:text-zinc-300">
-                                        <span className="font-bold text-emerald-700 dark:text-electric-green">$</span> {item.command}
+                                    <code className="block overflow-x-auto rounded-xl border border-primary-dark/10 bg-primary-dark/[0.045] px-3 py-3 text-sm text-slate-700 dark:border-white/[0.06] dark:bg-black/40 dark:text-zinc-300">
+                                        <span className="font-bold text-primary-dark dark:text-primary">$</span> {item.command}
                                     </code>
                                 </div>
                             ))}
@@ -139,7 +139,7 @@ function LandingPage() {
                         <div className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
                             {['API key auth', 'Provider routing', 'Audit events'].map((item) => (
                                 <div key={item} className="flex items-center gap-2 rounded-xl border border-white/[0.06] bg-card/60 px-3 py-2">
-                                    <CheckCircle2 className="h-4 w-4 text-electric-green" />
+                                    <CheckCircle2 className="h-4 w-4 text-primary" />
                                     <span>{item}</span>
                                 </div>
                             ))}
@@ -155,7 +155,7 @@ function LandingPage() {
             <UseCases />
 
             <section className="relative overflow-hidden border-y border-white/[0.06] bg-background px-4 py-24 sm:px-6 md:py-32">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.08),transparent_28rem)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(169,198,82,0.08),transparent_28rem)]" />
                 <div className="relative mx-auto max-w-7xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ function LandingPage() {
                         viewport={{ once: true }}
                         className="mx-auto mb-14 max-w-3xl text-center"
                     >
-                        <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Deploy Anywhere</p>
+                        <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Deploy Anywhere</p>
                         <h2 className="mb-5 text-4xl font-extrabold tracking-[-0.04em] text-foreground md:text-5xl">
                             Your infrastructure. Your rules.
                         </h2>
@@ -176,18 +176,18 @@ function LandingPage() {
                     <div className="grid gap-5 md:grid-cols-3">
                         {[
                             {
-                                icon: <Cloud className="h-6 w-6 text-blue-400" />,
+                                icon: <Cloud className="h-6 w-6 text-secondary" />,
                                 title: 'Managed Cloud',
                                 desc: 'Zero infrastructure to manage. We handle scaling, updates, and availability.',
                                 chips: ['Auto-scaling', 'Global edge', 'Zero maintenance'],
-                                border: 'border-blue-400/20',
+                                border: 'border-secondary/20',
                             },
                             {
-                                icon: <Server className="h-6 w-6 text-electric-green" />,
+                                icon: <Server className="h-6 w-6 text-primary" />,
                                 title: 'Self-Hosted',
                                 desc: 'Deploy on your own VPC or data centre with a signed Enterprise licence.',
                                 chips: ['Data residency', 'VPC / on-prem', 'Docker Compose'],
-                                border: 'border-electric-green/20',
+                                border: 'border-primary/20',
                             },
                             {
                                 icon: <Lock className="h-6 w-6 text-amber-400" />,
@@ -224,7 +224,7 @@ function LandingPage() {
                     <div className="mt-10 text-center">
                         <Link
                             to="/docs/integrations/deployment/self-hosted"
-                            className="inline-flex items-center gap-2 text-sm font-bold text-electric-green transition-colors hover:text-emerald-bright"
+                            className="inline-flex items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-primary-dark"
                         >
                             Read the self-hosted deployment guide <ArrowRight className="h-4 w-4" />
                         </Link>
@@ -252,13 +252,13 @@ function LandingPage() {
                         <div className="flex flex-col gap-3 sm:flex-row">
                             <Link
                                 to="/signup?plan=growth"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-bright"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary-dark"
                             >
 								Choose Growth <ArrowRight className="h-4 w-4" />
                             </Link>
                             <Link
                                 to="/demo"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-background/60 px-6 py-3 text-sm font-bold text-foreground transition-colors hover:border-electric-green/30 hover:bg-muted"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-background/60 px-6 py-3 text-sm font-bold text-foreground transition-colors hover:border-primary/30 hover:bg-muted"
                             >
                                 Book a demo
                             </Link>

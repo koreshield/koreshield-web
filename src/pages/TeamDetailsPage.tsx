@@ -382,9 +382,9 @@ export function TeamDetailsPage() {
 													</select>
 												) : (
 													<span className={`px-2 py-1 rounded text-xs font-medium ${member.role === 'owner'
-														? 'bg-purple-500/10 text-purple-400'
+														? 'bg-secondary-dark/10 text-secondary-dark'
 														: member.role === 'admin'
-															? 'bg-blue-500/10 text-blue-400'
+															? 'bg-secondary/10 text-secondary'
 															: 'bg-muted text-muted-foreground'
 														}`}>
 														{member.role.toUpperCase()}

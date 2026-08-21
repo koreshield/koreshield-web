@@ -21,10 +21,10 @@ function PaperCard({ item, index }: { item: (typeof publishedPapers)[number]; in
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
 			transition={{ duration: 0.4, delay: index * 0.07 }}
-			className="group rounded-[1.75rem] border border-border bg-card/90 p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-electric-green/30 hover:shadow-xl hover:shadow-emerald-900/5"
+			className="group rounded-[1.75rem] border border-border bg-card/90 p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary-dark/5"
 		>
 			<div className="mb-5 flex flex-wrap items-center gap-3">
-				<span className="rounded-full border border-electric-green/30 bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-electric-green">{item.type}</span>
+				<span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-primary">{item.type}</span>
 				<span className="text-xs text-muted-foreground">{item.date}</span>
 			</div>
 			<h3 className="text-2xl font-extrabold leading-tight tracking-[-0.03em]">{item.title}</h3>
@@ -33,7 +33,7 @@ function PaperCard({ item, index }: { item: (typeof publishedPapers)[number]; in
 			<div className="mt-6 flex flex-wrap gap-2">
 				{item.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
 			</div>
-			<a href={item.href} target="_blank" rel="noreferrer noopener" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-electric-green hover:underline">
+			<a href={item.href} target="_blank" rel="noreferrer noopener" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
 				Read paper <ExternalLink className="h-4 w-4" />
 			</a>
 		</motion.article>
@@ -50,13 +50,13 @@ function ReportCard({ item, index }: { item: (typeof reportArticles)[number]; in
 			className="rounded-[1.75rem] border border-border bg-card/90 p-7 shadow-sm"
 		>
 			<div className="mb-5 flex flex-wrap items-center gap-3">
-				<span className="rounded-full border border-electric-green/30 bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-electric-green">{item.type}</span>
+				<span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-primary">{item.type}</span>
 				<span className="text-xs text-muted-foreground">{item.date}</span>
 				<span className="text-xs text-muted-foreground">{item.readTime}</span>
 			</div>
 			<h3 className="text-2xl font-extrabold leading-tight tracking-[-0.03em]">{item.title}</h3>
 			<p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.summary}</p>
-			<Link to={`/research/${item.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-electric-green hover:underline">
+			<Link to={`/research/${item.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
 				Read report <ArrowRight className="h-4 w-4" />
 			</Link>
 		</motion.article>
@@ -74,10 +74,10 @@ export default function ResearchPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_78%_14%,rgba(59,130,246,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_78%_14%,rgba(98,98,198,0.08),transparent_24%)]" />
 				<div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Microscope className="h-3.5 w-3.5" />
 							Research
 						</span>
@@ -94,15 +94,15 @@ export default function ResearchPage() {
 							initial={{ opacity: 0, y: 18 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.55, delay: 0.1 }}
-							className="rounded-[2rem] border border-border bg-card/90 p-7 shadow-2xl shadow-emerald-900/10 dark:bg-card/75"
+							className="rounded-[2rem] border border-border bg-card/90 p-7 shadow-2xl shadow-primary-dark/10 dark:bg-card/75"
 						>
-							<p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">Featured report</p>
+							<p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">Featured report</p>
 							<h2 className="text-3xl font-extrabold tracking-[-0.04em]">{featured.title}</h2>
 							<p className="mt-4 text-sm leading-relaxed text-muted-foreground">{featured.description}</p>
 							<div className="mt-6 flex flex-wrap gap-2">
 								{featured.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
 							</div>
-							<Link to={`/research/${featured.slug}`} className="mt-6 inline-flex items-center gap-2 rounded-xl bg-electric-green px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+							<Link to={`/research/${featured.slug}`} className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 								Read featured report <ArrowRight className="h-4 w-4" />
 							</Link>
 						</motion.div>
@@ -121,7 +121,7 @@ export default function ResearchPage() {
 							transition={{ duration: 0.4, delay: index * 0.07 }}
 							className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm"
 						>
-							<lane.icon className="mb-5 h-6 w-6 text-electric-green" />
+							<lane.icon className="mb-5 h-6 w-6 text-primary" />
 							<h3 className="text-xl font-bold">{lane.title}</h3>
 							<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{lane.body}</p>
 						</motion.div>
@@ -133,7 +133,7 @@ export default function ResearchPage() {
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
 						<div>
-							<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Papers</p>
+							<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Papers</p>
 							<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Published work.</h2>
 						</div>
 						<p className="max-w-xl text-sm leading-relaxed text-muted-foreground">Architecture papers and preprints behind Koreshield's RAG and prompt-injection threat model.</p>
@@ -147,7 +147,7 @@ export default function ResearchPage() {
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Reports & advisories</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Reports & advisories</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Operational findings.</h2>
 					</div>
 					<div className="grid gap-6 lg:grid-cols-2">
@@ -159,7 +159,7 @@ export default function ResearchPage() {
 			<section className="px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Research notes</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Research notes</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Short notes from the lab.</h2>
 					</div>
 					<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -172,10 +172,10 @@ export default function ResearchPage() {
 								transition={{ duration: 0.35, delay: index * 0.05 }}
 								className="rounded-[1.35rem] border border-border bg-card/85 p-5 shadow-sm"
 							>
-								<FileText className="mb-4 h-5 w-5 text-electric-green" />
+								<FileText className="mb-4 h-5 w-5 text-primary" />
 								<h3 className="font-bold leading-snug">{item.title}</h3>
 								<p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{item.summary}</p>
-								<Link to={`/research/${item.slug}`} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-electric-green hover:underline">
+								<Link to={`/research/${item.slug}`} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
 									Read note <ArrowRight className="h-4 w-4" />
 								</Link>
 							</motion.article>
@@ -191,7 +191,7 @@ export default function ResearchPage() {
 						<p className="mt-2 text-sm text-muted-foreground">If you have found an LLM infrastructure issue, we can coordinate a remediation path.</p>
 					</div>
 					<div className="flex flex-col gap-3 sm:flex-row">
-						<a href="mailto:hello@koreshield.com" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+						<a href="mailto:hello@koreshield.com" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 							Contact us <ArrowRight className="h-4 w-4" />
 						</a>
 						<Link to="/blog" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-bold text-foreground transition-colors hover:bg-muted">

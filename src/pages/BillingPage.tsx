@@ -392,7 +392,7 @@ export default function BillingPage() {
 						</div>
 						<div className="flex flex-wrap gap-2">
 							{allowedFeatures.map((feature) => (
-								<span key={feature} className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-500">
+								<span key={feature} className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
 									<CheckCircle2 className="h-3.5 w-3.5" />
 									{FEATURE_LABELS[feature]}
 								</span>

@@ -27,11 +27,11 @@ function batchAnchor(label: string) {
 }
 
 const CATEGORY_STYLES: Record<ChangeCategory, string> = {
-	Added: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300',
-	Improved: 'border-sky-400/30 bg-sky-400/10 text-sky-300',
+	Added: 'border-primary/30 bg-primary/10 text-primary',
+	Improved: 'border-secondary/30 bg-secondary/10 text-secondary',
 	Fixed: 'border-amber-400/30 bg-amber-400/10 text-amber-300',
 	Security: 'border-rose-400/30 bg-rose-400/10 text-rose-300',
-	Infra: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
+	Infra: 'border-secondary-dark/30 bg-secondary-dark/10 text-secondary-dark',
 };
 
 const CHANGELOG_BATCHES: ChangelogBatch[] = [
@@ -598,11 +598,11 @@ function ChangelogPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_82%_14%,rgba(59,130,246,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_82%_14%,rgba(98,98,198,0.08),transparent_24%)]" />
 				<div className="relative mx-auto max-w-7xl">
 					<div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
 						<div>
-							<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+							<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 								<CalendarDays className="h-3.5 w-3.5" />
 								Release Notes
 							</span>
@@ -615,14 +615,14 @@ function ChangelogPage() {
 						</div>
 
 						{latest ? (
-							<div className="rounded-[2rem] border border-border bg-card/90 p-7 shadow-2xl shadow-emerald-900/10 dark:bg-card/75">
-								<p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">Latest</p>
+							<div className="rounded-[2rem] border border-border bg-card/90 p-7 shadow-2xl shadow-primary-dark/10 dark:bg-card/75">
+								<p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">Latest</p>
 								<h2 className="text-3xl font-extrabold tracking-[-0.04em]">{latest.label}</h2>
 								<p className="mt-4 text-sm leading-relaxed text-muted-foreground">{latest.overview}</p>
 								<div className="mt-6 grid gap-3 sm:grid-cols-3">
 									{latest.stats.map((stat) => (
 										<div key={stat.label} className="rounded-2xl border border-border bg-background/70 p-4">
-											<p className="text-3xl font-black text-electric-green">{stat.value}</p>
+											<p className="text-3xl font-black text-primary">{stat.value}</p>
 											<p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">{stat.label}</p>
 										</div>
 									))}
@@ -648,7 +648,7 @@ function ChangelogPage() {
 					</div>
 					<div className="flex flex-wrap gap-2">
 						{CHANGELOG_BATCHES.slice(0, 6).map((batch) => (
-							<a key={batch.label} href={`#${batchAnchor(batch.label)}`} className="rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-electric-green/30 hover:text-foreground">
+							<a key={batch.label} href={`#${batchAnchor(batch.label)}`} className="rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground">
 								{batch.timeframe}
 							</a>
 						))}
@@ -660,15 +660,15 @@ function ChangelogPage() {
 				<div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
 					<div className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm">
 						<p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">Release groups</p>
-						<p className="mt-3 text-4xl font-black text-electric-green">{CHANGELOG_BATCHES.length}</p>
+						<p className="mt-3 text-4xl font-black text-primary">{CHANGELOG_BATCHES.length}</p>
 					</div>
 					<div className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm">
 						<p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">Curated entries</p>
-						<p className="mt-3 text-4xl font-black text-electric-green">{totalEntries}</p>
+						<p className="mt-3 text-4xl font-black text-primary">{totalEntries}</p>
 					</div>
 					<div className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm">
 						<p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">Signal</p>
-						<p className="mt-3 text-4xl font-black text-electric-green">Manual</p>
+						<p className="mt-3 text-4xl font-black text-primary">Manual</p>
 					</div>
 				</div>
 			</section>
@@ -680,7 +680,7 @@ function ChangelogPage() {
 							<section key={batch.label} id={batchAnchor(batch.label)} className="scroll-mt-36">
 								<div className="mb-8 grid gap-6 border-b border-border pb-8 lg:grid-cols-[0.7fr_1.3fr]">
 									<div>
-										<p className="text-xs font-bold uppercase tracking-[0.28em] text-electric-green">{batch.timeframe}</p>
+										<p className="text-xs font-bold uppercase tracking-[0.28em] text-primary">{batch.timeframe}</p>
 										<h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">{batch.label}</h2>
 									</div>
 									<p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">{batch.overview}</p>
@@ -689,13 +689,13 @@ function ChangelogPage() {
 								<div className="relative space-y-5 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-border md:before:left-5">
 									{batch.entries.map((entry) => (
 										<article key={`${entry.date}-${entry.title}`} className="relative grid gap-4 pl-12 md:grid-cols-[180px_minmax(0,1fr)]">
-											<div className="absolute left-0 top-2 flex h-9 w-9 items-center justify-center rounded-full border border-electric-green/25 bg-background text-electric-green shadow-sm">
+											<div className="absolute left-0 top-2 flex h-9 w-9 items-center justify-center rounded-full border border-primary/25 bg-background text-primary shadow-sm">
 												<ShieldCheck className="h-4 w-4" />
 											</div>
 											<div className="pt-2 text-xs font-mono text-muted-foreground">{entry.date}</div>
-											<div className="rounded-[1.5rem] border border-border bg-card/90 p-6 shadow-sm transition-colors hover:border-electric-green/30">
+											<div className="rounded-[1.5rem] border border-border bg-card/90 p-6 shadow-sm transition-colors hover:border-primary/30">
 												<div className="mb-4 flex flex-wrap items-center gap-2">
-													{entry.isMajor ? <span className="rounded-full border border-electric-green/30 bg-electric-green/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-electric-green">Major</span> : null}
+													{entry.isMajor ? <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-primary">Major</span> : null}
 													<span id={`category-${entry.category.toLowerCase()}`} className={`rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] ${CATEGORY_STYLES[entry.category]}`}>
 														{entry.category}
 													</span>
@@ -706,13 +706,13 @@ function ChangelogPage() {
 													<ul className="space-y-3">
 														{entry.items.map((item) => (
 															<li key={item} className="flex gap-3 text-sm leading-6 text-foreground/85">
-																<span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-electric-green" />
+																<span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
 																<span>{item}</span>
 															</li>
 														))}
 													</ul>
-													<div className="rounded-2xl border border-electric-green/20 bg-electric-green/10 p-5">
-														<p className="text-xs font-bold uppercase tracking-[0.18em] text-electric-green">Customer impact</p>
+													<div className="rounded-2xl border border-primary/20 bg-primary/10 p-5">
+														<p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Customer impact</p>
 														<p className="mt-3 text-sm leading-6 text-foreground/85">{entry.customerImpact}</p>
 													</div>
 												</div>
@@ -732,7 +732,7 @@ function ChangelogPage() {
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">Need implementation details?</h2>
 						<p className="mt-2 text-sm text-muted-foreground">Release notes stay curated. Deep technical guidance lives in the docs.</p>
 					</div>
-					<Link to="/docs" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+					<Link to="/docs" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 						View docs <ArrowRight className="h-4 w-4" />
 					</Link>
 				</div>

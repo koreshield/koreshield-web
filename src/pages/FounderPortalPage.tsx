@@ -250,7 +250,7 @@ type FounderMetricsResponse = {
 	generated_at: string;
 };
 
-const DONUT_COLORS = ['#dc2626', '#f59e0b', '#b45309', '#737373', '#0f766e', '#2563eb', '#7c3aed'];
+const DONUT_COLORS = ['#c66952', '#7a8b39', '#A9C652', '#6262c6', '#45458b', '#c8df7c', '#9090d8'];
 const STANDARD_REFRESH_INTERVAL = 60_000;
 const REQUEST_LOG_REFRESH_INTERVAL = 30_000;
 
@@ -274,13 +274,13 @@ function shortDate(value: string) {
 function badgeClass(kind: string) {
 	const value = kind.toLowerCase();
 	if (['active', 'allowed', 'owner', 'admin', 'production', 'verified', 'growth', 'paid'].includes(value)) {
-		return 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300';
+		return 'bg-primary/10 text-primary-dark dark:text-primary';
 	}
 	if (['blocked', 'revoked', 'inactive', 'error', 'unverified'].includes(value)) {
 		return 'bg-red-500/10 text-red-700 dark:text-red-300';
 	}
 	if (['ci', 'google', 'github', 'apple', 'internal'].includes(value)) {
-		return 'bg-blue-500/10 text-blue-700 dark:text-blue-300';
+		return 'bg-secondary/10 text-secondary-dark dark:text-secondary';
 	}
 	if (['dev', 'local', 'free', 'email', 'user', 'member'].includes(value)) {
 		return 'bg-muted text-muted-foreground';
@@ -580,7 +580,7 @@ export function FounderPortalPage() {
 										<XAxis dataKey="label" tick={{ fontSize: 12 }} />
 										<YAxis tick={{ fontSize: 12 }} />
 										<Tooltip />
-										<Bar dataKey="requests" fill="#2563eb" radius={[8, 8, 0, 0]} />
+										<Bar dataKey="requests" fill="#6262c6" radius={[8, 8, 0, 0]} />
 									</BarChart>
 								)}
 							</ChartFrame>
@@ -639,7 +639,7 @@ export function FounderPortalPage() {
 									</div>
 									<div className="flex justify-between py-2 border-b border-border">
 										<span className="text-muted-foreground">Churn risk</span>
-										<span className={`font-semibold ${metrics.retention.churn_risk_users > 0 ? 'text-amber-600' : 'text-emerald-600'}`}>{numberFormat(metrics.retention.churn_risk_users)} users inactive 30d+</span>
+										<span className={`font-semibold ${metrics.retention.churn_risk_users > 0 ? 'text-destructive' : 'text-primary-dark'}`}>{numberFormat(metrics.retention.churn_risk_users)} users inactive 30d+</span>
 									</div>
 									<div className="flex justify-between py-2 border-b border-border">
 										<span className="text-muted-foreground">New users today</span>
@@ -655,10 +655,10 @@ export function FounderPortalPage() {
 							<AppPageSection title="Conversion funnel">
 								<div className="space-y-3 mt-2">
 									{[
-										{ label: 'Signups', value: metrics.funnel.signups, pct: 100, color: 'bg-blue-500' },
+										{ label: 'Signups', value: metrics.funnel.signups, pct: 100, color: 'bg-secondary' },
 										{ label: 'Email verified', value: metrics.funnel.verified, pct: metrics.funnel.signup_to_verified_pct, color: 'bg-primary' },
-										{ label: 'Activated (made API call)', value: metrics.funnel.activated, pct: metrics.funnel.verified_to_activated_pct > 0 ? (metrics.funnel.activated / metrics.funnel.signups) * 100 : 0, color: 'bg-emerald-500' },
-										{ label: 'Converted to paid', value: metrics.funnel.paid, pct: metrics.funnel.overall_conversion_pct, color: 'bg-violet-500' },
+										{ label: 'Activated (made API call)', value: metrics.funnel.activated, pct: metrics.funnel.verified_to_activated_pct > 0 ? (metrics.funnel.activated / metrics.funnel.signups) * 100 : 0, color: 'bg-primary' },
+										{ label: 'Converted to paid', value: metrics.funnel.paid, pct: metrics.funnel.overall_conversion_pct, color: 'bg-secondary-dark' },
 									].map(({ label, value, pct, color }) => (
 										<div key={label}>
 											<div className="flex justify-between text-sm mb-1">
@@ -697,14 +697,14 @@ export function FounderPortalPage() {
 												</div>
 												<div className="flex justify-between text-xs text-muted-foreground mt-0.5">
 													<span>£{p.monthly_price}/mo per seat</span>
-													<span className={p.mrr_contribution > 0 ? 'text-emerald-600 font-semibold' : ''}>£{numberFormat(p.mrr_contribution)} MRR</span>
+													<span className={p.mrr_contribution > 0 ? 'text-primary-dark font-semibold' : ''}>£{numberFormat(p.mrr_contribution)} MRR</span>
 												</div>
 											</div>
 										</div>
 									))}
 									<div className="flex justify-between pt-3 font-bold text-sm">
 										<span>Total MRR</span>
-										<span className="text-emerald-600">£{numberFormat(metrics.revenue.mrr)}</span>
+										<span className="text-primary-dark">£{numberFormat(metrics.revenue.mrr)}</span>
 									</div>
 								</div>
 							</AppPageSection>
@@ -719,9 +719,9 @@ export function FounderPortalPage() {
 												<YAxis tick={{ fontSize: 11 }} />
 												<Tooltip />
 												<Legend />
-												<Bar dataKey="total_requests" name="Requests" fill="#2563eb" radius={[4,4,0,0]} />
-												<Bar dataKey="attacks" name="Attacks" fill="#dc2626" radius={[4,4,0,0]} />
-												<Bar dataKey="blocked" name="Blocked" fill="#f59e0b" radius={[4,4,0,0]} />
+												<Bar dataKey="total_requests" name="Requests" fill="#6262c6" radius={[4,4,0,0]} />
+												<Bar dataKey="attacks" name="Attacks" fill="#c66952" radius={[4,4,0,0]} />
+												<Bar dataKey="blocked" name="Blocked" fill="#7a8b39" radius={[4,4,0,0]} />
 											</BarChart>
 										)}
 									</ChartFrame>
@@ -813,7 +813,7 @@ export function FounderPortalPage() {
 										<td className="py-3 pr-4"><Badge>{user.auth_provider}</Badge></td>
 										<td className="py-3 pr-4">
 											<span className="inline-flex items-center gap-1">
-												{user.email_verified ? <CheckCircle2 className="h-4 w-4 text-emerald-500" /> : <XCircle className="h-4 w-4 text-red-500" />}
+												{user.email_verified ? <CheckCircle2 className="h-4 w-4 text-primary" /> : <XCircle className="h-4 w-4 text-red-500" />}
 												{user.email_verified ? 'Verified' : 'Unverified'}
 											</span>
 										</td>
@@ -851,7 +851,7 @@ export function FounderPortalPage() {
 																event.stopPropagation();
 																if (window.confirm(`Reactivate ${user.email}?`)) reactivateUserMutation.mutate(user.id);
 															}}
-															className="rounded-lg border border-emerald-500/30 px-2 py-1 text-xs font-semibold text-emerald-600 hover:bg-emerald-500/10"
+															className="rounded-lg border border-primary/30 px-2 py-1 text-xs font-semibold text-primary-dark hover:bg-primary/10"
 														>
 															Reactivate
 														</button>
@@ -1236,7 +1236,7 @@ export function FounderPortalPage() {
 															reactivateUserMutation.mutate(userDetailQuery.data!.user!.id);
 														}
 													}}
-													className="rounded-xl border border-emerald-500/30 px-3 py-2 text-xs font-semibold text-emerald-600 hover:bg-emerald-500/10"
+													className="rounded-xl border border-primary/30 px-3 py-2 text-xs font-semibold text-primary-dark hover:bg-primary/10"
 												>
 													Reactivate account
 												</button>

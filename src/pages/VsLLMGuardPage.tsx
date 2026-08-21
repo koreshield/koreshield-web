@@ -34,10 +34,10 @@ export default function VsLLMGuardPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(59,130,246,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(98,98,198,0.08),transparent_24%)]" />
 				<div className="relative mx-auto max-w-5xl text-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Scale className="h-3.5 w-3.5" />
 							Comparison
 						</span>
@@ -56,18 +56,18 @@ export default function VsLLMGuardPage() {
 
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
-					<div className="rounded-[2rem] border border-electric-green/25 bg-electric-green/10 p-7 shadow-sm">
-						<ShieldCheck className="mb-5 h-8 w-8 text-electric-green" />
+					<div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-7 shadow-sm">
+						<ShieldCheck className="mb-5 h-8 w-8 text-primary" />
 						<h2 className="text-3xl font-extrabold tracking-[-0.04em]">Koreshield</h2>
 						<p className="mt-3 text-sm leading-relaxed text-muted-foreground">
 							A runtime security layer for prompts, retrieved context, provider calls, policy decisions, alerts, and audit evidence.
 						</p>
-						<Link to="/demo" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-electric-green px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+						<Link to="/demo" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 							See Koreshield <ArrowRight className="h-4 w-4" />
 						</Link>
 					</div>
 					<div className="rounded-[2rem] border border-border bg-card/90 p-7 shadow-sm">
-						<GitBranch className="mb-5 h-8 w-8 text-electric-green" />
+						<GitBranch className="mb-5 h-8 w-8 text-primary" />
 						<h2 className="text-3xl font-extrabold tracking-[-0.04em]">LLM Guard</h2>
 						<p className="mt-3 text-sm leading-relaxed text-muted-foreground">
 							An open-source scanner toolkit from Protect AI for detecting and sanitizing risky LLM inputs and outputs.
@@ -82,14 +82,14 @@ export default function VsLLMGuardPage() {
 			<section className="px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-10">
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Practical difference</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Practical difference</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">Toolkit vs security layer.</h2>
 					</div>
 					<div className="overflow-hidden rounded-[2rem] border border-border bg-card/90 shadow-sm">
 						{comparisonRows.map(([label, koreshield, llmGuard]) => (
 							<div key={label} className="grid gap-4 border-b border-border p-5 last:border-b-0 md:grid-cols-[0.75fr_1fr_1fr] md:items-center">
 								<p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
-								<p className="rounded-2xl bg-electric-green/10 px-4 py-3 text-sm font-semibold text-foreground">{koreshield}</p>
+								<p className="rounded-2xl bg-primary/10 px-4 py-3 text-sm font-semibold text-foreground">{koreshield}</p>
 								<p className="rounded-2xl bg-muted px-4 py-3 text-sm text-muted-foreground">{llmGuard}</p>
 							</div>
 						))}
@@ -104,7 +104,7 @@ export default function VsLLMGuardPage() {
 						<div className="mt-6 space-y-3">
 							{koreshieldWins.map((item) => (
 								<div key={item} className="flex gap-3 rounded-2xl border border-border bg-background/70 p-4 text-sm">
-									<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-electric-green" />
+									<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 									<span>{item}</span>
 								</div>
 							))}
@@ -115,7 +115,7 @@ export default function VsLLMGuardPage() {
 						<div className="mt-6 space-y-3">
 							{llmGuardFits.map((item) => (
 								<div key={item} className="flex gap-3 rounded-2xl border border-border bg-background/70 p-4 text-sm">
-									<Code2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-electric-green" />
+									<Code2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 									<span>{item}</span>
 								</div>
 							))}
@@ -127,7 +127,7 @@ export default function VsLLMGuardPage() {
 			<section className="px-6 py-20">
 				<div className="mx-auto grid max-w-7xl gap-6 rounded-[2rem] border border-border bg-card/90 p-7 shadow-sm lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
 					<div>
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Migration thinking</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Migration thinking</p>
 						<h2 className="text-3xl font-extrabold tracking-[-0.04em]">If scanners are not enough, move enforcement to the path.</h2>
 						<p className="mt-4 text-sm leading-relaxed text-muted-foreground">
 							The clean migration is not replacing one function call with another. It is deciding where enforcement should live: inside each app, or once at the AI traffic boundary.
@@ -136,7 +136,7 @@ export default function VsLLMGuardPage() {
 					<div className="grid gap-3 sm:grid-cols-3">
 						{['Route traffic', 'Attach policy', 'Record evidence'].map((item, index) => (
 							<div key={item} className="rounded-2xl border border-border bg-background/70 p-4">
-								<p className="text-xs font-bold tracking-[0.22em] text-electric-green">0{index + 1}</p>
+								<p className="text-xs font-bold tracking-[0.22em] text-primary">0{index + 1}</p>
 								<p className="mt-3 font-bold">{item}</p>
 							</div>
 						))}
@@ -153,7 +153,7 @@ export default function VsLLMGuardPage() {
 					<div className="flex flex-wrap justify-center gap-4">
 						<Link
 							to="/demo"
-							className="inline-flex items-center gap-2 px-6 py-3 bg-electric-green hover:bg-emerald-bright text-black rounded-lg font-semibold transition-colors"
+							className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-black rounded-lg font-semibold transition-colors"
 						>
 							Request Demo
 							<ArrowRight className="w-5 h-5" />

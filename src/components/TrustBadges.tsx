@@ -31,8 +31,8 @@ const badges = [
 export function TrustBadges() {
 	return (
 		<section className="relative overflow-hidden border-t border-white/[0.06] bg-muted/30 py-20 transition-colors dark:bg-white/[0.02] md:py-28">
-			<div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric-green/50 to-transparent" />
-			<div className="pointer-events-none absolute left-1/2 top-10 h-56 w-56 -translate-x-1/2 rounded-full bg-electric-green/10 blur-3xl" />
+			<div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+			<div className="pointer-events-none absolute left-1/2 top-10 h-56 w-56 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
 			<div className="max-w-7xl mx-auto px-6">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
@@ -41,7 +41,7 @@ export function TrustBadges() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-12"
 				>
-					<p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-electric-green">
+					<p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-primary">
 						Compliance posture
 					</p>
 					<h2 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-[-0.04em] mb-4">
@@ -60,16 +60,16 @@ export function TrustBadges() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
-							className="group relative flex min-h-[190px] flex-col justify-between gap-5 overflow-hidden rounded-2xl border border-white/[0.08] bg-card/80 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-electric-green/30 hover:shadow-lg hover:shadow-emerald-500/10"
+							className="group relative flex min-h-[190px] flex-col justify-between gap-5 overflow-hidden rounded-2xl border border-white/[0.08] bg-card/80 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
 						>
-							<div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-electric-green/0 blur-2xl transition-colors duration-300 group-hover:bg-electric-green/10" />
+							<div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/0 blur-2xl transition-colors duration-300 group-hover:bg-primary/10" />
 							<div className="flex items-center gap-3">
-								<div className="p-2.5 rounded-xl bg-electric-green/10 group-hover:bg-electric-green/20 transition-colors shrink-0">
-									<badge.icon className="w-5 h-5 text-electric-green" />
+								<div className="p-2.5 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
+									<badge.icon className="w-5 h-5 text-primary" />
 								</div>
 								<div>
 									<p className="font-bold text-foreground text-sm leading-tight">{badge.title}</p>
-									<p className="text-xs text-electric-green font-semibold uppercase tracking-widest mt-0.5">{badge.description}</p>
+									<p className="text-xs text-primary font-semibold uppercase tracking-widest mt-0.5">{badge.description}</p>
 								</div>
 							</div>
 							<p className="text-xs text-muted-foreground leading-relaxed">{badge.detail}</p>

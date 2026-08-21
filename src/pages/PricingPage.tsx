@@ -85,7 +85,7 @@ export default function PricingPage() {
 						<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
 							<Link
 								to="/signup?plan=growth"
-								className="inline-flex items-center gap-2 rounded-xl bg-electric-green px-7 py-3 font-semibold text-white transition-colors hover:bg-emerald-500"
+								className="inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3 font-semibold text-white transition-colors hover:bg-primary"
 							>
 								Choose Growth
 								<ArrowRight className="h-4 w-4" />
@@ -109,13 +109,13 @@ export default function PricingPage() {
 								aria-label="Toggle annual pricing"
 							>
 								<motion.div
-									className="absolute left-0.5 top-0.5 h-6 w-6 rounded-full border-2 border-electric-green bg-white shadow-lg"
+									className="absolute left-0.5 top-0.5 h-6 w-6 rounded-full border-2 border-primary bg-white shadow-lg"
 									animate={{ x: billingPeriod === 'annual' ? 30 : 0 }}
 									transition={{ type: 'spring', stiffness: 500, damping: 30 }}
 								/>
 							</button>
 							<span className={`text-base font-medium ${billingPeriod === 'annual' ? 'text-foreground' : 'text-muted-foreground'}`}>
-								Annual <span className="ml-1 text-sm font-semibold text-electric-green sm:ml-2">Save 20%</span>
+								Annual <span className="ml-1 text-sm font-semibold text-primary sm:ml-2">Save 20%</span>
 							</span>
 						</div>
 					</motion.div>
@@ -175,7 +175,7 @@ export default function PricingPage() {
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.45, delay: index * 0.08 }}
-									className={`flex h-full flex-col rounded-[2rem] border bg-card p-6 shadow-lg md:p-8 ${plan.popular ? 'border-electric-green shadow-emerald-500/10' : 'border-border'}`}
+									className={`flex h-full flex-col rounded-[2rem] border bg-card p-6 shadow-lg md:p-8 ${plan.popular ? 'border-primary shadow-primary/10' : 'border-border'}`}
 								>
 									<div className="flex items-start justify-between gap-3">
 										<div>
@@ -183,7 +183,7 @@ export default function PricingPage() {
 											<p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
 										</div>
 										{plan.badge ? (
-											<span className="rounded-full bg-electric-green/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-electric-green whitespace-nowrap">
+											<span className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-primary whitespace-nowrap">
 												{plan.badge}
 											</span>
 										) : null}
@@ -195,7 +195,7 @@ export default function PricingPage() {
 											<span className="pb-1 text-muted-foreground">{periodLabel}</span>
 										</div>
 										{billingPeriod === 'annual' && plan.annualSavingsLabel ? (
-											<p className="mt-2 text-sm font-medium text-electric-green">{plan.annualSavingsLabel}</p>
+											<p className="mt-2 text-sm font-medium text-primary">{plan.annualSavingsLabel}</p>
 										) : null}
 									</div>
 
@@ -209,7 +209,7 @@ export default function PricingPage() {
 									<ul className="mt-6 flex-1 space-y-3">
 										{plan.features.map((feature) => (
 											<li key={feature} className="flex items-start gap-3 text-sm text-foreground/85">
-												<svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-electric-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
 												</svg>
 												<span>{feature}</span>
@@ -274,7 +274,7 @@ export default function PricingPage() {
 								<ul className="space-y-2">
 									{enterprisePlan?.features.map((feature) => (
 										<li key={feature} className="flex items-start gap-2 text-sm text-foreground/85">
-											<svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-electric-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
 											</svg>
 											<span>{feature}</span>
@@ -385,7 +385,7 @@ export default function PricingPage() {
 						))}
 					</div>
 					<div className="mt-8 text-center">
-						<Link to="/faq" className="inline-flex items-center gap-2 text-sm font-bold text-electric-green transition-colors hover:text-emerald-bright">
+						<Link to="/faq" className="inline-flex items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-primary-dark">
 							See all FAQs <ArrowRight className="h-4 w-4" />
 						</Link>
 					</div>

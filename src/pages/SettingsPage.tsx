@@ -176,13 +176,13 @@ export function SettingsPage() {
 						variant="panel"
 					>
 						<div className="mb-6 flex items-start gap-4">
-							<div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 text-lg font-semibold text-primary shadow-[0_0_30px_rgba(16,185,129,0.12)]">
+							<div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 text-lg font-semibold text-primary shadow-[0_0_30px_rgba(169,198,82,0.12)]">
 								{initials}
 							</div>
 						</div>
 						<AppStatGrid columns={4}>
-							<AppStatCard label="Account status" value={<span className="capitalize">{user.status || 'unknown'}</span>} tone={user.status === 'active' ? 'text-emerald-500' : 'text-amber-500'} />
-							<AppStatCard label="Verification" value={user.email_verified ? 'Verified' : 'Unverified'} tone={user.email_verified ? 'text-emerald-500' : 'text-amber-500'} />
+							<AppStatCard label="Account status" value={<span className="capitalize">{user.status || 'unknown'}</span>} tone={user.status === 'active' ? 'text-primary' : 'text-amber-500'} />
+							<AppStatCard label="Verification" value={user.email_verified ? 'Verified' : 'Unverified'} tone={user.email_verified ? 'text-primary' : 'text-amber-500'} />
 							<AppStatCard label="Role" value={<span className="capitalize">{user.role}</span>} icon={Shield} />
 							<AppStatCard label="Company" value={user.company || 'Not set'} icon={Building} />
 						</AppStatGrid>
@@ -450,9 +450,9 @@ export function SettingsPage() {
 					<AppPageSection title="Email verification" description="Keep your account verified so you can create keys, receive critical account mail, and avoid friction in account recovery.">
 						<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 							<div className="flex items-start gap-3">
-									<div className={`mt-0.5 flex h-9 w-9 items-center justify-center rounded-full ${user.email_verified ? 'bg-emerald-500/10' : 'bg-amber-500/10'}`}>
+									<div className={`mt-0.5 flex h-9 w-9 items-center justify-center rounded-full ${user.email_verified ? 'bg-primary/10' : 'bg-amber-500/10'}`}>
 										{user.email_verified ? (
-											<CheckCircle2 className="h-5 w-5 text-emerald-500" />
+											<CheckCircle2 className="h-5 w-5 text-primary" />
 										) : (
 											<AlertTriangle className="h-5 w-5 text-amber-500" />
 										)}

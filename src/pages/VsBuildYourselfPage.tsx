@@ -97,10 +97,10 @@ export default function VsBuildYourselfPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(245,158,11,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(122,139,57,0.08),transparent_24%)]" />
 				<div className="relative mx-auto max-w-5xl text-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Hammer className="h-3.5 w-3.5" />
 							Build vs Buy
 						</span>
@@ -115,14 +115,14 @@ export default function VsBuildYourselfPage() {
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
 					<div>
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">Operating burden</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Operating burden</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">What your team owns.</h2>
 						<p className="mt-5 text-muted-foreground">If you build internally, these do not disappear after launch. They become part of your security roadmap.</p>
 					</div>
 					<div className="grid gap-3 sm:grid-cols-2">
 						{buildBurden.map((item) => (
 							<div key={item} className="flex gap-3 rounded-2xl border border-border bg-card/85 p-4 shadow-sm">
-								<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-electric-green" />
+								<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 								<span className="text-sm">{item}</span>
 							</div>
 						))}
@@ -141,7 +141,7 @@ export default function VsBuildYourselfPage() {
 							transition={{ duration: 0.4, delay: index * 0.07 }}
 							className="rounded-[1.5rem] border border-border bg-card/85 p-6 shadow-sm"
 						>
-							<TimerReset className="mb-5 h-6 w-6 text-electric-green" />
+							<TimerReset className="mb-5 h-6 w-6 text-primary" />
 							<h3 className="text-xl font-bold">{title}</h3>
 							<p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
 						</motion.div>
@@ -152,7 +152,7 @@ export default function VsBuildYourselfPage() {
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-8 flex items-center gap-4">
-						<DollarSign className="h-8 w-8 text-electric-green" />
+						<DollarSign className="h-8 w-8 text-primary" />
 						<div>
 							<h2 className="text-4xl font-extrabold tracking-[-0.04em]">Total cost of ownership: year one</h2>
 							<p className="mt-2 text-sm text-muted-foreground">Illustrative planning model for a production-grade internal LLM security layer.</p>
@@ -169,17 +169,17 @@ export default function VsBuildYourselfPage() {
 								<span className="text-3xl font-black text-red-400">$460,000+</span>
 							</div>
 						</div>
-						<div className="rounded-[1.5rem] border border-electric-green/35 bg-electric-green/10 p-6">
-							<h3 className="text-2xl font-extrabold text-electric-green">Using Koreshield</h3>
+						<div className="rounded-[1.5rem] border border-primary/35 bg-primary/10 p-6">
+							<h3 className="text-2xl font-extrabold text-primary">Using Koreshield</h3>
 							<div className="mt-6">
 								<CostRows rows={yearOneKoreshield} />
 							</div>
-							<div className="mt-6 flex items-center justify-between border-t border-electric-green/30 pt-5">
+							<div className="mt-6 flex items-center justify-between border-t border-primary/30 pt-5">
 								<span className="text-lg font-bold">Total year 1</span>
-								<span className="text-3xl font-black text-electric-green">$65,500</span>
+								<span className="text-3xl font-black text-primary">$65,500</span>
 							</div>
-							<div className="mt-6 rounded-2xl border border-electric-green/25 bg-background/55 p-5 text-center">
-								<p className="text-4xl font-black text-electric-green">Save $394,500</p>
+							<div className="mt-6 rounded-2xl border border-primary/25 bg-background/55 p-5 text-center">
+								<p className="text-4xl font-black text-primary">Save $394,500</p>
 								<p className="mt-2 text-sm text-muted-foreground">85% cost reduction in year one</p>
 							</div>
 						</div>
@@ -190,7 +190,7 @@ export default function VsBuildYourselfPage() {
 			<section className="px-6 py-20">
 				<div className="mx-auto max-w-7xl rounded-[2rem] border border-border bg-card/85 p-7 shadow-sm">
 					<div className="mb-8 flex items-center gap-4">
-						<TimerReset className="h-8 w-8 text-electric-green" />
+						<TimerReset className="h-8 w-8 text-primary" />
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em]">Time to production</h2>
 					</div>
 					<div className="grid gap-8 lg:grid-cols-2">
@@ -206,18 +206,18 @@ export default function VsBuildYourselfPage() {
 							</div>
 						</div>
 						<div>
-							<h3 className="mb-5 text-2xl font-extrabold text-electric-green">Using Koreshield: 1 week</h3>
+							<h3 className="mb-5 text-2xl font-extrabold text-primary">Using Koreshield: 1 week</h3>
 							<div className="space-y-3">
 								{koreshieldTimeline.map(([period, item]) => (
 									<div key={period} className="flex gap-3 rounded-2xl border border-border bg-background/60 p-4">
-										<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-electric-green" />
+										<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 										<span className="text-sm text-muted-foreground"><strong className="text-foreground">{period}:</strong> {item}</span>
 									</div>
 								))}
 							</div>
-							<div className="mt-5 rounded-2xl border border-electric-green/25 bg-electric-green/10 p-5 text-center">
-								<TrendingUp className="mx-auto mb-3 h-6 w-6 text-electric-green" />
-								<p className="text-4xl font-black text-electric-green">48x faster</p>
+							<div className="mt-5 rounded-2xl border border-primary/25 bg-primary/10 p-5 text-center">
+								<TrendingUp className="mx-auto mb-3 h-6 w-6 text-primary" />
+								<p className="text-4xl font-black text-primary">48x faster</p>
 								<p className="mt-2 text-sm text-muted-foreground">From 12 months to 1 week</p>
 							</div>
 						</div>
@@ -252,7 +252,7 @@ export default function VsBuildYourselfPage() {
 			<section className="px-6 py-20">
 				<div className="mx-auto max-w-7xl rounded-[2rem] border border-border bg-card/85 p-7 shadow-sm">
 					<div className="mb-8 flex items-center gap-4">
-						<Shield className="h-8 w-8 text-electric-green" />
+						<Shield className="h-8 w-8 text-primary" />
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em]">What is included in Koreshield</h2>
 					</div>
 					<div className="grid gap-6 md:grid-cols-3">
@@ -262,7 +262,7 @@ export default function VsBuildYourselfPage() {
 									<ul className="space-y-3">
 										{items.map((item) => (
 										<li key={item} className="flex gap-3 text-sm text-muted-foreground">
-											<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-electric-green" />
+											<CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 											<span>{item}</span>
 										</li>
 									))}
@@ -289,8 +289,8 @@ export default function VsBuildYourselfPage() {
 								<span className="text-3xl font-black text-red-400">$930,000</span>
 							</div>
 						</div>
-						<div className="rounded-[1.5rem] border border-electric-green/25 bg-background/60 p-6">
-							<h3 className="text-2xl font-extrabold text-electric-green">Use Koreshield</h3>
+						<div className="rounded-[1.5rem] border border-primary/25 bg-background/60 p-6">
+							<h3 className="text-2xl font-extrabold text-primary">Use Koreshield</h3>
 							<div className="mt-5 space-y-3 text-sm text-muted-foreground">
 								<div className="flex justify-between gap-4"><span>Year 1</span><strong>$65,500</strong></div>
 								<div className="flex justify-between gap-4"><span>Year 2</span><strong>$60,000</strong></div>
@@ -298,12 +298,12 @@ export default function VsBuildYourselfPage() {
 							</div>
 							<div className="mt-5 flex justify-between border-t border-border pt-5">
 								<span className="font-bold">3-year total</span>
-								<span className="text-3xl font-black text-electric-green">$195,500</span>
+								<span className="text-3xl font-black text-primary">$195,500</span>
 							</div>
 						</div>
 					</div>
 					<div className="mt-10 text-center">
-						<p className="text-5xl font-black text-electric-green">Save $734,500</p>
+						<p className="text-5xl font-black text-primary">Save $734,500</p>
 						<p className="mt-2 text-sm text-muted-foreground">79% cost reduction over 3 years</p>
 					</div>
 				</div>
@@ -315,7 +315,7 @@ export default function VsBuildYourselfPage() {
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">Use your team for product, not permanent detector upkeep.</h2>
 						<p className="mt-2 text-sm text-muted-foreground">Koreshield gives you a maintained runtime layer while your engineers keep shipping.</p>
 					</div>
-					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 						Talk through the tradeoff <Code2 className="h-4 w-4" />
 					</Link>
 				</div>

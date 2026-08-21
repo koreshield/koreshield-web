@@ -84,8 +84,8 @@ export default function SolutionKorePilotPage() {
 				<div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 				
 				{/* Animated gradient orb */}
-				<div className="absolute -top-40 -right-40 w-80 h-80 bg-electric-green/10 rounded-full blur-3xl pointer-events-none" />
-				<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+				<div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+				<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
 				<div className="relative mx-auto max-w-5xl">
 					<motion.div
@@ -94,13 +94,13 @@ export default function SolutionKorePilotPage() {
 						transition={{ duration: 0.8 }}
 						className="text-center"
 					>
-						<div className="inline-flex items-center gap-2 rounded-full border border-electric-green/30 bg-electric-green/5 px-4 py-2 mb-8 backdrop-blur-sm">
-							<span className="h-1.5 w-1.5 rounded-full bg-electric-green" />
-							<span className="text-xs font-semibold uppercase tracking-widest text-electric-green/90">Koreshield Pilot roadmap</span>
+						<div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 mb-8 backdrop-blur-sm">
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+							<span className="text-xs font-semibold uppercase tracking-widest text-primary/90">Koreshield Pilot roadmap</span>
 						</div>
 						<h1 className="text-6xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
 							Live compliance evidence
-							<span className="block bg-gradient-to-r from-electric-green via-emerald-400 to-electric-green bg-clip-text text-transparent">
+							<span className="block bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent">
 								from real detection data
 							</span>
 						</h1>
@@ -112,14 +112,14 @@ export default function SolutionKorePilotPage() {
 						<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
 							<Link
 								to="/demo"
-								className="inline-flex items-center gap-2 rounded-lg bg-electric-green px-8 py-3.5 font-semibold text-white transition-all hover:bg-emerald-500 hover:shadow-lg hover:shadow-electric-green/20 active:scale-95 group"
+								className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 font-semibold text-white transition-all hover:bg-primary hover:shadow-lg hover:shadow-primary/20 active:scale-95 group"
 							>
 								Discuss Koreshield Pilot
 								<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
 							</Link>
 							<Link
 								to="/solutions/ai-detection-response"
-								className="inline-flex items-center gap-2 rounded-lg border border-electric-green/30 bg-electric-green/5 px-8 py-3.5 font-semibold text-foreground transition-all hover:bg-electric-green/10 hover:border-electric-green/50 active:scale-95 backdrop-blur-sm"
+								className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/5 px-8 py-3.5 font-semibold text-foreground transition-all hover:bg-primary/10 hover:border-primary/50 active:scale-95 backdrop-blur-sm"
 							>
 								Explore detection layer
 								<ArrowRight className="h-4 w-4" />
@@ -158,23 +158,23 @@ export default function SolutionKorePilotPage() {
 								variants={itemVariants}
 								className={`group relative rounded-2xl border transition-all duration-300 p-8 ${
 									item.highlight
-										? 'border-electric-green/30 bg-gradient-to-br from-electric-green/10 to-emerald-500/5 hover:border-electric-green/60 hover:shadow-lg hover:shadow-electric-green/10'
-										: 'border-border bg-card hover:border-electric-green/20 hover:bg-card/80'
+										? 'border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10'
+										: 'border-border bg-card hover:border-primary/20 hover:bg-card/80'
 								}`}
 							>
 								{/* Subtle gradient glow on hover */}
-								<div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-electric-green/0 to-emerald-500/0 group-hover:from-electric-green/5 group-hover:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+								<div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
 								<div className="relative">
 									<div className={`inline-flex rounded-xl p-3 mb-4 border ${
 										item.highlight
-											? 'border-electric-green/40 bg-electric-green/15'
-											: 'border-electric-green/20 bg-electric-green/10'
+											? 'border-primary/40 bg-primary/15'
+											: 'border-primary/20 bg-primary/10'
 									}`}>
-										<item.icon className="h-6 w-6 text-electric-green" />
+										<item.icon className="h-6 w-6 text-primary" />
 									</div>
 
-									<h3 className="text-lg font-semibold mb-2 group-hover:text-electric-green transition-colors">{item.title}</h3>
+									<h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
 									<p className="text-sm leading-relaxed text-muted-foreground group-hover:text-muted-foreground/90 transition-colors">{item.body}</p>
 								</div>
 							</motion.div>
@@ -197,9 +197,9 @@ export default function SolutionKorePilotPage() {
 							<p className="text-lg text-muted-foreground leading-relaxed mb-6">
 								The real advantage isn't another checklist. It's live control evidence generated from the exact security layer protecting your production traffic.
 							</p>
-							<div className="flex items-center gap-3 p-4 rounded-xl border border-electric-green/20 bg-electric-green/5 backdrop-blur-sm">
-								<Zap className="h-5 w-5 text-electric-green flex-shrink-0" />
-								<span className="text-sm font-medium text-electric-green/90">Evidence stays fresh as threats evolve</span>
+							<div className="flex items-center gap-3 p-4 rounded-xl border border-primary/20 bg-primary/5 backdrop-blur-sm">
+								<Zap className="h-5 w-5 text-primary flex-shrink-0" />
+								<span className="text-sm font-medium text-primary/90">Evidence stays fresh as threats evolve</span>
 							</div>
 						</motion.div>
 
@@ -213,16 +213,16 @@ export default function SolutionKorePilotPage() {
 							{controlFramework.map((item, index) => (
 								<div
 									key={item.label}
-									className="group flex items-center gap-4 p-4 rounded-xl border border-white/[0.08] bg-background/60 hover:bg-background/100 hover:border-electric-green/30 transition-all duration-300 cursor-pointer"
+									className="group flex items-center gap-4 p-4 rounded-xl border border-white/[0.08] bg-background/60 hover:bg-background/100 hover:border-primary/30 transition-all duration-300 cursor-pointer"
 									style={{
 										animationDelay: `${index * 50}ms`,
 									}}
 								>
-									<div className="inline-flex p-2.5 rounded-lg border border-electric-green/20 bg-electric-green/10 group-hover:bg-electric-green/20 transition-colors">
-										<item.icon className="h-5 w-5 text-electric-green" />
+									<div className="inline-flex p-2.5 rounded-lg border border-primary/20 bg-primary/10 group-hover:bg-primary/20 transition-colors">
+										<item.icon className="h-5 w-5 text-primary" />
 									</div>
-									<span className="font-medium text-sm group-hover:text-electric-green transition-colors">{item.label}</span>
-									<ArrowRight className="h-4 w-4 ml-auto text-muted-foreground group-hover:text-electric-green group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
+									<span className="font-medium text-sm group-hover:text-primary transition-colors">{item.label}</span>
+									<ArrowRight className="h-4 w-4 ml-auto text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
 								</div>
 							))}
 						</motion.div>
@@ -249,14 +249,14 @@ export default function SolutionKorePilotPage() {
 					<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
 						<Link
 							to="/demo"
-							className="inline-flex items-center gap-2 rounded-lg bg-electric-green px-8 py-3.5 font-semibold text-white transition-all hover:bg-emerald-500 hover:shadow-lg hover:shadow-electric-green/20 active:scale-95 group w-full sm:w-auto justify-center"
+							className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 font-semibold text-white transition-all hover:bg-primary hover:shadow-lg hover:shadow-primary/20 active:scale-95 group w-full sm:w-auto justify-center"
 						>
 							Book a technical discussion
 							<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
 						</Link>
 						<Link
 							to="/docs"
-							className="inline-flex items-center gap-2 rounded-lg border border-electric-green/30 bg-electric-green/5 px-8 py-3.5 font-semibold text-foreground transition-all hover:bg-electric-green/10 hover:border-electric-green/50 active:scale-95 backdrop-blur-sm w-full sm:w-auto justify-center"
+							className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/5 px-8 py-3.5 font-semibold text-foreground transition-all hover:bg-primary/10 hover:border-primary/50 active:scale-95 backdrop-blur-sm w-full sm:w-auto justify-center"
 						>
 							View technical docs
 						</Link>

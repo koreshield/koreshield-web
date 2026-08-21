@@ -155,7 +155,7 @@ const DEFAULT_FORM: AudioScanPayload = {
 
 function decisionTone(decision?: string) {
 	switch (decision) {
-		case 'allow': return 'text-electric-green';
+		case 'allow': return 'text-primary';
 		case 'warn': return 'text-yellow-400';
 		case 'sanitize_or_block': return 'text-orange-400';
 		case 'block': return 'text-red-400';
@@ -368,8 +368,8 @@ export function AudioSecurityPage() {
 			</AppCallout>
 
 			{scannedTranscript && (
-				<AppSurface className="border-electric-green/30 bg-electric-green/5 p-5">
-					<p className="text-xs font-bold uppercase tracking-[0.2em] text-electric-green">Speech prompt scanned</p>
+				<AppSurface className="border-primary/30 bg-primary/5 p-5">
+					<p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Speech prompt scanned</p>
 					<p className="mt-3 text-base leading-relaxed text-foreground">{scannedTranscript}</p>
 				</AppSurface>
 			)}

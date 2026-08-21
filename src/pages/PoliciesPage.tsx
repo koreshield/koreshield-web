@@ -145,7 +145,7 @@ export function PoliciesPage() {
             case 'critical': return 'bg-red-500/10 text-red-600 border-red-500/20';
             case 'high': return 'bg-orange-500/10 text-orange-600 border-orange-500/20';
             case 'medium': return 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20';
-            case 'low': return 'bg-blue-500/10 text-blue-600 border-blue-500/20';
+            case 'low': return 'bg-secondary/10 text-secondary border-secondary/20';
             default: return 'bg-muted text-muted-foreground border-border';
         }
     };
@@ -243,7 +243,7 @@ export function PoliciesPage() {
                         label="Active"
                         value={policies.filter((p: Policy) => p.enabled !== false).length}
                         icon={CheckCircle}
-                        tone="text-electric-green"
+                        tone="text-primary"
                     />
                     <AppStatCard
                         label="Critical"

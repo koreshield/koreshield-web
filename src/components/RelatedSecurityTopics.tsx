@@ -41,7 +41,7 @@ export function RelatedSecurityTopics({ currentPath }: { currentPath: string }) 
 		<section aria-labelledby="related-security-topics" className="border-t border-border px-4 py-16 sm:px-6 md:py-20">
 			<div className="mx-auto max-w-7xl">
 				<div className="mb-8 max-w-2xl">
-					<p className="text-xs font-bold uppercase tracking-[0.2em] text-electric-green">Related controls</p>
+					<p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Related controls</p>
 					<h2 id="related-security-topics" className="mt-3 text-2xl font-extrabold tracking-[-0.03em] sm:text-3xl">
 						Explore the rest of the AI security layer
 					</h2>
@@ -51,11 +51,11 @@ export function RelatedSecurityTopics({ currentPath }: { currentPath: string }) 
 						<Link
 							key={topic.path}
 							to={topic.path}
-							className="group rounded-2xl border border-border bg-card/75 p-5 transition-colors hover:border-electric-green/35 hover:bg-muted/70"
+							className="group rounded-2xl border border-border bg-card/75 p-5 transition-colors hover:border-primary/35 hover:bg-muted/70"
 						>
 							<h3 className="font-bold text-foreground">{topic.title}</h3>
 							<p className="mt-2 text-sm leading-relaxed text-muted-foreground">{topic.description}</p>
-							<span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-electric-green">
+							<span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
 								Explore control <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
 							</span>
 						</Link>

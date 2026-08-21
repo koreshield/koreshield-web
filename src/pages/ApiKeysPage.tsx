@@ -234,7 +234,7 @@ export function ApiKeysPage() {
 				{!isLoading && apiKeys.length > 0 && (
 					<AppStatGrid>
 						<AppStatCard label="Total Keys" value={apiKeys.length} icon={Key} />
-						<AppStatCard label="Active" value={activeKeyCount} icon={CheckCircle} tone="text-electric-green" />
+						<AppStatCard label="Active" value={activeKeyCount} icon={CheckCircle} tone="text-primary" />
 						<AppStatCard label="Revoked" value={revokedKeyCount} icon={Trash2} tone="text-red-400" />
 						<AppStatCard label="Expired" value={expiredKeyCount} icon={AlertTriangle} tone="text-amber-400" />
 					</AppStatGrid>
@@ -321,7 +321,7 @@ export function ApiKeysPage() {
 													{status}
 												</span>
 											{key.environment && (
-												<span className="px-2 py-1 rounded text-xs font-medium bg-blue-500/10 text-blue-600">
+												<span className="px-2 py-1 rounded text-xs font-medium bg-secondary/10 text-secondary">
 													{key.environment}
 												</span>
 											)}
@@ -329,7 +329,7 @@ export function ApiKeysPage() {
 										{(key.rate_limit_rpm || key.monthly_ceiling || key.allowed_origins?.length) ? (
 											<div className="flex flex-wrap gap-2 mb-2">
 												{key.rate_limit_rpm && (
-													<span className="flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-purple-500/10 text-purple-600">
+													<span className="flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-secondary-dark/10 text-secondary-dark">
 														<Zap className="w-3 h-3" />{key.rate_limit_rpm} RPM
 													</span>
 												)}
@@ -339,7 +339,7 @@ export function ApiKeysPage() {
 													</span>
 												)}
 												{key.allowed_origins?.length ? (
-													<span className="flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-teal-500/10 text-teal-600">
+													<span className="flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-primary-dark/10 text-primary-dark">
 														<Globe className="w-3 h-3" />{key.allowed_origins.length} origin{key.allowed_origins.length !== 1 ? 's' : ''}
 													</span>
 												) : null}

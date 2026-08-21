@@ -7,7 +7,7 @@ const ecosystemItems = [
 		description: 'Part of NVIDIA Inception for AI startups building advanced infrastructure and applied AI systems.',
 		logo: '/logos/ecosystem/nvidia-logo.png',
 		logoClassName: 'h-11 w-auto object-contain',
-		accent: 'from-[#76B900]/20 to-electric-green/10',
+		accent: 'from-[#A9C652]/20 to-primary/10',
 	},
 	{
 		name: 'Nebius Cloud',
@@ -15,14 +15,14 @@ const ecosystemItems = [
 		description: 'Aligned with high-performance AI infrastructure for model-serving and security workloads.',
 		logo: '/logos/ecosystem/nebius-outline-white.svg',
 		logoClassName: 'h-8 w-auto object-contain',
-		accent: 'from-sky-500/20 to-cyan-500/10',
+		accent: 'from-secondary/20 to-secondary/10',
 	},
 ];
 
 export function EcosystemProof() {
 	return (
 		<section className="relative border-y border-white/[0.06] bg-muted/20 px-4 py-12 overflow-hidden sm:px-6">
-			<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.12),transparent_36rem)] pointer-events-none" />
+			<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(169,198,82,0.12),transparent_36rem)] pointer-events-none" />
 			<div className="max-w-7xl mx-auto relative z-10">
 				<motion.div
 					initial={{ opacity: 0, y: 12 }}
@@ -32,7 +32,7 @@ export function EcosystemProof() {
 					className="flex flex-col gap-8 lg:flex-row lg:items-center"
 				>
 					<div className="text-center lg:w-[30%] lg:text-left">
-						<p className="text-xs font-bold uppercase tracking-[0.28em] text-electric-green mb-3">
+						<p className="text-xs font-bold uppercase tracking-[0.28em] text-primary mb-3">
 							Ecosystem Signal
 						</p>
 						<h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.035em] text-foreground">
@@ -48,7 +48,7 @@ export function EcosystemProof() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.45, delay: index * 0.08 }}
-								className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-card/80 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-electric-green/30 hover:shadow-lg hover:shadow-emerald-500/10"
+								className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-card/80 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
 							>
 								<div className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-80 transition-opacity group-hover:opacity-100`} />
 								<div className="relative z-10">

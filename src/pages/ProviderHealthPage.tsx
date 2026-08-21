@@ -103,8 +103,8 @@ export function ProviderHealthPage() {
 
 	const getBarColor = (status: string) => {
 		switch (status) {
-			case 'healthy': return '#22c55e';
-			case 'down': return '#ef4444';
+			case 'healthy': return '#A9C652';
+			case 'down': return '#c66952';
 			case 'disabled': return '#9ca3af';
 			default: return '#6b7280';
 		}
@@ -145,9 +145,9 @@ export function ProviderHealthPage() {
 			/>
 
 			<AppStatGrid columns={3}>
-				<AppStatCard label="Healthy" value={healthyCount} icon={CheckCircle} tone="text-emerald-400" detail="Operational providers" />
+				<AppStatCard label="Healthy" value={healthyCount} icon={CheckCircle} tone="text-primary" detail="Operational providers" />
 				<AppStatCard label="Down" value={downCount} icon={XCircle} tone="text-red-400" detail="Unavailable" />
-				<AppStatCard label="Providers" value={configuredCount} icon={Zap} tone="text-sky-400" detail="Configured" />
+				<AppStatCard label="Providers" value={configuredCount} icon={Zap} tone="text-secondary" detail="Configured" />
 			</AppStatGrid>
 
 			<AppPageSection eyebrow="Status" title="Provider Status" variant="panel">

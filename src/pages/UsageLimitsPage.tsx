@@ -60,7 +60,7 @@ function formatPercent(value: number | null) {
 function usageTone(status: UsageSummary['limits']['status']) {
 	if (status === 'limit_reached' || status === 'near_limit') return 'text-red-500';
 	if (status === 'watch') return 'text-amber-500';
-	return 'text-electric-green';
+	return 'text-primary';
 }
 
 function getNextMonthStart() {
@@ -195,7 +195,7 @@ function ProgressBar({ usage }: { usage: UsageSummary }) {
 			? 'bg-red-500'
 			: usage.limits.status === 'watch'
 				? 'bg-amber-500'
-				: 'bg-electric-green';
+				: 'bg-primary';
 
 	return (
 		<div>
@@ -236,7 +236,7 @@ function DailyBars({ daily }: { daily: UsageSummary['breakdown']['daily'] }) {
 					<div key={item.date} className="group flex min-w-0 flex-1 flex-col items-center gap-2">
 						<div className="relative flex h-36 w-full items-end">
 							<div
-								className="w-full rounded-t-lg bg-electric-green/70 shadow-[0_0_24px_rgba(18,194,150,0.16)] transition-colors group-hover:bg-electric-green"
+								className="w-full rounded-t-lg bg-primary/70 shadow-[0_0_24px_rgba(18,194,150,0.16)] transition-colors group-hover:bg-primary"
 								style={{ height: `${height}%` }}
 							/>
 						</div>
@@ -381,7 +381,7 @@ export default function UsageLimitsPage() {
 					label="Remaining"
 					value={formatNumber(data.limits.remaining)}
 					icon={CalendarClock}
-					tone="text-electric-green"
+					tone="text-primary"
 					detail="Until the next monthly reset"
 				/>
 				<AppStatCard
@@ -443,25 +443,25 @@ export default function UsageLimitsPage() {
 			>
 				<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 					<AppSurface>
-						<CheckCircle2 className="mb-4 h-5 w-5 text-electric-green" />
+						<CheckCircle2 className="mb-4 h-5 w-5 text-primary" />
 						<h3 className="font-bold">Prompts and responses</h3>
 						<p className="mt-1 text-2xl font-black">1 request</p>
 						<p className="mt-2 text-sm text-muted-foreground">Each prompt or response scanned via the proxy counts as one protected request, whether it passes or gets blocked.</p>
 					</AppSurface>
 					<AppSurface>
-						<CheckCircle2 className="mb-4 h-5 w-5 text-electric-green" />
+						<CheckCircle2 className="mb-4 h-5 w-5 text-primary" />
 						<h3 className="font-bold">RAG document scans</h3>
 						<p className="mt-1 text-2xl font-black">25 per document</p>
 						<p className="mt-2 text-sm text-muted-foreground">Each document in a RAG scan batch counts as 25 protected requests. Scanning 4 documents in one call uses 100 requests.</p>
 					</AppSurface>
 					<AppSurface>
-						<CheckCircle2 className="mb-4 h-5 w-5 text-electric-green" />
+						<CheckCircle2 className="mb-4 h-5 w-5 text-primary" />
 						<h3 className="font-bold">VoiceGuard audio scans</h3>
 						<p className="mt-1 text-2xl font-black">50 requests</p>
 						<p className="mt-2 text-sm text-muted-foreground">Each audio scan consumes 50 protected requests to cover server-side transcription and speech threat analysis.</p>
 					</AppSurface>
 					<AppSurface>
-						<CheckCircle2 className="mb-4 h-5 w-5 text-electric-green" />
+						<CheckCircle2 className="mb-4 h-5 w-5 text-primary" />
 						<h3 className="font-bold">Per-key ceilings</h3>
 						<p className="mt-2 text-sm text-muted-foreground">Set monthly ceilings on API keys to keep test traffic from draining production allowance.</p>
 					</AppSurface>

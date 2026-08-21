@@ -20,10 +20,10 @@ export default function VsLakeraPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(168,85,247,0.1),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(69,69,139,0.1),transparent_24%)]" />
 				<div className="relative mx-auto max-w-5xl text-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<ShieldCheck className="h-3.5 w-3.5" />
 							Comparison
 						</span>
@@ -38,13 +38,13 @@ export default function VsLakeraPage() {
 
 			<section className="border-y border-border bg-card/35 px-6 py-20">
 				<div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
-					<div className="rounded-[2rem] border border-electric-green/25 bg-electric-green/10 p-7 shadow-sm">
-						<ShieldCheck className="mb-5 h-8 w-8 text-electric-green" />
+					<div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-7 shadow-sm">
+						<ShieldCheck className="mb-5 h-8 w-8 text-primary" />
 						<h2 className="text-3xl font-extrabold tracking-[-0.04em]">Koreshield</h2>
 						<p className="mt-3 text-sm leading-relaxed text-muted-foreground">Built around runtime proxy protection, provider routing, RAG/context scanning, policy decisions, alerts, and audit evidence.</p>
 					</div>
 					<div className="rounded-[2rem] border border-border bg-card/90 p-7 shadow-sm">
-						<Cloud className="mb-5 h-8 w-8 text-electric-green" />
+						<Cloud className="mb-5 h-8 w-8 text-primary" />
 						<h2 className="text-3xl font-extrabold tracking-[-0.04em]">Lakera Guard</h2>
 						<p className="mt-3 text-sm leading-relaxed text-muted-foreground">A commercial AI security product to evaluate if you want a managed vendor option for prompt and model protection.</p>
 					</div>
@@ -56,7 +56,7 @@ export default function VsLakeraPage() {
 					{rows.map(([label, koreshield, competitor]) => (
 						<div key={label} className="grid gap-4 border-b border-border p-5 last:border-b-0 md:grid-cols-[0.7fr_1fr_1fr] md:items-center">
 							<p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
-							<p className="rounded-2xl bg-electric-green/10 px-4 py-3 text-sm font-semibold">{koreshield}</p>
+							<p className="rounded-2xl bg-primary/10 px-4 py-3 text-sm font-semibold">{koreshield}</p>
 							<p className="rounded-2xl bg-muted px-4 py-3 text-sm text-muted-foreground">{competitor}</p>
 						</div>
 					))}
@@ -69,7 +69,7 @@ export default function VsLakeraPage() {
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">Ask the architecture question first.</h2>
 						<p className="mt-2 text-sm text-muted-foreground">Where will policy, tenant context, and audit evidence live in your AI stack?</p>
 					</div>
-					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 						Compare with us <ArrowRight className="h-4 w-4" />
 					</Link>
 				</div>

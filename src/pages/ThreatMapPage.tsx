@@ -194,9 +194,9 @@ export function ThreatMapPage() {
 				</AppCallout>
 
 				<AppStatGrid columns={3}>
-					<AppStatCard label="Live Threats" value={stats.total} icon={Activity} tone="text-sky-400" detail="Current live session" />
+					<AppStatCard label="Live Threats" value={stats.total} icon={Activity} tone="text-secondary" detail="Current live session" />
 					<AppStatCard label="Critical" value={stats.critical} icon={Shield} tone="text-red-400" detail="High priority threats" />
-					<AppStatCard label="Attack Types" value={Object.keys(attackVectors).length} icon={TrendingUp} tone="text-emerald-400" detail="Distinct attack categories" />
+					<AppStatCard label="Attack Types" value={Object.keys(attackVectors).length} icon={TrendingUp} tone="text-primary" detail="Distinct attack categories" />
 				</AppStatGrid>
 
 				<div className="mb-8 grid grid-cols-1 gap-4 sm:gap-8 lg:grid-cols-3">

@@ -107,12 +107,12 @@ export function RagSimulator() {
 
   return (
     <div className="w-full max-w-5xl mx-auto rounded-3xl border border-white/[0.08] bg-card/30 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden shadow-2xl transition-all duration-300">
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.01] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.01] via-transparent to-transparent pointer-events-none" />
 
       {/* Header and Scenario Selector */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-white/[0.06] pb-6 mb-6">
         <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-electric-green/10 border border-electric-green/20 px-3 py-1 text-xs font-bold text-electric-green mb-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-xs font-bold text-primary mb-3">
             <Shield className="w-3.5 h-3.5" />
             Interactive Simulation
           </span>
@@ -127,7 +127,7 @@ export function RagSimulator() {
               onClick={() => handleScenarioChange(index)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
                 selectedScenarioIndex === index
-                  ? 'bg-electric-green/10 text-electric-green border-electric-green/30 shadow-[0_0_12px_rgba(16,185,129,0.1)]'
+                  ? 'bg-primary/10 text-primary border-primary/30 shadow-[0_0_12px_rgba(169,198,82,0.1)]'
                   : 'bg-white/[0.02] text-muted-foreground border-white/[0.06] hover:text-foreground hover:bg-white/[0.05]'
               }`}
             >
@@ -163,7 +163,7 @@ export function RagSimulator() {
                 {/* Laser scan line */}
                 {scanStep === 'scanning' && (
                   <motion.div
-                    className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-electric-green to-transparent opacity-95 z-20 shadow-[0_0_12px_rgba(16,185,129,0.9)]"
+                    className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-95 z-20 shadow-[0_0_12px_rgba(169,198,82,0.9)]"
                     initial={{ top: "0%" }}
                     animate={{ top: "100%" }}
                     transition={{ duration: 1.8, ease: "easeInOut" }}
@@ -184,7 +184,7 @@ export function RagSimulator() {
                     if (doc.isInjected) {
                       borderClass = 'border-red-500/40 bg-red-950/5 shadow-[0_0_15px_rgba(239,68,68,0.05)]';
                     } else {
-                      borderClass = 'border-emerald-500/30 bg-emerald-950/5 shadow-[0_0_15px_rgba(16,185,129,0.05)]';
+                      borderClass = 'border-primary/30 bg-secondary-dark/5 shadow-[0_0_15px_rgba(169,198,82,0.05)]';
                     }
                   }
 
@@ -198,7 +198,7 @@ export function RagSimulator() {
                     >
                       {/* Laser scanner blur layer overlay */}
                       {isScanning && (
-                        <div className="absolute inset-0 bg-electric-green/[0.01] backdrop-blur-[0.5px] pointer-events-none rounded-2xl transition-all" />
+                        <div className="absolute inset-0 bg-primary/[0.01] backdrop-blur-[0.5px] pointer-events-none rounded-2xl transition-all" />
                       )}
 
                       <div className="flex items-center justify-between gap-3 mb-2">
@@ -239,7 +239,7 @@ export function RagSimulator() {
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
-                            className="absolute right-3 bottom-3 flex items-center gap-1.5 bg-electric-green/10 border border-electric-green/30 text-electric-green px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider"
+                            className="absolute right-3 bottom-3 flex items-center gap-1.5 bg-primary/10 border border-primary/30 text-primary px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider"
                           >
                             <CheckCircle2 className="w-3 h-3" />
                             Cleared
@@ -261,12 +261,12 @@ export function RagSimulator() {
               className={`w-full sm:w-auto px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer select-none ${
                 scanStep === 'scanning'
                   ? 'bg-white/[0.05] text-muted-foreground border border-white/[0.08]'
-                  : 'bg-electric-green text-white hover:bg-emerald-bright shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 active:scale-95'
+                  : 'bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-95'
               }`}
             >
               {scanStep === 'scanning' ? (
                 <>
-                  <RefreshCw className="w-4 h-4 animate-spin text-electric-green" />
+                  <RefreshCw className="w-4 h-4 animate-spin text-primary" />
                   Scanning Context...
                 </>
               ) : (
@@ -285,7 +285,7 @@ export function RagSimulator() {
             {/* Terminal Top bar */}
             <div className="flex items-center justify-between border-b border-white/[0.06] pb-3 mb-4">
               <div className="flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5 text-electric-green" />
+                <Terminal className="w-3.5 h-3.5 text-primary" />
                 <span className="text-[10px] font-bold text-muted-foreground tracking-wider">SECURE AUDIT TERMINAL</span>
               </div>
               <div className="flex gap-1.5">
@@ -306,7 +306,7 @@ export function RagSimulator() {
 
               {scanStep === 'scanning' && (
                 <div className="space-y-3 py-6">
-                  <div className="flex items-center gap-2 text-electric-green">
+                  <div className="flex items-center gap-2 text-primary">
                     <RefreshCw className="w-3.5 h-3.5 animate-spin" />
                     <span>Analyzing RAG payload...</span>
                   </div>
@@ -361,10 +361,10 @@ export function RagSimulator() {
                     <motion.div
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-emerald-950/10 border border-electric-green/20 rounded-xl p-3 space-y-2"
+                      className="bg-secondary-dark/10 border border-primary/20 rounded-xl p-3 space-y-2"
                     >
                       <div className="text-[10px] text-muted-foreground uppercase">Mitigation Action</div>
-                      <div className="flex items-center gap-2 text-electric-green font-bold">
+                      <div className="flex items-center gap-2 text-primary font-bold">
                         <CheckCircle2 className="w-4 h-4 shrink-0" />
                         <span>Document Filtered Out</span>
                       </div>

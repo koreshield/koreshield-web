@@ -477,7 +477,7 @@ function UpgradeFeaturePrompt({
 				onClick={onClose}
 			/>
 			<div className="relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-border bg-card shadow-2xl shadow-black/40">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(16,185,129,0.18),transparent_38%),radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.1),transparent_32%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(169,198,82,0.18),transparent_38%),radial-gradient(circle_at_100%_0%,rgba(98,98,198,0.1),transparent_32%)]" />
 				<div className="relative p-6 sm:p-8">
 					<div className="flex items-start justify-between gap-4">
 						<div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/25 bg-primary/10 text-primary">
@@ -561,9 +561,9 @@ function WsStatus() {
 
 	if (connected) {
 		return (
-			<div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-				<Wifi className="w-3 h-3 text-emerald-500" />
-				<span className="text-[11px] font-medium text-emerald-500 hidden sm:inline">Live</span>
+			<div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
+				<Wifi className="w-3 h-3 text-primary" />
+				<span className="text-[11px] font-medium text-primary hidden sm:inline">Live</span>
 			</div>
 		);
 	}
@@ -878,7 +878,7 @@ export function AppLayout() {
 									</button>
 								</div>
 							) : verificationBannerState === 'verified' ? (
-								<div className="flex items-start gap-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 rounded-lg px-4 py-3 text-sm">
+								<div className="flex items-start gap-3 bg-primary/10 border border-primary/30 text-primary-dark dark:text-primary rounded-lg px-4 py-3 text-sm">
 									<CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" />
 									<div className="flex-1">
 										<p className="font-medium">Email verified.</p>

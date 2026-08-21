@@ -345,7 +345,7 @@ export function AlertsPage() {
             case 'critical': return 'bg-red-500/10 text-red-600';
             case 'high': return 'bg-orange-500/10 text-orange-600';
             case 'medium': return 'bg-yellow-500/10 text-yellow-600';
-            case 'low': return 'bg-blue-500/10 text-blue-600';
+            case 'low': return 'bg-secondary/10 text-secondary';
             default: return 'bg-muted text-muted-foreground';
         }
     };
@@ -583,7 +583,7 @@ export function AlertsPage() {
                                 label="Active"
                                 value={rules.filter(r => r.enabled).length}
                                 icon={CheckCircle}
-                                tone="text-electric-green"
+                                tone="text-primary"
                             />
                             <AppStatCard
                                 label="Critical"
@@ -595,7 +595,7 @@ export function AlertsPage() {
                                 label="Total Triggers"
                                 value={rules.reduce((acc, r) => acc + r.trigger_count, 0)}
                                 icon={Clock}
-                                tone="text-violet-400"
+                                tone="text-secondary-dark"
                             />
                         </AppStatGrid>
 
@@ -711,19 +711,19 @@ export function AlertsPage() {
                                 label="Active"
                                 value={channels.filter(c => c.enabled).length}
                                 icon={CheckCircle}
-                                tone="text-electric-green"
+                                tone="text-primary"
                             />
                             <AppStatCard
                                 label="Email"
                                 value={channels.filter(c => c.type === 'email').length}
                                 icon={Mail}
-                                tone="text-sky-400"
+                                tone="text-secondary"
                             />
                             <AppStatCard
                                 label="Webhooks"
                                 value={channels.filter(c => c.type === 'webhook').length}
                                 icon={Webhook}
-                                tone="text-violet-400"
+                                tone="text-secondary-dark"
                             />
                         </AppStatGrid>
 

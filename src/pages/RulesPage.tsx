@@ -235,7 +235,7 @@ export function RulesPage() {
             case 'critical': return 'bg-red-500/10 text-red-600';
             case 'high': return 'bg-orange-500/10 text-orange-600';
             case 'medium': return 'bg-yellow-500/10 text-yellow-600';
-            case 'low': return 'bg-blue-500/10 text-blue-600';
+            case 'low': return 'bg-secondary/10 text-secondary';
             case 'info': return 'bg-muted text-muted-foreground';
             default: return 'bg-muted text-muted-foreground';
         }
@@ -266,7 +266,7 @@ export function RulesPage() {
                         label="Active"
                         value={rules.filter(r => r.enabled).length}
                         icon={CheckCircle}
-                        tone="text-electric-green"
+                        tone="text-primary"
                     />
                     <AppStatCard
                         label="Critical Severity"
@@ -278,7 +278,7 @@ export function RulesPage() {
                         label="Block Actions"
                         value={rules.filter(r => r.action === 'block').length}
                         icon={XCircle}
-                        tone="text-violet-400"
+                        tone="text-secondary-dark"
                     />
                 </AppStatGrid>
 

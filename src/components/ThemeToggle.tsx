@@ -31,7 +31,7 @@ export function ThemeToggle({ className = '', showLabel = false }: ThemeTogglePr
 				<Moon
 					className={[
 						'absolute h-4 w-4 transition-all duration-200',
-						isLight ? 'scale-0 rotate-45 opacity-0' : 'scale-100 rotate-0 text-sky-400',
+						isLight ? 'scale-0 rotate-45 opacity-0' : 'scale-100 rotate-0 text-secondary',
 					].join(' ')}
 				/>
 			</span>

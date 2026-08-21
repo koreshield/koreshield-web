@@ -29,7 +29,7 @@ interface TenantAnalytics {
     tier: string;
 }
 
-const COLORS = ['#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#06b6d4', '#f97316', '#84cc16'];
+const COLORS = ['#A9C652', '#7a8b39', '#6262c6', '#45458b', '#c66952', '#c8df7c', '#9090d8', '#8a8a8a'];
 
 function asSelectedMetric(value: string): 'requests' | 'blocked' | 'attacks' | 'latency' {
     return value as 'requests' | 'blocked' | 'attacks' | 'latency';
@@ -145,7 +145,7 @@ export function AnalyticsPage() {
             {!accessDenied && !analyticsError && (analytics.length > 0 || isLoading) && (
                 <>
                     <AppStatGrid>
-                        <AppStatCard label="Total Requests" value={totalRequests.toLocaleString()} icon={Activity} tone="text-sky-400" detail="Across all accounts" />
+                        <AppStatCard label="Total Requests" value={totalRequests.toLocaleString()} icon={Activity} tone="text-secondary" detail="Across all accounts" />
                         <AppStatCard
                             label="Blocked"
                             value={totalBlocked.toLocaleString()}
@@ -154,7 +154,7 @@ export function AnalyticsPage() {
                             detail={`${totalRequests > 0 ? ((totalBlocked / totalRequests) * 100).toFixed(1) : 0}% block rate`}
                         />
                         <AppStatCard label="Attacks Detected" value={totalAttacks.toLocaleString()} icon={Building2} tone="text-amber-400" detail="Security incidents" />
-                        <AppStatCard label="Avg Latency" value={`${avgLatency.toFixed(0)}ms`} icon={Users} tone="text-violet-400" detail="Platform-wide" />
+                        <AppStatCard label="Avg Latency" value={`${avgLatency.toFixed(0)}ms`} icon={Users} tone="text-secondary-dark" detail="Platform-wide" />
                     </AppStatGrid>
 
                     <AppPageSection
@@ -193,7 +193,7 @@ export function AnalyticsPage() {
                                     <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
                                     <Tooltip contentStyle={{ backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }} />
                                     <Legend />
-                                    <Bar dataKey={selectedMetric} fill="#3b82f6" name={getMetricLabel(selectedMetric)} />
+                                    <Bar dataKey={selectedMetric} fill="#6262c6" name={getMetricLabel(selectedMetric)} />
                                 </BarChart>
                             </ResponsiveContainer>
                         )}
@@ -210,7 +210,7 @@ export function AnalyticsPage() {
                                         labelLine={false}
                                         label={({ name, percent }) => `${name}: ${((percent || 0) * 100).toFixed(0)}%`}
                                         outerRadius={100}
-                                        fill="#8884d8"
+                                        fill="#6262c6"
                                         dataKey="value"
                                     >
                                         {tierDistributionData.map((_, index) => (
@@ -241,8 +241,8 @@ export function AnalyticsPage() {
                                             <div className="text-right">
                                                 <div className={`text-sm font-medium ${
                                                     tenant.tier === 'enterprise' ? 'text-orange-600' :
-                                                    tenant.tier === 'professional' ? 'text-purple-600' :
-                                                    tenant.tier === 'starter' ? 'text-blue-600' : 'text-muted-foreground'
+                                                    tenant.tier === 'professional' ? 'text-secondary-dark' :
+                                                    tenant.tier === 'starter' ? 'text-secondary' : 'text-muted-foreground'
                                                 }`}>
                                                     {tenant.tier.charAt(0).toUpperCase() + tenant.tier.slice(1)}
                                                 </div>
@@ -280,8 +280,8 @@ export function AnalyticsPage() {
                                             <td className="px-6 py-4">
                                                 <span className={`rounded px-2 py-1 text-xs font-medium ${
                                                     tenant.tier === 'enterprise' ? 'bg-orange-500/10 text-orange-600' :
-                                                    tenant.tier === 'professional' ? 'bg-purple-500/10 text-purple-600' :
-                                                    tenant.tier === 'starter' ? 'bg-blue-500/10 text-blue-600' :
+                                                    tenant.tier === 'professional' ? 'bg-secondary-dark/10 text-secondary-dark' :
+                                                    tenant.tier === 'starter' ? 'bg-secondary/10 text-secondary' :
                                                     'bg-muted text-muted-foreground'
                                                 }`}>
                                                     {tenant.tier.charAt(0).toUpperCase() + tenant.tier.slice(1)}

@@ -50,7 +50,7 @@ interface CostOptimization {
 type SelectedMetric = 'latency' | 'cost' | 'reliability' | 'throughput';
 type TimeRange = '7d' | '30d' | '90d' | '1y';
 
-const CHART_COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#06b6d4'];
+const CHART_COLORS = ['#A9C652', '#7a8b39', '#6262c6', '#45458b', '#c66952', '#c8df7c'];
 
 // ── Provider display name helper ──────────────────────────────────────────────
 // Normalise raw DB provider values into readable names for the UI.
@@ -225,7 +225,7 @@ export function AdvancedAnalyticsPage() {
 		switch (priority) {
 			case 'high': return 'bg-red-500/10 text-red-600 border-red-500/50';
 			case 'medium': return 'bg-yellow-500/10 text-yellow-600 border-yellow-500/50';
-			case 'low': return 'bg-blue-500/10 text-blue-600 border-blue-500/50';
+			case 'low': return 'bg-secondary/10 text-secondary border-secondary/50';
 			default: return 'bg-muted text-muted-foreground border-border';
 		}
 	};
@@ -310,14 +310,14 @@ export function AdvancedAnalyticsPage() {
 					label="Total Spend"
 					value={loadingCosts ? '…' : `£${totalCost.toFixed(4)}`}
 					icon={PoundSterling}
-					tone="text-emerald-400"
+					tone="text-primary"
 					detail="Selected period"
 				/>
 				<AppStatCard
 					label="Total Requests"
 					value={loadingProviders ? '…' : totalRequests.toLocaleString()}
 					icon={TrendingUp}
-					tone="text-sky-400"
+					tone="text-secondary"
 					detail="Proxied requests"
 				/>
 				<AppStatCard
@@ -331,7 +331,7 @@ export function AdvancedAnalyticsPage() {
 					label="Avg Success Rate"
 					value={loadingProviders ? '…' : `${avgSuccessRate.toFixed(1)}%`}
 					icon={BarChart3}
-					tone="text-violet-400"
+					tone="text-secondary-dark"
 					detail="Across all providers"
 				/>
 			</AppStatGrid>
@@ -384,7 +384,7 @@ export function AdvancedAnalyticsPage() {
 										borderRadius: '8px',
 									}}
 								/>
-								<Line type="monotone" dataKey="cost" stroke="#3b82f6" strokeWidth={2} name="Cost (£)" dot={false} />
+								<Line type="monotone" dataKey="cost" stroke="#6262c6" strokeWidth={2} name="Cost (£)" dot={false} />
 							</LineChart>
 						</ResponsiveContainer>
 					)}
@@ -420,7 +420,7 @@ export function AdvancedAnalyticsPage() {
 									borderRadius: '8px',
 								}}
 							/>
-							<Bar dataKey={metricKey} fill="#3b82f6" name={metricLabel} radius={[4, 4, 0, 0]} />
+							<Bar dataKey={metricKey} fill="#6262c6" name={metricLabel} radius={[4, 4, 0, 0]} />
 						</BarChart>
 					</ResponsiveContainer>
 				)}
@@ -498,7 +498,7 @@ export function AdvancedAnalyticsPage() {
 								</div>
 								<div className="h-2 w-full rounded-full bg-muted">
 									<div
-										className="h-2 rounded-full bg-blue-500"
+										className="h-2 rounded-full bg-secondary"
 										style={{ width: `${Math.min((avgLatency / 3000) * 100, 100)}%` }}
 									/>
 								</div>

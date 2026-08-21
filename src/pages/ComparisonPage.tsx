@@ -41,10 +41,10 @@ export default function ComparisonPage() {
 			/>
 
 			<section className="relative overflow-hidden px-6 py-24 ambient-glow md:py-32">
-				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.16),transparent_28%),radial-gradient(circle_at_80%_16%,rgba(59,130,246,0.08),transparent_24%)]" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(169,198,82,0.16),transparent_28%),radial-gradient(circle_at_80%_16%,rgba(98,98,198,0.08),transparent_24%)]" />
 				<div className="relative mx-auto max-w-5xl text-center">
 					<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-electric-green/20 bg-electric-green/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-electric-green">
+						<span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
 							<Scale className="h-3.5 w-3.5" />
 							Compare
 						</span>
@@ -68,14 +68,14 @@ export default function ComparisonPage() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.4, delay: index * 0.07 }}
-							className="group rounded-[2rem] border border-border bg-card/90 p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-electric-green/30"
+							className="group rounded-[2rem] border border-border bg-card/90 p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30"
 						>
-							<item.icon className="mb-6 h-8 w-8 text-electric-green" />
+							<item.icon className="mb-6 h-8 w-8 text-primary" />
 							<p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">{item.type}</p>
 							<h2 className="text-3xl font-extrabold tracking-[-0.04em]">{item.name}</h2>
 							<p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.bestFor}</p>
-							<p className="mt-4 rounded-2xl border border-electric-green/20 bg-electric-green/10 p-4 text-sm leading-relaxed text-foreground/85">{item.koreshieldAngle}</p>
-							<Link to={item.path} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-electric-green hover:underline">
+							<p className="mt-4 rounded-2xl border border-primary/20 bg-primary/10 p-4 text-sm leading-relaxed text-foreground/85">{item.koreshieldAngle}</p>
+							<Link to={item.path} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
 								Compare details <ArrowRight className="h-4 w-4" />
 							</Link>
 						</motion.article>
@@ -86,7 +86,7 @@ export default function ComparisonPage() {
 			<section className="px-6 py-20">
 				<div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
 					<div>
-						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-electric-green">How we compare</p>
+						<p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">How we compare</p>
 						<h2 className="text-4xl font-extrabold tracking-[-0.04em] md:text-5xl">The real questions are operational.</h2>
 						<p className="mt-5 text-muted-foreground">
 							A security product can look strong in a feature list but still fail if it lands in the wrong place in your architecture.
@@ -95,7 +95,7 @@ export default function ComparisonPage() {
 					<div className="grid gap-3">
 						{criteria.map((item, index) => (
 							<div key={item} className="flex items-center gap-4 rounded-2xl border border-border bg-card/85 p-4 shadow-sm">
-								<span className="flex h-8 w-8 items-center justify-center rounded-full bg-electric-green/10 text-xs font-black text-electric-green">0{index + 1}</span>
+								<span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-black text-primary">0{index + 1}</span>
 								<span className="font-semibold">{item}</span>
 							</div>
 						))}
@@ -109,7 +109,7 @@ export default function ComparisonPage() {
 						<h2 className="text-3xl font-extrabold tracking-[-0.03em]">Want a side-by-side for your stack?</h2>
 						<p className="mt-2 text-sm text-muted-foreground">Bring your providers, RAG flow, agent framework, and compliance requirements.</p>
 					</div>
-					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-green px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-bright">
+					<Link to="/demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
 						Book a demo <Layers3 className="h-4 w-4" />
 					</Link>
 				</div>

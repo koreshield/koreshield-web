@@ -17,7 +17,7 @@ export function AuthLayout({
 		<div className="auth-shell min-h-screen flex">
 			<div className="auth-side-panel relative hidden flex-col justify-between overflow-hidden border-r border-white/[0.06] p-12 lg:flex lg:w-[42%]">
 				<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:48px_48px] opacity-40" />
-				<div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-electric-green/[0.03] blur-3xl" />
+				<div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-primary/[0.03] blur-3xl" />
 
 				<div className="relative z-10 flex items-center gap-3">
 					<img src="/logo/dark/SVG/Black.svg" alt="Koreshield" className="h-8 w-8 dark:hidden" />
@@ -27,14 +27,14 @@ export function AuthLayout({
 
 				<div className="relative z-10 space-y-8">
 					<div>
-						<p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-electric-green">{eyebrow}</p>
+						<p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-primary">{eyebrow}</p>
 						<p className="max-w-md text-4xl font-black leading-tight tracking-[-0.055em] text-foreground">{headline}</p>
 					</div>
 
 					<div className="space-y-3">
 						{bullets.map((item) => (
 							<div key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-background/35 p-4">
-								<ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-electric-green" />
+								<ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
 								<span className="text-sm font-medium text-muted-foreground">{item}</span>
 							</div>
 						))}
@@ -81,7 +81,7 @@ export function AuthStatusPanel({
 	children: ReactNode;
 }) {
 	const toneClass = {
-		success: 'bg-electric-green/10 border-electric-green/20 text-electric-green',
+		success: 'bg-primary/10 border-primary/20 text-primary',
 		error: 'bg-destructive/10 border-destructive/20 text-destructive',
 		loading: 'bg-primary/10 border-primary/20 text-primary animate-pulse',
 	}[tone];

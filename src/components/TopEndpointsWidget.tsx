@@ -22,7 +22,7 @@ export function TopEndpointsWidget({ endpoints, limit = 10 }: TopEndpointsWidget
 			case 'critical': return 'text-red-500 bg-red-500/10';
 			case 'high': return 'text-orange-500 bg-orange-500/10';
 			case 'medium': return 'text-yellow-500 bg-yellow-500/10';
-			case 'low': return 'text-blue-500 bg-blue-500/10';
+			case 'low': return 'text-secondary bg-secondary/10';
 			default: return 'text-gray-500 bg-gray-500/10';
 		}
 	};

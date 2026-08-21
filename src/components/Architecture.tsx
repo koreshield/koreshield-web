@@ -5,10 +5,10 @@ function FlowArrow({ branded = false }: { branded?: boolean }) {
         <>
             <div className="hidden lg:flex h-full min-w-16 items-center justify-center relative">
                 <div className="relative flex w-full items-center justify-center">
-                    <div className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-gradient-to-r from-transparent via-electric-green/30 to-transparent" />
+                    <div className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                     {/* Flowing particle */}
                     <motion.div
-                        className="absolute h-[3px] w-8 rounded-full bg-gradient-to-r from-transparent via-electric-green to-transparent"
+                        className="absolute h-[3px] w-8 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent"
                         style={{ top: 'calc(50% - 1.5px)' }}
                         animate={{ x: [-40, 40] }}
                         transition={{
@@ -17,23 +17,23 @@ function FlowArrow({ branded = false }: { branded?: boolean }) {
                             repeat: Infinity,
                         }}
                     />
-                    <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-electric-green/25 bg-background shadow-lg shadow-emerald-500/10">
+                    <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-primary/25 bg-background shadow-lg shadow-primary/10">
                         {branded ? (
                             <>
                                 <img src="/logo/dark/SVG/Black.svg" alt="" className="h-5 w-5 dark:hidden" />
                                 <img src="/logo/light/SVG/White.svg" alt="" className="hidden h-5 w-5 dark:block" />
                             </>
                         ) : (
-                            <ArrowRight className="h-5 w-5 text-electric-green" />
+                            <ArrowRight className="h-5 w-5 text-primary" />
                         )}
                     </div>
                 </div>
             </div>
             <div className="flex lg:hidden justify-center py-4 relative">
-                <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-electric-green/30 to-transparent" />
+                <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
                 {/* Flowing particle downwards */}
                 <motion.div
-                    className="absolute h-8 w-[3px] rounded-full bg-gradient-to-b from-transparent via-electric-green to-transparent"
+                    className="absolute h-8 w-[3px] rounded-full bg-gradient-to-b from-transparent via-primary to-transparent"
                     style={{ left: 'calc(50% - 1.5px)' }}
                     animate={{ y: [-24, 24] }}
                     transition={{
@@ -42,8 +42,8 @@ function FlowArrow({ branded = false }: { branded?: boolean }) {
                         repeat: Infinity,
                     }}
                 />
-                <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl border border-electric-green/25 bg-muted shadow-sm">
-                    <ArrowDown className="text-electric-green w-5 h-5" />
+                <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/25 bg-muted shadow-sm">
+                    <ArrowDown className="text-primary w-5 h-5" />
                 </div>
             </div>
         </>
@@ -77,7 +77,7 @@ function Architecture() {
                         viewport={{ once: true }}
                         className="bg-card border border-white/[0.08] rounded-xl p-6 shadow-sm"
                     >
-                        <div className="flex items-center gap-3 mb-4 text-blue-500">
+                        <div className="flex items-center gap-3 mb-4 text-secondary">
                             <Code2 className="w-6 h-6" />
                             <h3 className="font-semibold">1. Your Application</h3>
                         </div>
@@ -87,7 +87,7 @@ function Architecture() {
                                     <Zap className="w-3 h-3" /> Outgoing Request
                                 </div>
                                 <span className="text-foreground/70">client.chat.completions.create(</span><br />
-                                <span className="ml-4 text-foreground/70">model=<span className="text-blue-400">"gpt-4o-mini"</span>,</span><br />
+                                <span className="ml-4 text-foreground/70">model=<span className="text-secondary">"gpt-4o-mini"</span>,</span><br />
                                 <span className="ml-4 text-foreground/70">messages=[&#123;...&#125;]</span><br />
                                 <span className="text-foreground/70">)</span>
                             </div>
@@ -106,18 +106,18 @@ function Architecture() {
                         className="relative overflow-visible"
                     >
                         <div className="flex justify-center mb-3">
-                            <span className="inline-flex items-center gap-2 bg-emerald-600 dark:bg-electric-green text-white font-bold px-5 py-2 text-xs rounded-full uppercase tracking-widest shadow-lg shadow-emerald-600/30 dark:shadow-emerald-500/30 ring-2 ring-emerald-600/20 dark:ring-emerald-400/20">
+                            <span className="inline-flex items-center gap-2 bg-primary-dark dark:bg-primary text-white font-bold px-5 py-2 text-xs rounded-full uppercase tracking-widest shadow-lg shadow-primary-dark/30 dark:shadow-primary/30 ring-2 ring-primary-dark/20 dark:ring-primary/20">
                                 <img src="/logo/light/SVG/White.svg" alt="" className="h-4 w-4" />
                                 Koreshield Proxy
                             </span>
                         </div>
 
-                        <div className="bg-card border-2 border-electric-green/20 rounded-xl p-6 md:p-8 relative overflow-hidden shadow-lg shadow-emerald-500/10">
-                            <div className="pointer-events-none absolute -left-12 top-8 h-24 w-24 rounded-full border border-electric-green/10" />
-                            <div className="pointer-events-none absolute -right-14 bottom-6 h-28 w-28 rounded-full bg-electric-green/5 blur-2xl" />
+                        <div className="bg-card border-2 border-primary/20 rounded-xl p-6 md:p-8 relative overflow-hidden shadow-lg shadow-primary/10">
+                            <div className="pointer-events-none absolute -left-12 top-8 h-24 w-24 rounded-full border border-primary/10" />
+                            <div className="pointer-events-none absolute -right-14 bottom-6 h-28 w-28 rounded-full bg-primary/5 blur-2xl" />
 
                             <div className="flex flex-col items-center text-center gap-3 mb-5">
-                                <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-electric-green/20 bg-electric-green/10 shadow-lg shadow-emerald-500/10">
+                                <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 shadow-lg shadow-primary/10">
                                     <img src="/logo/dark/SVG/Black.svg" alt="Koreshield" className="h-9 w-9 dark:hidden" />
                                     <img src="/logo/light/SVG/White.svg" alt="Koreshield" className="hidden h-9 w-9 dark:block" />
                                 </div>
@@ -130,7 +130,7 @@ function Architecture() {
                             <div className="space-y-2 text-sm">
                                 {['Sanitization', 'Attack Detection', 'Policy Engine', 'Audit Logging'].map((item) => (
                                     <div key={item} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-muted/50 border border-white/[0.04]">
-                                        <div className="w-2 h-2 bg-electric-green rounded-full status-dot-glow shrink-0" />
+                                        <div className="w-2 h-2 bg-primary rounded-full status-dot-glow shrink-0" />
                                         <span className="text-muted-foreground">{item}</span>
                                     </div>
                                 ))}
@@ -148,14 +148,14 @@ function Architecture() {
                         transition={{ delay: 0.4 }}
                         className="bg-card border border-white/[0.08] rounded-xl p-6 shadow-sm"
                     >
-                        <div className="flex items-center gap-3 mb-4 text-purple-500">
+                        <div className="flex items-center gap-3 mb-4 text-secondary-dark">
                             <Cloud className="w-6 h-6" />
                             <h3 className="font-semibold">3. LLM Providers</h3>
                         </div>
                         <div className="space-y-2">
                             {['OpenAI', 'Anthropic', 'Gemini', 'DeepSeek'].map((provider) => (
                                 <div key={provider} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg bg-muted/50 border border-white/[0.04]">
-                                    <div className="w-2 h-2 bg-purple-500 rounded-full shrink-0" />
+                                    <div className="w-2 h-2 bg-secondary-dark rounded-full shrink-0" />
                                     <span className="text-sm text-foreground/80 font-medium">{provider}</span>
                                 </div>
                             ))}
