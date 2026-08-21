@@ -321,7 +321,7 @@ export default function PricingPage() {
 						</div>
 						<div className="mt-8">
 							<Link
-								to="/why-koreshield"
+								to="/docs"
 								className="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3 font-semibold transition-colors hover:bg-muted"
 							>
 								Read how it works

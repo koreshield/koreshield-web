@@ -50,7 +50,6 @@ const AuthorPage = lazyRetry(() => import('./pages/AuthorPage'));
 const VsLakeraPage = lazyRetry(() => import('./pages/VsLakeraPage'));
 const VsLLMGuardPage = lazyRetry(() => import('./pages/VsLLMGuardPage'));
 const VsBuildYourselfPage = lazyRetry(() => import('./pages/VsBuildYourselfPage'));
-const WhyKoreShieldPage = lazyRetry(() => import('./pages/WhyKoreShieldPage'));
 const FAQPage = lazyRetry(() => import('./pages/FAQPage'));
 const NotFoundPage = lazyRetry(() => import('./pages/NotFoundPage'));
 const DemoPage = lazyRetry(() => import('./pages/DemoPage'));
@@ -78,7 +77,6 @@ const TeamDetailsPage = lazyRetry(() => import('./pages/TeamDetailsPage').then(m
 const RAGSecurityPage = lazyRetry(() => import('./pages/RAGSecurityPage').then(m => ({ default: m.RAGSecurityPage })));
 const AudioSecurityPage = lazyRetry(() => import('./pages/AudioSecurityPage').then(m => ({ default: m.AudioSecurityPage })));
 const ThreatMonitoringPage = lazyRetry(() => import('./pages/ThreatMonitoringPage').then(m => ({ default: m.ThreatMonitoringPage })));
-const ThreatMapPage = lazyRetry(() => import('./pages/ThreatMapPage').then(m => ({ default: m.ThreatMapPage })));
 const ProviderHealthPage = lazyRetry(() => import('./pages/ProviderHealthPage').then(m => ({ default: m.ProviderHealthPage })));
 const ApiKeyManagementPage = lazyRetry(() => import('./pages/ApiKeyManagementPage'));
 const AuditLogsPage = lazyRetry(() => import('./pages/AuditLogsPage'));
@@ -228,16 +226,7 @@ function AppContent() {
 							</Suspense>
 						}
 					/>
-					<Route
-						path="/why-koreshield"
-						element={
-							<Suspense fallback={<SuspenseFallback />}>
-								<RouteErrorBoundary>
-									<WhyKoreShieldPage />
-								</RouteErrorBoundary>
-							</Suspense>
-						}
-					/>
+					
 					<Route
 						path="/faq"
 						element={
@@ -900,18 +889,7 @@ function AppContent() {
 							</Suspense>
 						}
 					/>
-					<Route
-						path="/threat-map"
-						element={
-							<Suspense fallback={<SuspenseFallback />}>
-								<RouteErrorBoundary>
-									<ProtectedRoute>
-										<ThreatMapPage />
-									</ProtectedRoute>
-								</RouteErrorBoundary>
-							</Suspense>
-						}
-					/>
+					
 					<Route
 						path="/provider-health"
 						element={

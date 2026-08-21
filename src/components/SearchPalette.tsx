@@ -17,7 +17,6 @@ const staticPages: SearchItem[] = [
   { title: 'Home', path: '/', content: 'Koreshield LLM security platform', category: 'Pages' },
   { title: 'Pricing', path: '/pricing', content: 'Plans and pricing', category: 'Pages' },
   { title: 'Status', path: '/status', content: 'System status', category: 'Pages' },
-  { title: 'Why Koreshield', path: '/why-koreshield', content: 'Benefits', category: 'Pages' },
 ];
 
 const searchIndex: SearchItem[] = [...staticPages, ...buildDocsSearchIndex()];

@@ -123,7 +123,6 @@ export const ROUTE_FEATURES: Array<{ prefix: string; feature: PlanFeature }> = [
 	{ prefix: '/rag-security', feature: 'rag_security' },
 	{ prefix: '/voice-security', feature: 'voice_security' },
 	{ prefix: '/threat-monitoring', feature: 'threat_monitoring' },
-	{ prefix: '/threat-map', feature: 'threat_monitoring' },
 	{ prefix: '/rules', feature: 'rules' },
 	{ prefix: '/policies', feature: 'policies' },
 	{ prefix: '/alerts', feature: 'alerts' },
