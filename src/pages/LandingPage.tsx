@@ -1,9 +1,5 @@
-import { ErrorBoundary } from '../components/ErrorBoundary';
 import Features from '../components/Features';
 import Hero from '../components/Hero';
-import { IntegrationTicker } from '../components/IntegrationTicker';
-import { ProductExtensions } from '../components/ProductExtensions';
-import { TrustBadges } from '../components/TrustBadges';
 import UseCases from '../components/UseCases';
 import { CodeSwap } from '../components/CodeSwap';
 import { RagSimulator } from '../components/RagSimulator';
@@ -44,10 +40,6 @@ function LandingPage() {
         <div className="bg-background text-foreground">
             <SEOMeta {...SEOConfig.home} />
             <Hero />
-
-            <ErrorBoundary fallback={<div className="h-20 bg-muted/50" />}>
-                <IntegrationTicker />
-            </ErrorBoundary>
 
             
 
@@ -147,9 +139,6 @@ function LandingPage() {
             </section>
 
             <Features />
-            <ProductExtensions />
-
-            <TrustBadges />
             <UseCases />
 
             <section className="relative overflow-hidden border-y border-white/[0.06] bg-background px-4 py-24 sm:px-6 md:py-32">
