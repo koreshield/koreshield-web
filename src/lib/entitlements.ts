@@ -68,6 +68,7 @@ const ENTERPRISE_FEATURES: PlanFeature[] = [
 
 export const PLAN_FEATURES: Record<AccountPlanId, PlanFeature[]> = {
 	unpaid: UNPAID_ACCOUNT_FEATURES,
+	starter: CORE_FEATURES,
 	growth: GROWTH_FEATURES,
 	scale: SCALE_FEATURES,
 	enterprise: ENTERPRISE_FEATURES,
@@ -75,6 +76,7 @@ export const PLAN_FEATURES: Record<AccountPlanId, PlanFeature[]> = {
 
 export const PLAN_NAMES: Record<AccountPlanId, string> = {
 	unpaid: 'No active plan',
+	starter: 'Starter',
 	growth: 'Growth',
 	scale: 'Scale',
 	enterprise: 'Enterprise',
@@ -82,6 +84,7 @@ export const PLAN_NAMES: Record<AccountPlanId, string> = {
 
 export const PLAN_API_KEY_LIMITS: Record<AccountPlanId, number | null> = {
 	unpaid: 0,
+	starter: 5,
 	growth: 10,
 	scale: 50,
 	enterprise: null,

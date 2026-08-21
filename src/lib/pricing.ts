@@ -1,5 +1,5 @@
-export type PublicPlanId = 'growth' | 'scale' | 'enterprise';
-export type HostedPlanId = 'growth' | 'scale';
+export type PublicPlanId = 'starter' | 'growth' | 'scale' | 'enterprise';
+export type HostedPlanId = 'starter' | 'growth' | 'scale';
 export type BillingInterval = 'monthly' | 'annual';
 
 export type PricingPlan = {
@@ -23,20 +23,21 @@ export type PricingPlan = {
 };
 
 export const PRICING_FEATURE_ROWS = [
-	['Protected requests included', '100,000', '1,000,000', 'Custom'],
-	['Request rate limit', '600/min', '5,000/min', 'Custom'],
-	['API keys', '10', '50', 'Custom'],
-	['Prompt and RAG screening', 'Advanced', 'Advanced', 'Advanced + custom tuning'],
-	['Voice Security', 'Included', 'Included', 'Included'],
-	['Teams', 'Included', 'Included', 'Included'],
-	['Policies, rules, and alerts', 'Included', 'Included', 'Included'],
-	['Reports', 'Included', 'Included', 'Included'],
-	['RBAC and audit logs', 'N/A', 'Included', 'Included'],
-	['Advanced analytics and provider health', 'N/A', 'Included', 'Included'],
-	['Compliance evidence reports', 'N/A', 'N/A', 'Included'],
-	['SSO / SAML', 'N/A', 'N/A', 'Included'],
-	['SIEM export and custom retention', 'N/A', 'N/A', 'Included'],
-	['Self-hosted, VPC, or air-gapped deployment', 'N/A', 'N/A', 'Included'],
+
+	['Protected requests included', '50,000', '100,000', '1,000,000', 'Custom'],
+	['Request rate limit', '200/min', '600/min', '5,000/min', 'Custom'],
+	['API keys', '5', '10', '50', 'Custom'],
+	['Prompt and RAG screening', 'Basic', 'Advanced', 'Advanced', 'Advanced + custom tuning'],
+	['Voice Security', 'N/A', 'Included', 'Included', 'Included'],
+	['Teams', 'N/A', 'Included', 'Included', 'Included'],
+	['Policies, rules, and alerts', 'N/A', 'Included', 'Included', 'Included'],
+	['Reports', 'Basic', 'Included', 'Included', 'Included'],
+	['RBAC and audit logs', 'N/A', 'N/A', 'Included', 'Included'],
+	['Advanced analytics and provider health', 'N/A', 'N/A', 'Included', 'Included'],
+	['Compliance evidence reports', 'N/A', 'N/A', 'N/A', 'Included'],
+	['SSO / SAML', 'N/A', 'N/A', 'N/A', 'Included'],
+	['SIEM export and custom retention', 'N/A', 'N/A', 'N/A', 'Included'],
+	['Self-hosted, VPC, or air-gapped deployment', 'N/A', 'N/A', 'N/A', 'Included'],
 ] as const;
 
 export const PRICING_FAQS = [
@@ -88,6 +89,26 @@ export const PRICING_FAQS = [
 ];
 
 export const PRICING_PLANS: PricingPlan[] = [
+	{
+		id: 'starter',
+		name: 'Starter',
+		description: 'For early-stage projects and developers experimenting with AI security.',
+		monthlyPriceLabel: '£29',
+		annualPriceLabel: '£290',
+		monthlyPriceValue: 29,
+		annualPriceValue: 290,
+		annualSavingsLabel: 'Save £58/year',
+		includedRequests: '50,000 protected requests/month',
+		overage: '£15 per extra 100,000 protected requests',
+		retention: '7-day retention',
+		cta: 'Start for £29',
+		checkoutSlug: 'starter',
+		features: [
+			'Basic prompt and RAG screening',
+			'API key management',
+			'Email support',
+		],
+	},
 	{
 		id: 'growth',
 		name: 'Growth',
@@ -170,7 +191,13 @@ export const HOSTED_PLAN_DISPLAY_BY_INTERNAL_SLUG: Record<string, PublicPlanId |
 	unpaid: 'unpaid',
 };
 
-export const INTERNAL_HOSTED_PLAN_IDS: Record<HostedPlanId, { monthlyEnv: string; annualEnv: string }> = {
+export const INTERNAL_HOSTED_PLAN_IDS: Record<HostedPlanId, { monthlyEnv: string; annualEnv: string; hardcodedMonthly?: string; hardcodedAnnual?: string }> = {
+	starter: {
+		monthlyEnv: 'VITE_POLAR_STARTER_PRODUCT_ID',
+		annualEnv: 'VITE_POLAR_STARTER_ANNUAL_PRODUCT_ID',
+		hardcodedMonthly: 'f7fb3d1e-c16d-4737-9b5e-cc7cc8a15082',
+		hardcodedAnnual: 'a1c1da27-f31b-4f0b-9631-85f83854ea59',
+	},
 	growth: {
 		monthlyEnv: 'VITE_POLAR_GROWTH_PRODUCT_ID',
 		annualEnv: 'VITE_POLAR_GROWTH_ANNUAL_PRODUCT_ID',
@@ -197,7 +224,8 @@ export function getHostedCheckoutProductId(
 	interval: BillingInterval,
 ) {
 	const envKeys = INTERNAL_HOSTED_PLAN_IDS[planId];
-	return interval === 'annual'
+	const envValue = interval === 'annual'
 		? import.meta.env[envKeys.annualEnv]
 		: import.meta.env[envKeys.monthlyEnv];
+	return envValue || (interval === 'annual' ? envKeys.hardcodedAnnual : envKeys.hardcodedMonthly);
 }
