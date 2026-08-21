@@ -162,7 +162,7 @@ export default function PricingPage() {
 					</div>
 
 					{/* Standard plan cards */}
-					<div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+					<div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
 						{standardPlans.map((plan, index) => {
 							const price = billingPeriod === 'annual' && plan.annualPriceLabel ? plan.annualPriceLabel : plan.monthlyPriceLabel;
 							const periodLabel = billingPeriod === 'annual'
@@ -341,15 +341,17 @@ export default function PricingPage() {
 							<thead>
 								<tr className="border-b border-border">
 									<th className="p-4 text-left font-semibold">Capability</th>
+									<th className="p-4 text-center font-semibold">Starter</th>
 									<th className="p-4 text-center font-semibold">Growth</th>
 									<th className="p-4 text-center font-semibold">Scale</th>
 									<th className="p-4 text-center font-semibold">Enterprise</th>
 								</tr>
 							</thead>
 							<tbody className="divide-y divide-border text-sm">
-								{PRICING_FEATURE_ROWS.map(([label, growth, scale, enterprise]) => (
+								{PRICING_FEATURE_ROWS.map(([label, starter, growth, scale, enterprise]) => (
 									<tr key={label}>
 										<td className="p-4 font-medium text-foreground/85">{label}</td>
+										<td className="p-4 text-center text-muted-foreground">{starter}</td>
 										<td className="p-4 text-center text-muted-foreground">{growth}</td>
 										<td className="p-4 text-center text-muted-foreground">{scale}</td>
 										<td className="p-4 text-center text-muted-foreground">{enterprise}</td>
