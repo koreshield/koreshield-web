@@ -1,4 +1,3 @@
-import Architecture from '../components/Architecture';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import Features from '../components/Features';
 import Hero from '../components/Hero';
@@ -66,7 +65,6 @@ function LandingPage() {
                 </div>
             </section>
 
-            <Architecture />
 
             <section className="py-20 md:py-28 px-6 bg-muted/10 relative overflow-hidden border-t border-white/[0.04]">
                 <div className="max-w-7xl mx-auto relative z-10">
