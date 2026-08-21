@@ -23,17 +23,29 @@ export function WalletTopUpModal({
 	onClose: () => void;
 	onSuccess: () => void;
 }) {
-	const [selectedTier, setSelectedTier] = useState<TopUpTier>(TIERS[1]);
+	const [selectedTier, setSelectedTier] = useState<TopUpTier | null>(TIERS[1]);
+	const [isCustom, setIsCustom] = useState(false);
+	const [customAmountStr, setCustomAmountStr] = useState("50");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
 	if (!isOpen) return null;
 
+	const customAmount = parseInt(customAmountStr, 10) || 0;
+	const customAmountCents = customAmount * 100;
+	const isValidCustom = customAmount >= 10;
+	const requestsForCustom = customAmount * 100000;
+
+	const amountToCharge = isCustom ? customAmountCents : (selectedTier?.amount_cents || 0);
+	const labelToCharge = isCustom ? `$${customAmount}` : (selectedTier?.label || '');
+	const canSubmit = !loading && (isCustom ? isValidCustom : selectedTier !== null);
+
 	const handleTopUp = async () => {
+		if (!canSubmit) return;
 		setLoading(true);
 		setError(null);
 		try {
-			await api.fundWallet(selectedTier.amount_cents);
+			await api.fundWallet(amountToCharge);
 			onSuccess();
 			onClose();
 		} catch (err) {
@@ -67,9 +79,12 @@ export function WalletTopUpModal({
 							<button
 								type="button"
 								key={tier.amount_cents}
-								onClick={() => setSelectedTier(tier)}
+								onClick={() => {
+									setSelectedTier(tier);
+									setIsCustom(false);
+								}}
 								className={`flex w-full items-center justify-between rounded-xl border p-4 text-left transition-colors ${
-									selectedTier.amount_cents === tier.amount_cents
+									!isCustom && selectedTier?.amount_cents === tier.amount_cents
 										? 'border-primary bg-primary/10 ring-1 ring-primary'
 										: 'hover:border-primary/50 hover:bg-muted/50'
 								}`}
@@ -80,11 +95,54 @@ export function WalletTopUpModal({
 										{(tier.requests / 1000000).toFixed(1)}M requests
 									</div>
 								</div>
-								{selectedTier.amount_cents === tier.amount_cents && (
+								{!isCustom && selectedTier?.amount_cents === tier.amount_cents && (
 									<Shield className="h-5 w-5 text-primary" />
 								)}
 							</button>
 						))}
+
+						{/* Custom Amount Option */}
+						<div
+							className={`w-full rounded-xl border p-4 text-left transition-colors cursor-pointer ${
+								isCustom
+									? 'border-primary bg-primary/10 ring-1 ring-primary'
+									: 'hover:border-primary/50 hover:bg-muted/50'
+							}`}
+							onClick={() => setIsCustom(true)}
+						>
+							<div className="flex items-center justify-between">
+								<div className="font-semibold text-foreground">Custom Amount</div>
+								{isCustom && <Shield className="h-5 w-5 text-primary" />}
+							</div>
+							
+							{isCustom ? (
+								<div className="mt-3">
+									<div className="relative">
+										<span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+										<input 
+											type="number"
+											min="10"
+											value={customAmountStr}
+											onChange={(e) => setCustomAmountStr(e.target.value)}
+											className="w-full rounded-md border bg-background py-2 pl-7 pr-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+											placeholder="Enter amount (min 10)"
+										/>
+									</div>
+									<div className="mt-2 flex items-center justify-between text-xs">
+										<span className="text-muted-foreground">
+											{(requestsForCustom / 1000000).toFixed(1)}M requests
+										</span>
+										{!isValidCustom && customAmountStr.length > 0 && (
+											<span className="text-destructive">Minimum $10</span>
+										)}
+									</div>
+								</div>
+							) : (
+								<div className="text-sm text-muted-foreground">
+									Enter a custom amount (min $10)
+								</div>
+							)}
+						</div>
 					</div>
 
 					{error && (
@@ -96,7 +154,7 @@ export function WalletTopUpModal({
 					<button
 						type="button"
 						onClick={handleTopUp}
-						disabled={loading}
+						disabled={!canSubmit}
 						className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
 					>
 						{loading ? (
@@ -104,7 +162,7 @@ export function WalletTopUpModal({
 						) : (
 							<CreditCard className="h-4 w-4" />
 						)}
-						{loading ? 'Processing...' : `Pay ${selectedTier.label}`}
+						{loading ? 'Processing...' : `Pay ${labelToCharge}`}
 					</button>
 				</div>
 			</div>

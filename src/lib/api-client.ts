@@ -1069,6 +1069,13 @@ class ApiClient {
 		});
 	}
 
+	async configureAutoRecharge(enabled: boolean) {
+		return this.fetch('/v1/billing/auto-recharge', {
+			method: 'POST',
+			body: JSON.stringify({ enabled }),
+		});
+	}
+
 	async resendVerificationEmail() {
 		return this.fetch('/v1/management/resend-verification-email', {
 			method: 'POST',

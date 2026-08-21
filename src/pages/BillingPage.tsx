@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { WalletTopUpModal } from "../components/WalletTopUpModal";
-import { ArrowUpRight, CheckCircle2, Coins, Zap, CreditCard, Lock, RefreshCw } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Coins, Zap, CreditCard, Lock, RefreshCw, Loader2 } from 'lucide-react';
 import { SEOMeta } from '../components/SEOMeta';
 import { useSearchParams } from 'react-router-dom';
 import {
@@ -138,6 +138,7 @@ export default function BillingPage() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState('');
 	const [isTopUpModalOpen, setIsTopUpModalOpen] = useState(false);
+	const [togglingRecharge, setTogglingRecharge] = useState(false);
 	const [busyAction, setBusyAction] = useState<string | null>(null);
 	const [checkoutNotice, setCheckoutNotice] = useState('');
 	const [billingPeriod, setBillingPeriod] = useState<BillingInterval>(
@@ -148,6 +149,23 @@ export default function BillingPage() {
 		error.includes('POLAR_ACCESS_TOKEN') ||
 		error.includes('not configured') ||
 		error.includes('Unable to create Polar');
+
+	
+	const handleToggleAutoRecharge = async () => {
+		if (!account) return;
+		setTogglingRecharge(true);
+		try {
+			const newState = !account.auto_recharge_enabled;
+			await api.configureAutoRecharge(newState);
+			const raw = await api.getBillingAccount();
+			const data = normalizeBillingAccount(raw);
+			if (data) setAccount(data);
+		} catch (err) {
+			console.error('Failed to toggle auto recharge', err);
+		} finally {
+			setTogglingRecharge(false);
+		}
+	};
 
 	const loadAccount = async () => {
 		setError('');
@@ -340,11 +358,27 @@ export default function BillingPage() {
                                 value={<span className="text-2xl font-bold">{(account?.available_requests || 0).toLocaleString()} <span className="text-sm font-normal text-muted-foreground">reqs</span></span>} 
                                 icon={Coins} 
                             />
-							<AppStatCard 
-                                label="Auto-Recharge" 
-                                value={<span className="capitalize">{account?.auto_recharge_enabled ? 'Enabled' : 'Disabled'}</span>} 
-                                icon={Zap}
-                            />
+							<div className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-6 md:p-8 flex items-center justify-between">
+								<div className="flex flex-col gap-2">
+									<p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+										Auto-Recharge
+									</p>
+									<p className="text-2xl font-bold text-foreground capitalize">
+										{account?.auto_recharge_enabled ? 'Enabled' : 'Disabled'}
+									</p>
+								</div>
+								<button 
+									onClick={handleToggleAutoRecharge}
+									disabled={togglingRecharge}
+									className={`flex h-12 w-12 items-center justify-center rounded-2xl border transition-colors ${
+										account?.auto_recharge_enabled 
+											? 'border-primary/25 bg-primary/10 text-primary hover:bg-primary/20' 
+											: 'border-border bg-muted/50 text-muted-foreground hover:bg-muted'
+									}`}
+								>
+									{togglingRecharge ? <Loader2 className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
+								</button>
+							</div>
 							<AppStatCard label="Billing email" value={<span className="text-base font-semibold break-all">{account?.billing_email || 'Not set yet'}</span>} />
 						</AppStatGrid>
                         
