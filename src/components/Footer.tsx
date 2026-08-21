@@ -86,20 +86,20 @@ const socialLinks = [
 
 function Footer() {
 	return (
-		<footer className="relative overflow-hidden border-t border-white/[0.08] bg-[#070909] px-4 py-16 text-foreground sm:px-6">
+		<footer className="relative overflow-hidden border-t border-border bg-background px-4 py-16 text-foreground sm:px-6">
 			<div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 			<div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 			<div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-secondary/5 blur-3xl" />
 
 			<div className="relative mx-auto max-w-7xl min-w-0">
 				<div className="mb-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-					<div className="relative min-w-0 overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.03] p-6 md:p-8">
+					<div className="relative min-w-0 overflow-hidden rounded-[2rem] border border-border bg-card p-6 md:p-8">
 						<div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-primary/10 blur-3xl" />
 						<div className="relative flex h-full flex-col gap-8">
 							<div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 								<div>
 									<p className="text-xs font-bold uppercase tracking-[0.28em] text-primary">Connect on socials</p>
-									<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-4xl">Follow Koreshield</h2>
+									<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">Follow Koreshield</h2>
 								</div>
 								<div className="flex min-w-0 items-center gap-3 text-sm text-muted-foreground">
 									<img src="/logo/light/SVG/White.svg" alt="Koreshield" className="h-8 w-8" />
@@ -115,7 +115,7 @@ function Footer() {
 										target="_blank"
 										rel="noreferrer noopener"
 										aria-label={`Koreshield on ${social.label}`}
-										className="group flex min-h-32 min-w-0 flex-col justify-between rounded-[1.35rem] border border-white/[0.08] bg-black/20 p-5 text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-primary/[0.07] hover:text-white hover:shadow-2xl hover:shadow-primary/10 sm:min-h-36"
+										className="group flex min-h-32 min-w-0 flex-col justify-between rounded-[1.35rem] border border-border bg-muted/50 p-5 text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-primary/[0.07] hover:text-foreground hover:shadow-2xl hover:shadow-primary/10 sm:min-h-36"
 									>
 										<span className="transition-colors group-hover:text-primary">{social.icon}</span>
 										<span className="text-sm font-bold tracking-tight">{social.label}</span>
@@ -129,25 +129,25 @@ function Footer() {
 						<div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15">
 							<ShieldCheck className="h-6 w-6 text-primary" />
 						</div>
-						<h2 className="max-w-full text-2xl font-extrabold tracking-tight text-white">See what your AI is exposed to.</h2>
+						<h2 className="max-w-full text-2xl font-extrabold tracking-tight text-foreground">See what your AI is exposed to.</h2>
 						<p className="mt-3 text-sm leading-relaxed text-muted-foreground">
 							Run a guided demo against your stack: prompts, RAG, providers, alerts, and audit evidence.
 						</p>
 						<div className="mt-6 flex flex-col gap-3 sm:flex-row">
-							<Link to="/demo" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-[#04130f] transition-colors hover:bg-primary-dark sm:w-auto">
+							<Link to="/demo" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-dark sm:w-auto">
 								Book a demo <ArrowRight className="h-4 w-4" />
 							</Link>
-							<Link to="/docs" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-black/20 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-black/35 sm:w-auto">
+							<Link to="/docs" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-muted px-5 py-3 text-sm font-bold text-foreground transition-colors hover:bg-muted/80 sm:w-auto">
 								Read docs
 							</Link>
 						</div>
 					</div>
 				</div>
 
-				<div className="flex flex-wrap justify-between gap-x-8 gap-y-10 border-y border-white/[0.08] py-10">
+				<div className="flex flex-wrap justify-between gap-x-8 gap-y-10 border-y border-border py-10">
 					{footerGroups.map((group) => (
 						<div key={group.title} className="min-w-[140px] flex-1 md:flex-initial">
-							<h3 className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-white">{group.title}</h3>
+							<h3 className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-foreground">{group.title}</h3>
 							<ul className="space-y-3">
 								{group.links.map((link) => (
 									<li key={link.to}>
