@@ -531,7 +531,7 @@ export const careerRoles: CareerRole[] = [
 		summary: 'Break LLMs and agentic systems before the attackers do. Research novel prompt injections, jailbreaks, and data exfiltration methods to improve our core detection engine.',
 		hero: 'You will spend your days inventing new ways to bypass AI safety guardrails and turning those discoveries into defensive capabilities for our customers.',
 		overview: [
-			'Koreshield's value relies on our ability to detect attacks that generic firewalls miss.',
+			"Koreshield's value relies on our ability to detect attacks that generic firewalls miss.",
 			'As a Threat Researcher, you will push the boundaries of adversarial machine learning and directly feed intelligence into our proxy engine.'
 		],
 		responsibilities: [
@@ -544,7 +544,7 @@ export const careerRoles: CareerRole[] = [
 			'Deep understanding of transformer architectures and LLM internals.',
 			'Experience in adversarial machine learning or AI safety red teaming.',
 			'Strong scripting skills (Python) and experience interacting with LLM APIs.',
-			'A hacker mindset—you enjoy finding the edge cases that developers didn't consider.'
+			'A hacker mindset—you enjoy finding the edge cases that developers didn\'t consider.'
 		],
 		whatWeOffer: [
 			'Dedicated time and budget for independent AI security research.',
@@ -590,8 +590,8 @@ export const careerRoles: CareerRole[] = [
 		team: 'Security',
 		location: 'Remote',
 		type: 'Full-time',
-		summary: 'Ensure Koreshield's own global proxy network and infrastructure remains hardened against attack and compliant with enterprise standards.',
-		hero: 'We secure other companies' infrastructure, so our own posture must be flawless. You will own the security architecture of our edge nodes, control plane, and cloud environments.',
+		summary: 'Ensure Koreshield\'s own global proxy network and infrastructure remains hardened against attack and compliant with enterprise standards.',
+		hero: 'We secure other companies\' infrastructure, so our own posture must be flawless. You will own the security architecture of our edge nodes, control plane, and cloud environments.',
 		overview: [
 			'Enterprise customers trust us with their raw AI traffic. We must maintain the highest standards of infrastructure security, isolation, and compliance.',
 			'You will be the guardian of our own systems.'
