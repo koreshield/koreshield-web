@@ -1062,6 +1062,13 @@ class ApiClient {
 		return response.blob();
 	}
 
+	async fundWallet(amount_cents: number) {
+		return this.fetch('/v1/billing/fund', {
+			method: 'POST',
+			body: JSON.stringify({ amount_cents }),
+		});
+	}
+
 	async resendVerificationEmail() {
 		return this.fetch('/v1/management/resend-verification-email', {
 			method: 'POST',

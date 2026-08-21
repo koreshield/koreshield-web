@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, CheckCircle2, CreditCard, Lock, RefreshCw } from 'lucide-react';
+import { WalletTopUpModal } from "../components/WalletTopUpModal";
+import { ArrowUpRight, CheckCircle2, Coins, Zap, CreditCard, Lock, RefreshCw } from 'lucide-react';
 import { SEOMeta } from '../components/SEOMeta';
 import { useSearchParams } from 'react-router-dom';
 import {
@@ -40,6 +41,10 @@ type BillingAccount = {
 	billing_email?: string | null;
 	external_customer_id: string;
 	polar_customer_id?: string | null;
+	available_requests?: number;
+	auto_recharge_enabled?: boolean;
+	auto_recharge_threshold?: number | null;
+	auto_recharge_amount_cents?: number | null;
 	metadata?: {
 		recurring_interval?: string;
 		active_meter_count?: number;
@@ -114,6 +119,10 @@ function normalizeBillingAccount(raw: unknown): BillingAccount | null {
 			typeof value.external_customer_id === 'string' ? value.external_customer_id : '',
 		polar_customer_id:
 			typeof value.polar_customer_id === 'string' ? value.polar_customer_id : null,
+		available_requests: typeof value.available_requests === 'number' ? value.available_requests : 0,
+		auto_recharge_enabled: typeof value.auto_recharge_enabled === 'boolean' ? value.auto_recharge_enabled : false,
+		auto_recharge_threshold: typeof value.auto_recharge_threshold === 'number' ? value.auto_recharge_threshold : null,
+		auto_recharge_amount_cents: typeof value.auto_recharge_amount_cents === 'number' ? value.auto_recharge_amount_cents : null,
 		metadata,
 	};
 }
@@ -128,6 +137,7 @@ export default function BillingPage() {
 	const [account, setAccount] = useState<BillingAccount | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState('');
+	const [isTopUpModalOpen, setIsTopUpModalOpen] = useState(false);
 	const [busyAction, setBusyAction] = useState<string | null>(null);
 	const [checkoutNotice, setCheckoutNotice] = useState('');
 	const [billingPeriod, setBillingPeriod] = useState<BillingInterval>(
@@ -323,19 +333,42 @@ export default function BillingPage() {
 					{loading ? (
 						<div className="text-sm text-muted-foreground">Loading billing account...</div>
 					) : (
+						<>
 						<AppStatGrid columns={2} className="mb-0">
-							<AppStatCard label="Plan" value={displayPlan?.name || (normalizedPlan === 'unpaid' ? 'No active plan' : account?.plan_name || account?.plan_slug)} icon={CreditCard} />
-							<AppStatCard label="Status" value={<span className="capitalize">{account?.subscription_status || account?.status || 'inactive'}</span>} />
+							<AppStatCard 
+                                label="Wallet Balance" 
+                                value={<span className="text-2xl font-bold">{(account?.available_requests || 0).toLocaleString()} <span className="text-sm font-normal text-muted-foreground">reqs</span></span>} 
+                                icon={Coins} 
+                            />
+							<AppStatCard 
+                                label="Auto-Recharge" 
+                                value={<span className="capitalize">{account?.auto_recharge_enabled ? 'Enabled' : 'Disabled'}</span>} 
+                                icon={Zap}
+                            />
 							<AppStatCard label="Billing email" value={<span className="text-base font-semibold break-all">{account?.billing_email || 'Not set yet'}</span>} />
-							<AppStatCard
-								label="Period end"
-								value={
-									account?.current_period_end
-										? new Date(account.current_period_end).toLocaleDateString()
-										: 'No active cycle'
-								}
-							/>
 						</AppStatGrid>
+                        
+                        <div className="mt-6 flex gap-4">
+                            <button
+                                type="button"
+                                onClick={() => setIsTopUpModalOpen(true)}
+                                className="rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                            >
+                                Add Funds
+                            </button>
+                        </div>
+                        
+                        <WalletTopUpModal 
+                            isOpen={isTopUpModalOpen}
+                            onClose={() => setIsTopUpModalOpen(false)}
+                            onSuccess={() => {
+                                api.getBillingAccount().then(raw => {
+                                    const data = normalizeBillingAccount(raw);
+                                    if (data) setAccount(data);
+                                });
+                            }}
+                        />
+						</>
 					)}
 
 					<div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row sm:gap-3">
